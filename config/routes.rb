@@ -1,9 +1,17 @@
 AutoApp::Application.routes.draw do
-  get "home" => "home#index"
+  # get "home" => "home#index"
 
   get "articles" => "articles#index"
 
   get "articles/:id" => "articles#show"
+
+  get "manufacturers" => "catalog#index"
+
+  get "manufacturers/:id/models" => "catalog#index"
+
+  get "manufacturer/:id" => "search#index"
+
+  get "models/:id" => "search#home"
 
   root to: "home#main"
 

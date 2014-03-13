@@ -42,7 +42,7 @@ $include-html-global-classes: $include-html-classes;
 // We use these to control various global styles
 // $body-bg: #fff;
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -58,13 +58,13 @@ $text-direction: rtl;
 $primary-color: #f08CBA;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
-// $success-color: #43AC6A;
+$success-color: #43AC6A;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
-$global-radius: 3px;
-// $global-rounded: 1000px;
+$global-radius: 15px;
+$global-rounded: 10px;
 
 // We use these to control inset shadow shiny edges and depressions.
 // $shiny-edge-size: 0 1px 0;
@@ -313,42 +313,42 @@ $global-radius: 3px;
 // BUTTONS
 //
 
-// $include-html-button-classes: $include-html-classes;
+$include-html-button-classes: $include-html-classes;
 
 // We use these to build padding for buttons.
-// $button-tny: rem-calc(10);
-// $button-sml: rem-calc(14);
-// $button-med: rem-calc(16);
-// $button-lrg: rem-calc(18);
+$button-tny: rem-calc(10);
+$button-sml: rem-calc(14);
+$button-med: rem-calc(16);
+$button-lrg: rem-calc(18);
 
 // We use this to control the display property.
-// $button-display: inline-block;
-// $button-margin-bottom: rem-calc(20);
+$button-display: inline-block;
+$button-margin-bottom: rem-calc(20);
 
 // We use these to control button text styles.
-// $button-font-family: $body-font-family;
-// $button-font-color: #fff;
-// $button-font-color-alt: #333;
-// $button-font-tny: rem-calc(11);
-// $button-font-sml: rem-calc(13);
-// $button-font-med: rem-calc(16);
-// $button-font-lrg: rem-calc(20);
-// $button-font-weight: normal;
-// $button-font-align: center;
+$button-font-family: $body-font-family;
+$button-font-color: #fff;
+$button-font-color-alt: #333;
+$button-font-tny: rem-calc(11);
+$button-font-sml: rem-calc(13);
+$button-font-med: rem-calc(16);
+$button-font-lrg: rem-calc(20);
+$button-font-weight: normal;
+$button-font-align: center;
 
 // We use these to control various hover effects.
-// $button-function-factor: 5%;
+$button-function-factor: 5%;
 
 // We use these to control button border styles.
-// $button-border-width: 1px;
-// $button-border-style: solid;
+$button-border-width: 1px;
+$button-border-style: solid;
 
 // We use this to set the default radius used throughout the core.
-// $button-radius: $global-radius;
-// $button-round: $global-rounded;
+$button-radius: $global-radius;
+$button-round: $global-rounded;
 
 // We use this to set default opacity for disabled buttons.
-// $button-disabled-opacity: 0.7;
+$button-disabled-opacity: 0.6;
 
 // Button Groups
 
@@ -763,27 +763,27 @@ $global-radius: 3px;
 
 // Panels
 
-// $include-html-panel-classes: $include-html-classes;
+$include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-// $panel-bg: scale-color(#fff, $lightness: -5%);
-// $panel-border-style: solid;
-// $panel-border-size: 1px;
+$panel-bg: scale-color(#fff, $lightness: -5%);
+$panel-border-style: solid;
+$panel-border-size: 1px;
 
 // We use this % to control how much we darken things on hover
-// $panel-function-factor: -11%;
-// $panel-border-color: scale-color($panel-bg, $lightness: $panel-function-factor);
+$panel-function-factor: -11%;
+$panel-border-color: scale-color($panel-bg, $lightness: $panel-function-factor);
 
 // We use these to set default inner padding and bottom margin
-// $panel-margin-bottom: rem-calc(20);
-// $panel-padding: rem-calc(20);
+$panel-margin-bottom: rem-calc(20);
+$panel-padding: rem-calc(20);
 
 // We use these to set default font colors
-// $panel-font-color: #333;
-// $panel-font-color-alt: #fff;
+$panel-font-color: #333;
+$panel-font-color-alt: #fff;
 
 // $panel-header-adjust: true;
-// $callout-panel-link-color: $primary-color;
+$callout-panel-link-color: $primary-color;
 
 // Pricing Tables
 
@@ -991,41 +991,41 @@ $global-radius: 3px;
 // SWITCH
 //
 
-// $include-html-form-classes: $include-html-classes;
+$include-html-form-classes: $include-html-classes;
 
 // Controlling border styles and background colors for the switch container
-// $switch-border-color: scale-color(#fff, $lightness: -20%);
-// $switch-border-style: solid;
-// $switch-border-width: 1px;
-// $switch-bg: #fff;
+$switch-border-color: scale-color(#fff, $lightness: -20%);
+$switch-border-style: solid;
+$switch-border-width: 1px;
+$switch-bg: #fff;
 
 // We use these to control the switch heights for our default classes
-// $switch-height-tny: 22px;
-// $switch-height-sml: 28px;
-// $switch-height-med: 36px;
-// $switch-height-lrg: 44px;
-// $switch-bottom-margin: rem-calc(20);
+$switch-height-tny: 22px;
+$switch-height-sml: 28px;
+$switch-height-med: 36px;
+$switch-height-lrg: 44px;
+$switch-bottom-margin: rem-calc(20);
 
 // We use these to control default font sizes for our classes.
-// $switch-font-size-tny: 11px;
-// $switch-font-size-sml: 12px;
-// $switch-font-size-med: 14px;
-// $switch-font-size-lrg: 17px;
-// $switch-label-side-padding: 6px;
+$switch-font-size-tny: 11px;
+$switch-font-size-sml: 12px;
+$switch-font-size-med: 14px;
+$switch-font-size-lrg: 17px;
+$switch-label-side-padding: 6px;
 
 // We use these to style the switch-paddle
-// $switch-paddle-bg: #fff;
-// $switch-paddle-fade-to-color: scale-color($switch-paddle-bg, $lightness: -10%);
-// $switch-paddle-border-color: scale-color($switch-paddle-bg, $lightness: -35%);
-// $switch-paddle-border-width: 1px;
-// $switch-paddle-border-style: solid;
-// $switch-paddle-transition-speed: .1s;
-// $switch-paddle-transition-ease: ease-out;
-// $switch-positive-color: scale-color($success-color, $lightness: 94%);
-// $switch-negative-color: #f5f5f5;
+$switch-paddle-bg: #fff;
+$switch-paddle-fade-to-color: scale-color($switch-paddle-bg, $lightness: -10%);
+$switch-paddle-border-color: scale-color($switch-paddle-bg, $lightness: -35%);
+$switch-paddle-border-width: 1px;
+$switch-paddle-border-style: solid;
+$switch-paddle-transition-speed: .1s;
+$switch-paddle-transition-ease: ease-out;
+$switch-positive-color: scale-color($success-color, $lightness: 94%);
+$switch-negative-color: #f5f5f5;
 
 // Outline Style for tabbing through switches
-// $switch-label-outline: 1px dotted #888;
+$switch-label-outline: 1px dotted #888;
 
 // Tables
 
