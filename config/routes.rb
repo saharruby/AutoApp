@@ -21,7 +21,9 @@ AutoApp::Application.routes.draw do
 
   get "competitors/:id" => "catalog#competitors"
 
-  get "models.:id/used" => "catalog#used"
+  get "models/:id/used" => "catalog#used"
+
+  # get "models/:id?usedId=:id" => "catalog#used"
 
   root to: "home#main"
 

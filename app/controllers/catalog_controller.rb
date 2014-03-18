@@ -24,7 +24,9 @@ def competitors
 end
 
 def used
-    respond_with Net::HTTP.get URI.parse(HOST + "/models/" + params[:id] + "/used") if params[:id]
+  # raise params.inspect
+    respond_with Net::HTTP.get URI.parse(HOST + "/models/" + params[:id] + "/used") unless params[:usedId]
+    # respond_with Net::HTTP.get URI.parse(HOST + "/models/" + params[:id] + "/used/" + params[:usedId])
 end
 
   # def show

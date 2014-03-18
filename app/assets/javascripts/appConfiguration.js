@@ -30,11 +30,19 @@ angular.module("main")
                     templateUrl: 'partials/carModelView.html',
                     controller: 'CarModelCtrl'
                 })
+                .when('/articles/carcatalog/models/:id/used', {
+                    templateUrl: 'partials/carModelView.html',
+                    controller: 'CarModelCtrl'
+                })
                 .when('/carcatalog/model/review', {
                     templateUrl: 'partials/modelReviewView.html',
                     controller: 'CarModelCtrl'
                 })
                 .when('/carcatalog/model/versions', {
+                    templateUrl: 'partials/modelVersionsView.html',
+                    controller: 'ModelVersionsCtrl'
+                })
+                .when('/carcatalog/model/versions/:id', {
                     templateUrl: 'partials/modelVersionsView.html',
                     controller: 'ModelVersionsCtrl'
                 })
@@ -49,6 +57,10 @@ angular.module("main")
                 .when('/carcatalog/model/competitors', {
                     templateUrl: 'partials/modelCompetitorsView.html',
                     controller: 'ModelCompetitorsCtrl'
+                })
+                .when('/carcatalog/models/:id/useds', {
+                    templateUrl: 'partials/modelUsedsView.html',
+                    controller: 'ModelUsedsCtrl'
                 })
                 .when('/articles/:articleId', {
                     templateUrl: 'partials/articleView.html',
