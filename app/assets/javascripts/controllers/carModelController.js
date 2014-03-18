@@ -1,6 +1,6 @@
 angular.module('autoControllers')
-    .controller('CarModelCtrl', ['$scope', 'SearchServices', 'CatalogServices',
-        function($scope, SearchServices, CatalogServices) {
+    .controller('CarModelCtrl', ['$scope', '$routeParams', '$sce', 'SearchServices', 'CatalogServices',
+        function($scope, $routeParams, $sce, SearchServices, CatalogServices) {
             $scope.modelId = CatalogServices.getModelId();
             $scope.review = [];
             //$scope.newOrUsed = CatalogServices.getNewOrUsed();
@@ -8,7 +8,13 @@ angular.module('autoControllers')
 
             if ($scope.modelId > 0) {
                 // SearchServices.getSearchResaulForModelByModelId($scope.modelId + '?used=' + $scope.newOrUsed).success(function(data) {
-                SearchServices.getSearchResaulForModelByModelId($scope.modelId).success(function(data) {
+                getDataFromService($scope.modelId);
+            } else if ($routeParams.isSelected && $routeParams.id) {
+                getDataFromService($routeParams.id);
+            }
+
+            function getDataFromService(model_id) {
+                SearchServices.getSearchResaulForModelByModelId(model_id).success(function(data) {
                     $scope.model = data[0];
 
                     $scope.review.push({
@@ -59,18 +65,20 @@ angular.module('autoControllers')
                         link: '#/carcatalog/model/gallery?id=' + $scope.model.galleryId
                     }, {
                         title: 'וידאו',
-                        link: '#'
+                        link: '#/carcatalog/model/videos?id=' + $scope.model.videoId
                     }, {
                         title: 'מתחרים',
-                        link: '#'
+                        link: '#/carcatalog/model/competitors?id=' + $scope.model.competitorsId
                     }, {
                         title: 'דגמי יד שניה',
                         link: '#'
                     }];
-
-                    //console.log(data[0]);
                     console.log($scope.review);
+                    console.log($scope.model);
                 });
             }
+
+            console.log($routeParams);
+            console.log($scope.model);
         }
     ]);

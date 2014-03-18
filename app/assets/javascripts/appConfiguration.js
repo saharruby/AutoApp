@@ -42,6 +42,14 @@ angular.module("main")
                     templateUrl: 'partials/modelGalleryView.html',
                     controller: 'ModelGalleryCtrl'
                 })
+                .when('/carcatalog/model/videos', {
+                    templateUrl: 'partials/modelVideosView.html',
+                    controller: 'ModelVideosCtrl'
+                })
+                .when('/carcatalog/model/competitors', {
+                    templateUrl: 'partials/modelCompetitorsView.html',
+                    controller: 'ModelCompetitorsCtrl'
+                })
                 .when('/articles/:articleId', {
                     templateUrl: 'partials/articleView.html',
                     controller: 'ArticleCtrl'
@@ -60,6 +68,7 @@ angular.module("main").run(function($rootScope, $timeout) {
     $rootScope.$on('$routeChangeSuccess', function() {
         // $timeout(function() {
         $(document).foundation('reflow');
+        console.log('$routeChangeSuccess');
         // }, 500);
     });
 });
