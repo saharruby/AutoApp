@@ -30,6 +30,10 @@ angular.module("main")
                     templateUrl: 'partials/carModelView.html',
                     controller: 'CarModelCtrl'
                 })
+                .when('/articles/carcatalog/models/:id/used', {
+                    templateUrl: 'partials/carModelView.html',
+                    controller: 'CarModelCtrl'
+                })
                 .when('/carcatalog/model/review', {
                     templateUrl: 'partials/modelReviewView.html',
                     controller: 'CarModelCtrl'
@@ -38,9 +42,25 @@ angular.module("main")
                     templateUrl: 'partials/modelVersionsView.html',
                     controller: 'ModelVersionsCtrl'
                 })
+                .when('/carcatalog/model/versions/:id', {
+                    templateUrl: 'partials/modelVersionsView.html',
+                    controller: 'ModelVersionsCtrl'
+                })
                 .when('/carcatalog/model/gallery', {
                     templateUrl: 'partials/modelGalleryView.html',
                     controller: 'ModelGalleryCtrl'
+                })
+                .when('/carcatalog/model/videos', {
+                    templateUrl: 'partials/modelVideosView.html',
+                    controller: 'ModelVideosCtrl'
+                })
+                .when('/carcatalog/model/competitors', {
+                    templateUrl: 'partials/modelCompetitorsView.html',
+                    controller: 'ModelCompetitorsCtrl'
+                })
+                .when('/carcatalog/models/:id/useds', {
+                    templateUrl: 'partials/modelUsedsView.html',
+                    controller: 'ModelUsedsCtrl'
                 })
                 .when('/articles/:articleId', {
                     templateUrl: 'partials/articleView.html',
@@ -60,6 +80,7 @@ angular.module("main").run(function($rootScope, $timeout) {
     $rootScope.$on('$routeChangeSuccess', function() {
         // $timeout(function() {
         $(document).foundation('reflow');
+        console.log('$routeChangeSuccess');
         // }, 500);
     });
 });

@@ -8,13 +8,13 @@
   <ul class="pricing-table">
   <div ng-repeat="m in models" >
       <li class="title">{{m.key}}</li>
-      <li ng-repeat="col in m.collection" class="row bullet-item">
-        <a href="#articles/carcatalog?isSelected" ng-click="onSelectM(col)">
+      <a ng-repeat="col in m.collection" href="#articles/carcatalog?isSelected" ng-click="onSelectM(col)">
+        <li class="row bullet-item">
           <div class="expand text-right">
               <p>{{col.name}}</p>
           </div>
-        </a>
-    </li>
+        </li>
+      </a>
     </div>
   </ul>
 </div>

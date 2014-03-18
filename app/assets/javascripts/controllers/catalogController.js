@@ -17,6 +17,7 @@ angular.module('autoControllers')
                     $scope.manufacturerName = '<  ' + $scope.manufacturer.name;
                     $scope.searchUrl = 'manufacturers/' + $scope.manufacturer.id + '?isSelected';
                 }
+                //console.log($scope.newOrUsed);
             }, true);
 
             $scope.$watch(CatalogServices.model, function(newData) {

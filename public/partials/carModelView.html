@@ -41,18 +41,18 @@
   </div>
   <div class="row">
     <div class="twelve columns text-right">
-      <textarea class="text-right" disabled="disabled" placeholder="small-12.columns">{{model.review.summary}}</textarea>
+      <p class="breadcrumbs text-right" disabled="disabled" texthtmlparser texthtml="{{model.review.summary}}"></p>
     </div>
   </div>
   <div class="row">
     <ul class="pricing-table">
-      <li ng-repeat="td in tableData" class="row bullet-item">
-        <a href="{{td.link}}">
-          <div class=" text-right">
+      <a ng-repeat="td in tableData" href="{{td.link}}" alt=''>
+        <li class="twelve columns bullet-item">
+          <div class="text-center">
               <p style="color:black">{{td.title}}</p>
           </div>
-        </a>
-      </li>
+        </li>
+      </a>
     </ul>
   </div>
 </div>

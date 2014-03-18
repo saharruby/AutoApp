@@ -15,6 +15,20 @@ class CatalogController < ApplicationController
     respond_with Net::HTTP.get URI.parse(HOST + "/galleries/" + params[:id]) if params[:id]
   end
 
+def videos
+    respond_with Net::HTTP.get URI.parse(HOST + "/videos/" + params[:id]) if params[:id]
+end
+
+def competitors
+    respond_with Net::HTTP.get URI.parse(HOST + "/competitors/" + params[:id]) if params[:id]
+end
+
+def used
+  # raise params.inspect
+    respond_with Net::HTTP.get URI.parse(HOST + "/models/" + params[:id] + "/used") unless params[:usedId]
+    # respond_with Net::HTTP.get URI.parse(HOST + "/models/" + params[:id] + "/used/" + params[:usedId])
+end
+
   # def show
   #    respond_with Net::HTTP.get URI.parse(HOST + "/articles/" + params[:id])
   # end

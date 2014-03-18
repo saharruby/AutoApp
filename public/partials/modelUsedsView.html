@@ -1,0 +1,18 @@
+<div ng-controller="ModelUsedsCtrl" class="container">
+  <div class="row">
+    <div class="twelve columns text-right">
+      <ul class="pricing-table">
+        <a ng-repeat="u in useds" href="#/articles/carcatalog/models/{{u.modelId}}/used?usedId={{u.usedId}}&isSelected">
+          <li class="row bullet-item">
+            <div class="small-4 columns">
+              <img  class="th radius" ng-src="{{u.image_url}}" >
+            </div>
+            <div class="main small-8 columns text-right">
+              <h5>{{u.name}}</h5>
+            </div>
+          </li>
+        </a>
+      </ul>
+    </div>
+  </div>
+</div>

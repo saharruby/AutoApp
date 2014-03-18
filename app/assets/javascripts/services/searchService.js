@@ -3,29 +3,29 @@ angular.module('autoServices')
         function($http) {
             var resource = {};
 
-            resource.getSearchResaulForAllManufacturerModels = function(manufacturerId) {
-                return $http.get('manufacturer/' + manufacturerId + '.json', {
+            resource.getSearchResaulForAllManufacturerModels = function(manufacturerID) {
+                return $http.get('manufacturer/' + manufacturerID + '.json', {
                     headers: {
                         'Content-type': 'application/json'
                     }
                 });
             };
 
-            resource.getSearchResaulForModelByModelId = function(modelId) {
-                return $http.get('models/' + modelId + '.json', {
+            resource.getSearchResaulForModelByModelId = function(modelID) {
+                return $http.get('models/' + modelID + '.json', {
                     headers: {
                         'Content-type': 'application/json'
                     }
                 });
             };
 
-            // resource.getSearchModelsByModelId = function(mId) {
-            //     return $http.get('manufacturers/' + mId + '/models.json', {
-            //         headers: {
-            //             'Content-type': 'application/json'
-            //         }
-            //     });
-            // };
+    // resource.getModelUsedByModelIdAndUsedId = function(mID, uID) {
+    //     return $http.get('models/' + mID + '?usedId=' + uID + '.json', {
+    //         headers: {
+    //             'Content-type': 'application/json'
+    //         }
+    //     });
+    // };
 
             return resource;
         }
