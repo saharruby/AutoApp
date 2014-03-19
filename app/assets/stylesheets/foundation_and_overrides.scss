@@ -53,8 +53,8 @@ $font-smoothing: antialiased;
 
 // We use these to control text direction settings
 $text-direction: rtl;
-$opposite-direction: right;
-$default-float: left;
+$opposite-direction: left;
+$default-float: right;
 
 // We use these as default colors throughout
 $primary-color: #ff0000;
@@ -354,7 +354,7 @@ $button-disabled-opacity: 0.6;
 
 // Button Groups
 
-// $include-html-button-classes: $include-html-classes;
+$include-html-button-classes: $include-html-classes;
 
 // Sets the margin for the right side by default, and the left margin if right-to-left direction is used
 // $button-bar-margin-opposite: rem-calc(10);
@@ -540,7 +540,7 @@ $flex-video-widescreen-padding-bottom: 57.25%;
 
 // Inline Lists
 
-// $include-html-inline-list-classes: $include-html-classes;
+$include-html-inline-list-classes: $include-html-classes;
 
 // We use this to control the margins and padding of the inline list.
 // $inline-list-top-margin: 0;
