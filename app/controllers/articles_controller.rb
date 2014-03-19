@@ -9,6 +9,10 @@ class ArticlesController < ApplicationController
 
   end
 
+  def latest
+    respond_with Net::HTTP.get URI.parse(HOST + "/articles/latest")
+  end
+
   def show
      respond_with Net::HTTP.get URI.parse(HOST + "/articles/" + params[:id])
   end

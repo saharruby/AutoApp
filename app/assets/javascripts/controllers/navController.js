@@ -2,30 +2,29 @@ angular.module('autoControllers')
     .controller('NavCtrl', ['$scope', 'NavServices',
         function($scope, NavServices) {
             $scope.navs = [{
+                name: 'כתבות אחרונות',
+                img: '......',
+                route: '#/articles/latest'
+            }, {
                 name: 'קטלוג הרכב',
                 img: '......',
-                route: '#/articles/carcatalog',
-                navId: '1'
+                route: '#/articles/carcatalog'
             }, {
                 name: 'כתבות',
                 img: '......',
-                route: '#/articles',
-                navId: '2'
+                route: '#/articles'
             }, {
                 name: 'מדריך קניה',
                 img: '......',
-                route: '#',
-                navId: '3'
+                route: '#'
             }, {
                 name: 'יייעוץ חינם לקניית רכב',
                 img: '......',
-                route: '#',
-                navId: '4'
+                route: '#'
             }, {
                 name: 'מועדפים',
                 img: '......',
-                route: '#',
-                navId: '5'
+                route: '#'
             }];
         }
     ]);

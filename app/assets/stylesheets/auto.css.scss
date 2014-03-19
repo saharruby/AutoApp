@@ -24,4 +24,12 @@
 
 .orbit_img {
   margin: 0 auto;
+  min-height: 150px;
+  height: auto;
+}
+
+.orbit-container .orbit-slides-container > * .orbit-caption.under-line
+{
+  position: relative;
+  bottom:-1px;
 }

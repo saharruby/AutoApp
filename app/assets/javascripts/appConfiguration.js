@@ -6,6 +6,10 @@ angular.module("main")
                     templateUrl: 'partials/allArticlesView.html',
                     controller: 'ArticleListCtrl'
                 })
+                .when('/articles/latest', {
+                    templateUrl: 'partials/Index.html',
+                    controller: 'IndexCtrl'
+                })
                 .when('/articles/carcatalog', {
                     templateUrl: 'partials/catalogView.html',
                     controller: 'CatalogCtrl'
@@ -71,7 +75,7 @@ angular.module("main")
                     controller: 'ArticlesCategoryCtrl'
                 })
                 .otherwise({
-                    redirectTo: '/articles'
+                    redirectTo: '/articles/latest'
                 });
         }
     ]);

@@ -1,0 +1,12 @@
+<div ng-controller="IndexCtrl" class="container">
+  <div class="row">
+    <ul data-orbit  class="small-12 columns">
+      <a ng-repeat="l in latest" href="#/articles/{{l.articleId}}">
+        <li>
+          <img src="{{l.imageUrl}}" alt="" class="orbit_img"/>
+          <div class="orbit-caption text-right under-line">{{l.title}}</div>
+        </li>
+      </a>
+    </ul>
+  </div>
+</div>

@@ -1,6 +1,8 @@
 AutoApp::Application.routes.draw do
   # get "home" => "home#index"
 
+  get "articles/latest" => "articles#latest"
+
   get "articles" => "articles#index"
 
   get "articles/:id" => "articles#show"

@@ -17,7 +17,8 @@ angular.module('autoControllers')
                                 resume_on_mouseout: false, // If pause on hover is set to true, this setting resumes playback after mousing out of slide
                                 next_on_click: true, // Advance to next slide on click
                                 animation_speed: 500, // Sets the amount of time in milliseconds the transition between slides will last
-                                stack_on_small: false,
+                                stack_on_small: false
+                                // timer: false
                             });
                         });
                     });
