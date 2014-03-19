@@ -32,24 +32,24 @@ angular.module('autoDirectives')
                     });
                 },
                 template: '<div class="row" >' +
-                    '<div class="twelve columns text-center">' +
-                    '<a href="#/articles/carcatalog/manufacturers" class="button radius round" style="width:100%">' +
-                    '<span style="float:right">בחר יצרן</span>' +
-                    '<span style="float:left">{{manufactrureName}}</span>' +
+                    '<div class="twelve columns">' +
+                    '<a href="#/articles/carcatalog/manufacturers" class="nice small button success radius round expand">' +
+                    '<div class="small-6 columns text-right">בחר יצרן</div>' +
+                    '<div class="small-6 columns text-left">{{manufactrureName}}</div>' +
+                    '</a>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="row" >' +
+                    '<div class="twelve columns">' +
+                    '<a href="#/articles/carcatalog/models?isSelected" class="nice small button success radius round expand" ng-disabled="modelflag">' +
+                    '<div class="small-6 columns text-right">בחר דגם</div>' +
+                    '<div class="small-6 columns text-left">{{modelName}}</div>' +
                     '</a>' +
                     '</div>' +
                     '</div>' +
                     '<div class="row" >' +
                     '<div class="twelve columns text-center">' +
-                    '<a href="#/articles/carcatalog/models?isSelected" class="button  radius round" ng-disabled="modelflag"  style="width:100%">' +
-                    '<span style="float:right">בחר דגם</span>' +
-                    '<span style="float:left">{{modelName}}</span>' +
-                    '</a>' +
-                    '</div>' +
-                    '</div>' +
-                    '<div class="row" >' +
-                    '<div class="twelve columns text-center">' +
-                    '<a href="#/articles/carcatalog/{{url}}" class="button  alert round" ng-disabled="modelflag" style="width:100%">חפש</a>' +
+                    '<a href="#/articles/carcatalog/{{url}}" class="nice medium button alert round expand" ng-disabled="modelflag">חפש</a>' +
                     '</div>' +
                     '</div>'
             };

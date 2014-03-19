@@ -1,18 +1,18 @@
 <div ng-controller="ArticleCtrl" class="container">
  <div class="row" >
-          <header class="twelve columns text-right" style="margin-right: 10px;background-color: rgba(110, 110, 100, 0.5);position:absolute">
-                <h5 style="floet:right;color:white;font-weight:bold;">{{article.title}}</h5>
+          <header class="twelve columns text-right image-header">
+                <h4>{{article.title}}</h4>
           </header>
-          <img src="{{article.imageUrl}}" style="height: 240px;width:100%">
+          <img src="{{article.imageUrl}}" class="image-magazine">
    </div>
   <div class="row">
           <header class="twelve columns text-right">
-                <h3 style="floet:right;font-weight:bold;">{{article.subTitle}}</h3>
+                <h5>{{article.subTitle}}</h5>
             </header>
    </div>
 <div class="row">
       <div class="twelve columns text-right">
-            <articlecontentparser trustedhtml="{{article.content}}" style="floet:right;"></articlecontentparser>
+            <articlecontentparser trustedhtml="{{article.content}}"></articlecontentparser>
       </div>
 </div>
 </div>

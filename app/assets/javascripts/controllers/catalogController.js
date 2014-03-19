@@ -7,8 +7,8 @@ angular.module('autoControllers')
             $scope.modelId = 0;
             $scope.newOrUsed = '';
             $scope.searchUrl = '';
-            $scope.manufacturerName = '<  כל היצרנים';
-            $scope.modelName = '<  כל הדגמים';
+            $scope.manufacturerName = 'כל היצרנים  >';
+            $scope.modelName = 'כל הדגמים  >';
 
             $scope.$watch(CatalogServices.manufacturer, function(newData) {
                 $scope.manufacturer = CatalogServices.getManufacturer();
