@@ -6,9 +6,10 @@
 }
 
 .image-header{
-  background-color: rgba(110, 110, 100, 0.3);
+  background-color: rgba(110, 110, 100, 0.5);
   position:absolute;
   display:block;
+  margin-right: 10px;
 }
 
 .image-magazine{
@@ -16,4 +17,11 @@
   width:100%;
 }
 
+.orbit-bullets, .touch .orbit-bullets{
+  display: table;
+  text-align: center;
+}
 
+.orbit_img {
+  margin: 0 auto;
+}
