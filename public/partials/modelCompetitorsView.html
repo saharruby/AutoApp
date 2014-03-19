@@ -1,7 +1,7 @@
 <div ng-controller="ModelCompetitorsCtrl" class="container">
   <div class="row">
-    <div class="twelve columns text-right">
-      <ul class="pricing-table">
+    <div class="twelve columns text-right" ng-switch="hasCompetitors">
+      <ul class="pricing-table" ng-switch-default>
         <a ng-repeat="c in competitors" href="#/articles/carcatalog/models/{{c.model_id}}?isSelected">
           <li class="row bullet-item">
             <div class="small-4 columns">
@@ -13,6 +13,7 @@
           </li>
         </a>
       </ul>
+      <div ng-switch-on="false">{{noCompetitorsIndicator}}</div>
     </div>
   </div>
 </div>

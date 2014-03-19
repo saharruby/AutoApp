@@ -78,7 +78,7 @@ angular.module("main")
 
 angular.module("main").run(function($rootScope) {
     $rootScope.$on('$routeChangeSuccess', function() {
-        $(document).foundation('reflow');
+        //$(document).foundation('reflow');
         console.log('$routeChangeSuccess');
     });
 });

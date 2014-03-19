@@ -1,6 +1,6 @@
 angular.module('autoControllers')
-    .controller('ModelVideosCtrl', ['$scope', '$routeParams', '$sce', 'ModelVideosServices',
-        function($scope, $routeParams, $sce, ModelVideosServices) {
+    .controller('ModelVideosCtrl', ['$scope', '$routeParams', '$sce', '$timeout', 'ModelVideosServices',
+        function($scope, $routeParams, $sce, $timeout, ModelVideosServices) {
             $scope.switchView = false;
             $scope.defaultVideoText = '';
             $scope.videoUrl = '';
@@ -8,6 +8,10 @@ angular.module('autoControllers')
             $scope.changeView = function(videoUrl) {
                 $scope.videoUrl = $sce.trustAsResourceUrl(videoUrl);
                 $scope.switchView = !$scope.switchView;
+
+                $timeout(function() {
+                    $(document).foundation();
+                });
             };
 
             ModelVideosServices.getAllModelVideosByVideoId($routeParams.id).success(function(data) {
