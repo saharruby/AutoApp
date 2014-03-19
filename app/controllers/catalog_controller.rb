@@ -25,8 +25,17 @@ end
 
 def used
   # raise params.inspect
-    respond_with Net::HTTP.get URI.parse(HOST + "/models/" + params[:id] + "/used") unless params[:usedId]
-    # respond_with Net::HTTP.get URI.parse(HOST + "/models/" + params[:id] + "/used/" + params[:usedId])
+    # binding.pry
+    respond_with Net::HTTP.get URI.parse(HOST + "/models/" + params[:model_id] + "/used/" + params[:used_id] )  if params[:model_id] && params[:used_id]
+    respond_with Net::HTTP.get URI.parse(HOST + "/models/" + params[:id] + "/used") if params[:id]
+
+    # used_id params[:usedID].split('.')[0].strip
+    # respond_with Net::HTTP.get URI.parse(HOST + "/models/" + params[:id] + "/used/" + used_id)
+end
+
+def usedID
+  # binding.pry
+  respond_with Net::HTTP.get URI.parse(HOST + "/models/" + params[:model_id] + "/used/" + params[:used_id] + "/")  if params[:model_id] && params[:used_id]
 end
 
   # def show

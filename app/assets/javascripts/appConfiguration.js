@@ -76,11 +76,9 @@ angular.module("main")
         }
     ]);
 
-angular.module("main").run(function($rootScope, $timeout) {
+angular.module("main").run(function($rootScope) {
     $rootScope.$on('$routeChangeSuccess', function() {
-        // $timeout(function() {
         $(document).foundation('reflow');
         console.log('$routeChangeSuccess');
-        // }, 500);
     });
 });

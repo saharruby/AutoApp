@@ -19,13 +19,29 @@ angular.module('autoServices')
                 });
             };
 
-    // resource.getModelUsedByModelIdAndUsedId = function(mID, uID) {
-    //     return $http.get('models/' + mID + '?usedId=' + uID + '.json', {
-    //         headers: {
-    //             'Content-type': 'application/json'
-    //         }
-    //     });
-    // };
+            resource.getModelUsedByUsedID = function(model_id, used_Id) {
+                return $http.get('models/' + model_id + '/used.json', {
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    params: {
+                        model_id: model_id,
+                        used_id: used_Id
+                    }
+                });
+            };
+
+            // resource.getAllModelUsedsByModelIDAndUsedID = function(modelID, usedID) {
+            //     return $http.get('models/' + modelID + '/usedID.json', {
+            //         headers: {
+            //             'Content-type': 'application/json'
+            //         },
+            //         params: {
+            //             model_id: modelID,
+            //             used_id: usedID
+            //         }
+            //     });
+            // };
 
             return resource;
         }

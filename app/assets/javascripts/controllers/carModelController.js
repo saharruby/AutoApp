@@ -2,11 +2,14 @@ angular.module('autoControllers')
     .controller('CarModelCtrl', ['$scope', '$routeParams', '$sce', 'SearchServices', 'CatalogServices',
         function($scope, $routeParams, $sce, SearchServices, CatalogServices) {
             $scope.modelId = CatalogServices.getModelId();
+            $scope.model_id = $routeParams.id;
+            $scope.used_id = $routeParams.usedID;
             $scope.review = [];
             //$scope.newOrUsed = CatalogServices.getNewOrUsed();
             //console.log($scope.newOrUsed);
+
             console.log($routeParams);
-            if ($routeParams.isSelected && $routeParams.id) {
+            if ($routeParams.isSelected && $scope.model_id) {
                 // if ($routeParams.usedId) {
                 //     console.log("Route with usedID routeParams");
                 //     SearchServices.getModelUsedByModelIdAndUsedId($routeParams.id, $routeParams.usedId).success(function(data) {
@@ -17,10 +20,19 @@ angular.module('autoControllers')
                 //}
                 // SearchServices.getModelUsedByModelIdAndUsedId
                 // getDataFromService($routeParams.id);
-                console.log("Route with -id- routeParams");
-                SearchServices.getSearchResaulForModelByModelId($routeParams.id).success(function(data) {
-                    setDataFromService(data);
-                });
+
+                if ($scope.used_id) {
+                    console.log("Route with -id- routeParams & usd_id routeParams");
+                    SearchServices.getModelUsedByUsedID($scope.model_id, $scope.used_id).success(function(data) {
+                        console.log(data);
+                        setDataFromService(data);
+                    });
+                } else {
+                    console.log("Route with -id- routeParams");
+                    SearchServices.getSearchResaulForModelByModelId($scope.model_id).success(function(data) {
+                        setDataFromService(data);
+                    });
+                }
             } else if ($scope.modelId > 0) {
                 // SearchServices.getSearchResaulForModelByModelId($scope.modelId + '?used=' + $scope.newOrUsed).success(function(data) {
                 //getDataFromService($scope.modelId);
@@ -29,7 +41,6 @@ angular.module('autoControllers')
                     setDataFromService(data);
                 });
             }
-            console.log($routeParams);
 
             function setDataFromService(data) {
                 // SearchServices.getSearchResaulForModelByModelId(model_id).success(function(data) {

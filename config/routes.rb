@@ -23,7 +23,7 @@ AutoApp::Application.routes.draw do
 
   get "models/:id/used" => "catalog#used"
 
-  # get "models/:id?usedId=:id" => "catalog#used"
+  # get "models/:id/used/:id" => "catalog#used"
 
   root to: "home#main"
 
