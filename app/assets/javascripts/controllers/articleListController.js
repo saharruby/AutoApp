@@ -17,7 +17,7 @@ angular.module('autoControllers')
 
             $scope.complete = function() {
                 cfpLoadingBar.complete();
-            }
+            };
 
             ArticlesServices.getAllArticles().success(function(data) {
                 $scope.start();
