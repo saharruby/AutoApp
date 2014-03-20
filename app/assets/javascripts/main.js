@@ -4,8 +4,12 @@ var autoModuleApp = angular.module("main", [
     'ngResource',
     'autoServices',
     'autoControllers',
-    'autoDirectives'
-]);
+    'autoDirectives',
+    'ngAnimate',
+    'chieffancypants.loadingBar',
+]).config(function(cfpLoadingBarProvider) {
+    cfpLoadingBarProvider.includeSpinner = true;
+});
 
 /* App Module Dependencies*/
 var autoControllers = angular.module('autoControllers', []);

@@ -1,7 +1,7 @@
 angular.module('autoControllers')
-    .controller('ArticleListCtrl', ['$scope', 'NavServices', 'ArticlesServices',
-        function($scope, NavServices, ArticlesServices) {
-            $scope.articles = {};
+    .controller('ArticleListCtrl', ['$scope', '$timeout', 'NavServices', 'ArticlesServices', 'cfpLoadingBar',
+        function($scope, $timeout, NavServices, ArticlesServices, cfpLoadingBar) {
+            $scope.articlesCategoriesCollection = {};
             var dicTypes = {
                 "1": 'חדשות הרכב',
                 "2": 'מבחני רכב',
@@ -11,17 +11,28 @@ angular.module('autoControllers')
                 "6": 'מגזין ודעות'
             };
 
-            angular.forEach(dicTypes, function(item, key) {
-                $scope.articles[key] = {
-                    category: item,
-                    art: []
-                };
-            });
+            $scope.start = function() {
+                cfpLoadingBar.start();
+            };
+
+            $scope.complete = function() {
+                cfpLoadingBar.complete();
+            }
 
             ArticlesServices.getAllArticles().success(function(data) {
-                angular.forEach(data, function(item, index) {
-                    $scope.articles[item.categoryId].art.push(item);
-                });
+                $scope.start();
+                $timeout(function() {
+                    angular.forEach(dicTypes, function(item, key) {
+                        $scope.articlesCategoriesCollection[key] = {
+                            categoryName: item,
+                            articles: []
+                        };
+                    });
+                    angular.forEach(data, function(item, index) {
+                        $scope.articlesCategoriesCollection[item.categoryId].articles.push(item);
+                    });
+                    $scope.complete();
+                }, 3000);
                 //NavServices.broadcastNavIdMsg('2');
             });
         }
