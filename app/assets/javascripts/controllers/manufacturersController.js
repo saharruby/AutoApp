@@ -1,9 +1,8 @@
 angular.module('autoControllers')
     .controller('ManufacturersCtrl', ['$scope', 'ManufacturersServices', 'CatalogServices',
         function($scope, ManufacturersServices, CatalogServices) {
-            $scope.manufacturers = {};
-
             ManufacturersServices.getAllManufacturers().success(function(data) {
+                $scope.manufacturers = {};
                 angular.forEach(data, function(item, index) {
                     if (!$scope.manufacturers[item.name.charAt(0)]) {
                         $scope.manufacturers[item.name.charAt(0)] = {};

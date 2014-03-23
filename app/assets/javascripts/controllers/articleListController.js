@@ -1,7 +1,6 @@
 angular.module('autoControllers')
     .controller('ArticleListCtrl', ['$scope', '$timeout', 'NavServices', 'ArticlesServices', 'cfpLoadingBar',
         function($scope, $timeout, NavServices, ArticlesServices, cfpLoadingBar) {
-            $scope.articlesCategoriesCollection = {};
             var dicTypes = {
                 "1": 'חדשות הרכב',
                 "2": 'מבחני רכב',
@@ -22,6 +21,7 @@ angular.module('autoControllers')
             ArticlesServices.getAllArticles().success(function(data) {
                 $scope.start();
                 $timeout(function() {
+                    $scope.articlesCategoriesCollection = {};
                     angular.forEach(dicTypes, function(item, key) {
                         $scope.articlesCategoriesCollection[key] = {
                             categoryName: item,
@@ -32,7 +32,7 @@ angular.module('autoControllers')
                         $scope.articlesCategoriesCollection[item.categoryId].articles.push(item);
                     });
                     $scope.complete();
-                }, 3000);
+                }, 1500);
                 //NavServices.broadcastNavIdMsg('2');
             });
         }

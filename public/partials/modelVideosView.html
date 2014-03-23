@@ -1,21 +1,21 @@
-<div ng-controller="ModelVideosCtrl" class="container">
+<div ng-controller="ModelVideosCtrl" class="container" ng-show="videos.length" ng-cloak>
   <div class="row" ng-switch="switchView">
     <div class="twelve columns text-right" ng-switch-default>
       <ul class="pricing-table">
-        <li ng-repeat="v in videos" class="row bullet-item">
-          <a href="" ng-click="changeView(v.videoUrl)">
+        <li ng-repeat="video in videos" class="row bullet-item">
+          <a href="" ng-click="changeView(video.videoUrl)">
             <div class="small-4 columns">
-                    <img  class="th radius" ng-src="{{v.thumbUrl}}" >
+              <img  class="th radius" ng-src="{{video.thumbUrl}}" >
             </div>
             <div class="main small-8 columns text-right">
-                <h5>{{v.title}}</h5>
+              <h5>{{video.title}}</h5>
             </div>
           </a>
         </li>
       </ul>
     </div>
     <div class="twelve columns text-right" ng-switch-when="true">
-      <div class="flex-video widescreen vimeo"><!--   widescreen vimeo -->
+      <div class="flex-video widescreen vimeo">
         <iframe src="{{videoUrl}}" allowfullscreen frameborder="0" height="450" width="100%" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
       </div>
     </div>

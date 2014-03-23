@@ -4,7 +4,6 @@ angular.module('autoControllers')
             $scope.modelId = CatalogServices.getModelId();
             $scope.model_id = $routeParams.id;
             $scope.used_id = $routeParams.usedID;
-            $scope.review = [];
             //$scope.newOrUsed = CatalogServices.getNewOrUsed();
             //console.log($scope.newOrUsed);
 
@@ -44,41 +43,42 @@ angular.module('autoControllers')
 
             function setDataFromService(data) {
                 // SearchServices.getSearchResaulForModelByModelId(model_id).success(function(data) {
+                $scope.reviews = [];
                 $scope.model = data[0];
 
-                $scope.review.push({
+                $scope.reviews.push({
                     title: 'חוות דעת',
                     content: data[0].review.text
                 });
-                $scope.review.push({
+                $scope.reviews.push({
                     title: 'עיצוב ונוכחות',
                     content: data[0].review.design
                 });
-                $scope.review.push({
+                $scope.reviews.push({
                     title: 'תא נוסעים ומטען',
                     content: data[0].review.cabin
                 });
-                $scope.review.push({
+                $scope.reviews.push({
                     title: 'מנוע וביצועים',
                     content: data[0].review.performance
                 });
-                $scope.review.push({
+                $scope.reviews.push({
                     title: 'נוחות והתנהגות',
                     content: data[0].review.comfort
                 });
-                $scope.review.push({
+                $scope.reviews.push({
                     title: 'תמורה למחיר',
                     content: data[0].review.valueForMoney
                 });
-                $scope.review.push({
+                $scope.reviews.push({
                     title: 'סיכום',
                     content: data[0].review.summary
                 });
-                $scope.review.push({
+                $scope.reviews.push({
                     title: 'יתרונות',
                     content: data[0].review.advantages
                 });
-                $scope.review.push({
+                $scope.reviews.push({
                     title: 'חסרונות',
                     content: data[0].review.disadvantages
                 });

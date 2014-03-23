@@ -1,14 +1,14 @@
-<div ng-controller="ModelCompetitorsCtrl" class="container">
+<div ng-controller="ModelCompetitorsCtrl" class="container" ng-show="competitors.length" ng-cloak>
   <div class="row">
     <div class="twelve columns text-right" ng-switch="hasCompetitors">
       <ul class="pricing-table" ng-switch-default>
-        <a ng-repeat="c in competitors" href="#/articles/carcatalog/models/{{c.model_id}}?isSelected">
+        <a ng-repeat="competitor in competitors" href="#/articles/carcatalog/models/{{competitor.model_id}}?isSelected">
           <li class="row bullet-item">
             <div class="small-4 columns">
-                    <img  class="th radius" ng-src="{{c.image_url}}" >
+              <img  class="th radius" ng-src="{{competitor.image_url}}" >
             </div>
             <div class="main small-8 columns text-right">
-                <h5>{{c.name}}</h5>
+              <h5>{{competitor.name}}</h5>
             </div>
           </li>
         </a>

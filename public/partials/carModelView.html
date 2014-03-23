@@ -1,7 +1,7 @@
-<div ng-controller="CarModelCtrl" class="container">
+<div ng-controller="CarModelCtrl" class="container" ng-show="tableData.length" ng-cloak>
   <div class="row" >
     <header class="twelve columns text-right image-header">
-          <h5>{{model.name}}</h5>
+      <h5>{{model.name}}</h5>
     </header>
     <img src="{{model.image_url}}" class="image-magazine">
   </div>

@@ -14,7 +14,7 @@ angular.module('autoControllers')
                 $scope.manufacturer = CatalogServices.getManufacturer();
                 if ($scope.manufacturer && $scope.manufacturer.name) {
                     $scope.manufactureId = $scope.manufacturer.id;
-                    $scope.manufacturerName = '<  ' + $scope.manufacturer.name;
+                    $scope.manufacturerName = $scope.manufacturer.name + '  >';
                     $scope.searchUrl = 'manufacturers/' + $scope.manufacturer.id + '?isSelected';
                 }
                 //console.log($scope.newOrUsed);
@@ -24,7 +24,7 @@ angular.module('autoControllers')
                 $scope.model = CatalogServices.getModel();
                 if ($scope.model && $scope.model.name) {
                     $scope.modelId = $scope.model.id;
-                    $scope.modelName = '<  ' + $scope.model.name;
+                    $scope.modelName = $scope.model.name + '  >';
                     $scope.searchUrl = 'manufacturers/' + $scope.manufacturer.id + '/models/' + $scope.model.id + '?isSelected';
                     //console.log($scope.newOrUsed);
                 }

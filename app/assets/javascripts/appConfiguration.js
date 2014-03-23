@@ -3,7 +3,7 @@ angular.module("main")
         function($routeProvider) {
             $routeProvider
                 .when('/articles', {
-                    templateUrl: 'partials/allArticlesView.html',
+                    templateUrl: 'partials/ArticlesListView.html',
                     controller: 'ArticleListCtrl'
                 })
                 .when('/articles/latest', {

@@ -1,4 +1,4 @@
-<div ng-controller="IndexCtrl" class="container">
+<div ng-controller="IndexCtrl" class="container"  ng-show="latest.length" ng-cloak>
   <div class="row">
     <ul data-orbit  class="small-12 columns">
       <a ng-repeat="l in latest" href="#/articles/{{l.articleId}}">
