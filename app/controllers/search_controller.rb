@@ -13,4 +13,8 @@ class SearchController < ApplicationController
     # respond_with Net::HTTP.get URI.parse(HOST + "/models/" + params[:id]  + "?used=" + used)  if params[:id]
     respond_with Net::HTTP.get URI.parse(HOST + "/models/" + params[:id] )  if params[:id]
   end
+
+  def guide
+    respond_with Net::HTTP.get URI.parse(HOST + "/guide?" + params[:id] )  if params[:id]
+  end
 end

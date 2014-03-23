@@ -8,6 +8,8 @@ angular.module('autoControllers')
             //console.log($scope.newOrUsed);
 
             console.log($routeParams);
+            console.log("routeParams.id : " + $scope.model_id);
+            console.log("CatalogService.modelId : " + $scope.modelId);
             if ($routeParams.isSelected && $scope.model_id) {
                 // if ($routeParams.usedId) {
                 //     console.log("Route with usedID routeParams");
@@ -103,7 +105,9 @@ angular.module('autoControllers')
                     link: '#/carcatalog/models/' + $scope.model.id + '/useds'
                 }];
 
-                console.log($scope.model);
+                console.log('Reviews...');
+                console.log($scope.reviews);
+                // console.log($scope.model);
                 // });
             }
         }

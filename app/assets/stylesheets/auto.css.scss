@@ -17,6 +17,11 @@
   width:100%;
 }
 
+.scrollview{
+  height: 300px;
+  overflow-y: scroll;
+}
+
 .orbit-bullets, .touch .orbit-bullets{
   display: table;
   text-align: center;

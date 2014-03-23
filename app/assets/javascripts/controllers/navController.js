@@ -16,7 +16,7 @@ angular.module('autoControllers')
             }, {
                 name: 'מדריך קניה',
                 img: '......',
-                route: '#'
+                route: '#/guide'
             }, {
                 name: 'יייעוץ חינם לקניית רכב',
                 img: '......',

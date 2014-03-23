@@ -1,0 +1,13 @@
+<div ng-controller="GuideSearchResultCtrl" ng-show="searchResults.length" ng-cloak>
+    <div ng-repeat="result in searchResults" class="row border-bottom">
+        <a href="#/articles/carcatalog/models/{{result.model_id}}?isSelected" ng-click="setModelId(result)">
+        <div class="small-4 columns">
+            <img  class="th radius" ng-src="{{result.image_url}}" >
+        </div>
+        <div class="main small-8 columns text-justify">
+            <h5 class="text-right">{{result.name}}</h5>
+            <p class="text-left" texthtmlparser texthtml="{{result.price}}"></p>
+        </div>
+        </a>
+    </div>
+</div>

@@ -74,6 +74,18 @@ angular.module("main")
                     templateUrl: 'partials/allArticlesOfCategoryView.html',
                     controller: 'ArticlesCategoryCtrl'
                 })
+                .when('/guide', {
+                    templateUrl: 'partials/buyingGuideView.html',
+                    controller: 'BuyingGuideCtrl'
+                })
+                .when('/guide/search', {
+                    templateUrl: 'partials/guideSearchResultView.html',
+                    controller: 'GuideSearchResultCtrl'
+                })
+                .when('/articles', {
+                    templateUrl: 'partials/articlesListView.html',
+                    controller: 'ArticleListCtrl'
+                })
                 .otherwise({
                     redirectTo: '/articles/latest'
                 });
