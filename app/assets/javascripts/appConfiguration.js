@@ -38,15 +38,15 @@ angular.module("main")
                     templateUrl: 'partials/carModelView.html',
                     controller: 'CarModelCtrl'
                 })
-                .when('/carcatalog/model/review', {
+                .when('/carcatalog/model/review/:id', {
                     templateUrl: 'partials/modelReviewView.html',
                     controller: 'CarModelCtrl'
                 })
-                .when('/carcatalog/model/versions', {
+                .when('/carcatalog/model/versions/:id', {
                     templateUrl: 'partials/modelVersionsView.html',
                     controller: 'ModelVersionsCtrl'
                 })
-                .when('/carcatalog/model/versions/:id', {
+                .when('/carcatalog/model/versions/', {
                     templateUrl: 'partials/modelVersionsView.html',
                     controller: 'ModelVersionsCtrl'
                 })

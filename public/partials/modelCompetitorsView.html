@@ -1,7 +1,7 @@
-<div ng-controller="ModelCompetitorsCtrl" class="container" ng-show="competitors.length" ng-cloak>
+<div ng-controller="ModelCompetitorsCtrl" class="container">
   <div class="row">
     <div class="twelve columns text-right" ng-switch="hasCompetitors">
-      <ul class="pricing-table" ng-switch-default>
+      <ul class="pricing-table" ng-switch-default ng-show="competitors.length" ng-cloak>
         <a ng-repeat="competitor in competitors" href="#/articles/carcatalog/models/{{competitor.model_id}}?isSelected">
           <li class="row bullet-item">
             <div class="small-4 columns">

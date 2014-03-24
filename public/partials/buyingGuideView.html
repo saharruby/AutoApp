@@ -4,17 +4,17 @@
   </div>
   <div class="row">
     <a href='#/guide/search' class="small-6 columns button round primary text-center" ng-click="search()">חפש</a>
-    <span class="small-6 columns button round secondary text-center">נקה בחירה</span>
+    <span ng-click="clearFilter()" class="small-6 columns button round secondary text-center">נקה בחירה</span>
   </div>
-
-  <div class="row" ng-show="showScroll">
-    <div class="small-13 columns">
-      <span class="small-3 small-centered columns button tiny success radius round" ng-click="setFilterSelected()">בחר</span>
-    </div>
-    <div class="breadcrumbs scrollview">
-      <a href='' class="breadcrumbs end small-12 columns text-right" ng-repeat="item in collection" ng-click="filterSelected(item.value)">
-        <p>{{item.title}}</p>
-      </a>
+  <br/>
+  <div class="row top-border" ng-show="showScroll">
+    <div class="scrollview">
+      <div class="small-12 columns" ng-repeat="item in collection" ng-click="itemClicked($index)">
+        <a class="round success expand">
+          <p ng-class="{ 'selected-class': $index == selectedIndex }" ng-click="filterSelected(item.value)">{{item.title}}</p>
+        </a>
+        <hr/>
+      </div>
     </div>
   </div>
 </div>

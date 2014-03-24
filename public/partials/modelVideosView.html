@@ -1,6 +1,6 @@
-<div ng-controller="ModelVideosCtrl" class="container" ng-show="videos.length" ng-cloak>
+<div ng-controller="ModelVideosCtrl" class="container">
   <div class="row" ng-switch="switchView">
-    <div class="twelve columns text-right" ng-switch-default>
+    <div class="twelve columns text-right" ng-switch-default ng-show="videos.length" ng-cloak>
       <ul class="pricing-table">
         <li ng-repeat="video in videos" class="row bullet-item">
           <a href="" ng-click="changeView(video.videoUrl)">

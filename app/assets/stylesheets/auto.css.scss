@@ -9,7 +9,7 @@
   background-color: rgba(110, 110, 100, 0.5);
   position:absolute;
   display:block;
-  margin-right: 10px;
+  font-weight: bolder;
 }
 
 .image-magazine{
@@ -19,7 +19,30 @@
 
 .scrollview{
   height: 300px;
-  overflow-y: scroll;
+  overflow-y: auto;
+  border-color: transparent;
+  border-width: 10px;
+  border-style: solid;
+  border-radius: 10px;
+  background-color: lightgray;
+  -webkit-box-shadow: 0px 0px 13px 5px rgba(163,160,163,0.82);
+  -moz-box-shadow: 0px 0px 13px 5px rgba(163,160,163,0.82);
+  box-shadow: 0px 0px 13px 5px rgba(163,160,163,0.82);
+}
+
+.top-border{
+  border-color: black;
+  border-width: 10px;
+  border-style: solid;
+  border-radius: 10px;
+  background-color: black;
+}
+
+.selected-class {
+  text-decoration:underline;
+  font-size: large;
+  font-weight: bold;
+  color:black;
 }
 
 .orbit-bullets, .touch .orbit-bullets{

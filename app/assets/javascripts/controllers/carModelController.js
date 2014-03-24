@@ -7,21 +7,10 @@ angular.module('autoControllers')
             //$scope.newOrUsed = CatalogServices.getNewOrUsed();
             //console.log($scope.newOrUsed);
 
-            console.log($routeParams);
-            console.log("routeParams.id : " + $scope.model_id);
-            console.log("CatalogService.modelId : " + $scope.modelId);
+            // console.log($routeParams);
+            // console.log("routeParams.id : " + $scope.model_id);
+            // console.log("CatalogService.modelId : " + $scope.modelId);
             if ($routeParams.isSelected && $scope.model_id) {
-                // if ($routeParams.usedId) {
-                //     console.log("Route with usedID routeParams");
-                //     SearchServices.getModelUsedByModelIdAndUsedId($routeParams.id, $routeParams.usedId).success(function(data) {
-                //         setDataFromService(data);
-                //     });
-                // } else {
-
-                //}
-                // SearchServices.getModelUsedByModelIdAndUsedId
-                // getDataFromService($routeParams.id);
-
                 if ($scope.used_id) {
                     console.log("Route with -id- routeParams & usd_id routeParams");
                     SearchServices.getModelUsedByUsedID($scope.model_id, $scope.used_id).success(function(data) {
@@ -35,8 +24,6 @@ angular.module('autoControllers')
                     });
                 }
             } else if ($scope.modelId > 0) {
-                // SearchServices.getSearchResaulForModelByModelId($scope.modelId + '?used=' + $scope.newOrUsed).success(function(data) {
-                //getDataFromService($scope.modelId);
                 console.log("Route with modelID from catalogService");
                 SearchServices.getSearchResaulForModelByModelId($scope.modelId).success(function(data) {
                     setDataFromService(data);
@@ -44,7 +31,6 @@ angular.module('autoControllers')
             }
 
             function setDataFromService(data) {
-                // SearchServices.getSearchResaulForModelByModelId(model_id).success(function(data) {
                 $scope.reviews = [];
                 $scope.model = data[0];
 
@@ -87,7 +73,7 @@ angular.module('autoControllers')
 
                 $scope.tableData = [{
                     title: 'חוות דעת מומחה',
-                    link: '#/carcatalog/model/review?isSelected'
+                    link: '#/carcatalog/model/review/' + $scope.model.id + '?isSelected'
                 }, {
                     title: 'גרסאות',
                     link: '#/carcatalog/model/versions/' + $scope.model.id + '?isSelected'
@@ -107,8 +93,6 @@ angular.module('autoControllers')
 
                 console.log('Reviews...');
                 console.log($scope.reviews);
-                // console.log($scope.model);
-                // });
             }
         }
     ]);

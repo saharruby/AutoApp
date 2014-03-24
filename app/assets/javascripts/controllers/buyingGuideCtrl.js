@@ -4,6 +4,8 @@ angular.module('autoControllers')
             $scope.showScroll = false;
             $scope.currentFilterKey = -1;
             $scope.collection = [];
+            $scope.selectedIndex = 0;
+
             $scope.navsData = [{
                 title: 'בחר קטגוריה',
                 value: '',
@@ -179,6 +181,7 @@ angular.module('autoControllers')
             $scope.showFilter = function(navKey) {
                 $scope.collection = dicCollections[navKey];
                 $scope.currentFilterKey = navKey;
+                $scope.selectedIndex = 0;
                 $scope.showScroll = true;
             };
 
@@ -186,13 +189,21 @@ angular.module('autoControllers')
                 filtersNames[$scope.currentFilterKey].value = filterItemKey;
             };
 
-            $scope.setFilterSelected = function() {
+            $scope.clearFilter = function() {
+                $scope.selectedIndex = 0;
                 $scope.showScroll = false;
+                angular.forEach(filtersNames, function(item, key) {
+                    item.value = -1;
+                });
+            };
+
+            $scope.itemClicked = function(index) {
+                $scope.selectedIndex = index;
             };
 
             $scope.search = function() {
                 var params = {
-                    id: '?limit=20'
+                    id: ''
                 };
                 angular.forEach(filtersNames, function(item, key) {
                     if (item.value != -1) {
@@ -200,7 +211,7 @@ angular.module('autoControllers')
                     }
                 });
                 console.log(params);
-                GuideSearchService.setSearchParams(params);
+                GuideSearchService.setSearchParams(params.id);
                 $scope.showScroll = false;
             };
         }
