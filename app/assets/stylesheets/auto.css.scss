@@ -17,8 +17,20 @@
   width:100%;
 }
 
+// .pricing-table > li{
+//   padding-bottom: 0px;
+// }
+
 .li-bg-color{
   background-color: chocolate;
+}
+
+.auto-version-included-item{
+  background-image: url(http://auto.co.il/Layouts/default/bgImages/extra_adv.gif) !important;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  height: 10px;
+  // margin-left: 10px;
 }
 
 .scrollview{

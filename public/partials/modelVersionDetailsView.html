@@ -15,7 +15,7 @@
     <ul class="pricing-table">
       <li ng-repeat="version_item in version.items"  class="small-12 columns bullet-item">
         <p class="small-6 columns text-right">{{version_item.title}}</p>
-        <p class="small-6 columns text-left">{{version_item.value}}</p>
+        <p setclass condition="version_item.value" classname="auto-version-included-item" class="small-6 columns text-left">{{version_item.value}}</p>
       </li>
     </ul>
   </div>
