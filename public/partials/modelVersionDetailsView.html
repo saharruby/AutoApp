@@ -1,16 +1,14 @@
-<div ng-controller="ModelVersionDetailsCtrl" class="container"><!--  ng-show="version.lenght" ng-cloak> -->
+<div ng-controller="ModelVersionDetailsCtrl" class="container" ng-show="showContent" ng-cloak>
   <div class="row">
     <h3 class="small-12 columns expand text-center">{{title}}</h3>
   </div>
   <div class="row" ng-repeat="version in versionDetails">
-    <div class="small-12 columns">
-      <div class="sticky">
-        <nav class="top-bar" data-topbar>
-          <ul class="title-area">
-            <li class="title text-center">{{version.key}}</li>
-          </ul>
-        </nav>
-      </div>
+    <div class="sticky">
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="text-center">{{version.key}}</li>
+        </ul>
+      </nav>
     </div>
     <ul class="pricing-table">
       <li ng-repeat="version_item in version.items"  class="small-12 columns bullet-item">

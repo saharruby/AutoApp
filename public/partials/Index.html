@@ -9,4 +9,10 @@
       </a>
     </ul>
   </div>
+  <div class="row">
+    <ul class="off-canvas-list">
+      <li><label class="text-center">תפריט ראשי</label></li>
+      <li ng-repeat="nav in navs" class="li-bg-color"><a href="{{nav.route}}">{{nav.name}}</a></li>
+    </ul>
+  </div>
 </div>

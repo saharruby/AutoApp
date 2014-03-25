@@ -1,6 +1,8 @@
 angular.module('autoControllers')
-    .controller('IndexCtrl', ['$scope', '$timeout', 'IndexServices',
-        function($scope, $timeout, IndexServices) {
+    .controller('IndexCtrl', ['$scope', '$timeout', 'IndexServices', 'NavServices',
+        function($scope, $timeout, IndexServices, NavServices) {
+            $scope.navs = NavServices.navs;
+
             IndexServices.getAllLatestArticles().success(function(data) {
                 $scope.latest = data;
 

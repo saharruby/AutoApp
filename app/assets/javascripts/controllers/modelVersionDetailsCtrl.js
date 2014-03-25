@@ -3,6 +3,7 @@ angular.module('autoControllers')
         function($scope, $routeParams, VersionsServices, CatalogServices) {
             var model_id = $routeParams.modelId;
             var version_id = $routeParams.versionId;
+            $scope.showContent = false;
 
             console.log($routeParams);
             VersionsServices.getModelVersionDetailsByModelIDAndVersionID(model_id, version_id).success(function(data) {
@@ -200,6 +201,8 @@ angular.module('autoControllers')
                     title: 'ציון בטיוחות ילדים:',
                     value: data[0].crashTestOld.children
                 }];
+
+                $scope.showContent = true;
             });
         }
     ]);
