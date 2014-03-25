@@ -1,0 +1,32 @@
+doctype html
+html(lang="heb" dir="rtl")
+  head
+    title Auto Magazine
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/foundation/css/foundation.min.css")
+    script(type="text/javascript" src="/angular/angular.min.js")
+    script(type="text/javascript" src="/angular-route/angular-route.min.js")
+    script(type="text/javascript" src="/angular-resource/angular-resource.min.js")
+    script(type="text/javascript" src="/angular-animate/angular-animate.min.js")
+  body
+    div(ng-app='main')
+      .view-container
+          .off-canvas-wrap
+            .inner-wrap
+              .fixed
+                nav.tab-bar
+                  section.middle.tab-bar-section
+                    h1.title Auto Magazine
+                  section.right-small
+                    a.right-off-canvas-toggle.menu-icon
+                      span
+              aside.right-off-canvas-menu.text-right(ng-controller='NavCtrl')
+                ul.off-canvas-list
+                  li
+                    label Menu
+                  li(ng-repeat='nav in navs')
+                    a(href='{{nav.route}}') {{nav.name}}
+              section.main-section(ng-view='ng-view', style='margin-top: 45px; background-color: rgba(145, 145, 135, 0.3); height: 100%;')
+                // content goes here
+              a.exit-off-canvas
