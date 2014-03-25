@@ -49,7 +49,7 @@ angular.module('autoDirectives')
                     '</div>' +
                     '<div class="row" >' +
                     '<div class="twelve columns text-center">' +
-                    '<a href="#/articles/carcatalog/{{url}}" class="nice medium button alert round expand" ng-disabled="modelflag">חפש</a>' +
+                    '<a href="#/{{url}}" class="nice medium button alert round expand" ng-disabled="modelflag">חפש</a>' +
                     '</div>' +
                     '</div>'
             };

@@ -15,18 +15,23 @@ angular.module('autoControllers')
                 if ($scope.manufacturer && $scope.manufacturer.name) {
                     $scope.manufactureId = $scope.manufacturer.id;
                     $scope.manufacturerName = $scope.manufacturer.name + '  >';
-                    $scope.searchUrl = 'manufacturers/' + $scope.manufacturer.id + '?isSelected';
+                    $scope.searchUrl = 'articles/carcatalog/manufacturers/' + $scope.manufacturer.id + '?isSelected';
                 }
-                //console.log($scope.newOrUsed);
             }, true);
 
             $scope.$watch(CatalogServices.model, function(newData) {
                 $scope.model = CatalogServices.getModel();
+                $scope.newOrUsed = CatalogServices.getNewOrUsed();
+                console.log($scope.newOrUsed);
                 if ($scope.model && $scope.model.name) {
                     $scope.modelId = $scope.model.id;
                     $scope.modelName = $scope.model.name + '  >';
-                    $scope.searchUrl = 'manufacturers/' + $scope.manufacturer.id + '/models/' + $scope.model.id + '?isSelected';
-                    //console.log($scope.newOrUsed);
+
+                    if ($scope.newOrUsed === '' || $scope.newOrUsed === 'new=true') {
+                        $scope.searchUrl = 'articles/carcatalog/manufacturers/' + $scope.manufacturer.id + '/models/' + $scope.model.id + '?isSelected';
+                    } else {
+                        $scope.searchUrl = 'carcatalog/models/' + $scope.model.id + '/useds?isSelected&' + $scope.newOrUsed;
+                    }
                 }
             }, true);
         }

@@ -2,11 +2,11 @@ angular.module('autoControllers')
     .controller('ModelUsedsCtrl', ['$scope', '$routeParams', 'ModelUsedsServices',
         function($scope, $routeParams, ModelUsedsServices) {
             var modelID = $routeParams.id;
-            var usedID = $routeParams.usedID;
+            var newOrUsed = $routeParams.new;
 
-            // if (modelID && usedID) {
-            //     console.log('model & used id : ' + modelID + ' : ' + usedID);
-            //     ModelUsedsServices.getAllModelUsedsByModelIDAndUsedID(modelID, usedID).success(function(data) {
+            // if (modelID && newOrUsed) {
+            //     console.log('model & used id : ' + modelID + ' : ' + newOrUsed);
+            //     ModelUsedsServices.getAllModelUsedsByModelIDAndUsedID(modelID, newOrUsed).success(function(data) {
             //         $scope.useds = data;
             //         console.log(data);
             //     });

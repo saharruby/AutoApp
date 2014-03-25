@@ -4,7 +4,7 @@ angular.module('autoServices')
             var msgService = {};
             msgService.manufacturer = {};
             msgService.model = {};
-            msgService.newOrUsed = '';
+            msgService.newOrUsedData = '';
 
             msgService.setManufacturer = function(manufacturer) {
                 msgService.manufacturer = manufacturer;
@@ -44,15 +44,15 @@ angular.module('autoServices')
                 return 0;
             };
 
-            msgService.setNewOrUsed = function(id) {
-                msgService.newOrUsed = id;
+            msgService.setNewOrUsedData = function(newOrUsed) {
+                msgService.newOrUsedData = newOrUsed;
             };
 
             msgService.getNewOrUsed = function() {
                 if ($routeParams.isSelected) {
-                    return msgService.newOrUsed;
+                    return msgService.newOrUsedData;
                 }
-                return 0;
+                return '';
             };
 
             return msgService;

@@ -3,6 +3,14 @@ angular.module('autoControllers')
         function($scope, ManufacturersServices, CatalogServices) {
             $scope.manufacturerId = CatalogServices.getManufacturerId();
             $scope.newOrUsed = 'true';
+            $scope.selectedIndex = 0;
+            $scope.optionsArr = [{
+                name: 'חדש',
+                value: 'new=true'
+            }, {
+                name: 'משומש',
+                value: 'new=false'
+            }];
 
             ManufacturersServices.getAllModelsByManufacturerId($scope.manufacturerId).success(function(data) {
                 $scope.models = {};
@@ -17,8 +25,13 @@ angular.module('autoControllers')
                 });
             });
 
+            $scope.itemClicked = function(index) {
+                $scope.selectedIndex = index;
+            };
+
             $scope.onSelectM = function(model) {
                 CatalogServices.setModel(model);
+                CatalogServices.setNewOrUsedData($scope.optionsArr[$scope.selectedIndex].value);
             };
         }
     ]);

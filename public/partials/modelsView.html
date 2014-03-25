@@ -1,8 +1,9 @@
 <div ng-controller="ModelsCtrl" class="container" ng-show="models" ng-cloak>
   <div class="row">
-    <ul class="button-group twelve columns ">
-      <li><a href="#" class="2-small 4-large columns button secondary new-used">חדש</a></li>
-      <li><a href="#" class="2-small 4-large columns button secondary new-used">משומש</a></li>
+    <ul class="button-group small-12 columns">
+      <li ng-repeat="option in optionsArr" ng-click="itemClicked($index)">
+        <div ng-class="{'success': $index == selectedIndex}" class="button secondary round">{{option.name}}</div>
+      </li>
     </ul>
   </div>
   <ul class="pricing-table">

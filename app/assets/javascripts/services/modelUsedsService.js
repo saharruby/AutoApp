@@ -11,17 +11,17 @@ angular.module('autoServices')
                 });
             };
 
-            // source.getAllModelUsedsByModelIDAndUsedID = function(modelID, usedID) {
-            //     return $http.get('models/' + modelID + '/usedID.json', {
-            //         headers: {
-            //             'Content-type': 'application/json'
-            //         },
-            //         params: {
-            //             model_id: modelID,
-            //             used_id: usedID
-            //         }
-            //     });
-            // };
+            source.getAllModelUsedsByModelIDAndUsedID = function(modelID, usedID) {
+                return $http.get('models/' + modelID + '/used.json', {
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    params: {
+                        model_id: modelID,
+                        used_id: usedID
+                    }
+                });
+            };
 
             return source;
         }
