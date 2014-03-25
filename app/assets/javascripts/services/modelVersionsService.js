@@ -23,6 +23,18 @@ angular.module('autoServices')
                 });
             };
 
+            resource.getModelVersionDetailsByModelIDAndVersionID = function(modelID, versionID) {
+                return $http.get('models/' + modelID + '/versions/' + versionID + '.json', {
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    params: {
+                        model_id: modelID,
+                        version_id: versionID
+                    }
+                });
+            };
+
             return resource;
         }
     ]);

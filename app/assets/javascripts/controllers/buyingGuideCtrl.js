@@ -178,10 +178,17 @@ angular.module('autoControllers')
                 3: engineCapacityCollection
             };
 
+            function resetVars() {
+                $scope.showScroll = false;
+                $scope.selectedIndex = 0;
+            }
+
             $scope.showFilter = function(navKey) {
+                $scope.showScroll = false;
+                $scope.selectedIndex = 0;
+                // $scope.$apply(resetVars());
                 $scope.collection = dicCollections[navKey];
                 $scope.currentFilterKey = navKey;
-                $scope.selectedIndex = 0;
                 $scope.showScroll = true;
             };
 

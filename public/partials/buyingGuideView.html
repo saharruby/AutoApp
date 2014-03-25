@@ -8,7 +8,7 @@
   </div>
   <br/>
   <div class="row top-border" ng-show="showScroll">
-    <div class="scrollview">
+    <div class="scrollview" scrollpositiontop visible="showScroll">
       <div class="small-12 columns" ng-repeat="item in collection" ng-click="itemClicked($index)">
         <a class="round success expand">
           <p ng-class="{ 'selected-class': $index == selectedIndex }" ng-click="filterSelected(item.value)">{{item.title}}</p>

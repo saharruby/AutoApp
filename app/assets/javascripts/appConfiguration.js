@@ -50,6 +50,10 @@ angular.module("main")
                     templateUrl: 'partials/modelVersionsView.html',
                     controller: 'ModelVersionsCtrl'
                 })
+                .when('/carcatalog/model/version/details/', {
+                    templateUrl: 'partials/modelVersionDetailsView.html',
+                    controller: 'ModelVersionDetailsCtrl'
+                })
                 .when('/carcatalog/model/gallery', {
                     templateUrl: 'partials/modelGalleryView.html',
                     controller: 'ModelGalleryCtrl'

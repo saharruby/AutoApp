@@ -2,9 +2,9 @@
   <div class="row">
     <ul class="pricing-table">
       <li ng-repeat="version in versions" class="row bullet-item">
-        <a href="{{version.link}}">
+        <a href="#/carcatalog/model/version/details?modelId={{version.modelId}}&versionId={{version.versionId}}">
           <div class="text-right black">
-              <p>{{version.name}}</p>
+            <p>{{version.name}}</p>
           </div>
         </a>
       </li>

@@ -27,6 +27,8 @@ AutoApp::Application.routes.draw do
 
   get "guide/search"  => "search#guide"
 
+  get "models/:id/versions/:id" => "search#versionDetails"
+
   # get "models/:id/used/:id" => "catalog#used"
 
   root to: "home#main"

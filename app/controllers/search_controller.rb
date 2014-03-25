@@ -17,4 +17,10 @@ class SearchController < ApplicationController
   def guide
     respond_with Net::HTTP.get URI.parse(HOST + "/guide?" + params[:id] )  if params[:id]
   end
+
+  def versionDetails
+    # binding.pry
+    respond_with Net::HTTP.get URI.parse(HOST + "/models/" + params[:model_id] + '/versions/' +  params[:version_id] + '/')  if params[:model_id]
+  end
+
 end

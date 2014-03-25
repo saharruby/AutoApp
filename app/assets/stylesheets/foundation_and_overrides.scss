@@ -1193,15 +1193,15 @@ $topbar-margin-bottom: 0;
 // $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
 
 // Sticky Class
-// $topbar-sticky-class: ".sticky";
-// $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
+$topbar-sticky-class: ".sticky";
+$topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 
 //
 // VISIBILITY CLASSES
 //
 
-// $include-html-visibility-classes: $include-html-classes;
-// $include-table-visibility-classes: true;
-// $include-legacy-visibility-classes: true;
+$include-html-visibility-classes: $include-html-classes;
+$include-table-visibility-classes: true;
+$include-legacy-visibility-classes: true;
 
 @import 'foundation';
