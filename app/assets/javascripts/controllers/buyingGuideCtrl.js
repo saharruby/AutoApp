@@ -1,6 +1,6 @@
 angular.module('autoControllers')
-    .controller('BuyingGuideCtrl', ['$scope', 'GuideSearchService',
-        function($scope, GuideSearchService) {
+    .controller('BuyingGuideCtrl', ['$scope', '$timeout', 'GuideSearchService',
+        function($scope, $timeout, GuideSearchService) {
             $scope.showScroll = false;
             $scope.currentFilterKey = -1;
             $scope.collection = [];
@@ -178,15 +178,9 @@ angular.module('autoControllers')
                 3: engineCapacityCollection
             };
 
-            function resetVars() {
-                $scope.showScroll = false;
-                $scope.selectedIndex = 0;
-            }
-
             $scope.showFilter = function(navKey) {
-                $scope.showScroll = false;
-                $scope.selectedIndex = 0;
                 // $scope.$apply(resetVars());
+                filtersNames[navKey].value = 0;
                 $scope.collection = dicCollections[navKey];
                 $scope.currentFilterKey = navKey;
                 $scope.showScroll = true;
@@ -194,6 +188,11 @@ angular.module('autoControllers')
 
             $scope.filterSelected = function(filterItemKey) {
                 filtersNames[$scope.currentFilterKey].value = filterItemKey;
+
+                $timeout(function() {
+                    $scope.showScroll = false;
+                    $scope.selectedIndex = 0;
+                }, 700);
             };
 
             $scope.clearFilter = function() {
@@ -221,7 +220,5 @@ angular.module('autoControllers')
                 GuideSearchService.setSearchParams(params.id);
                 $scope.showScroll = false;
             };
-
-            $(document).foundation();
         }
     ]);

@@ -8,7 +8,6 @@ angular.module('autoControllers')
                 // SearchServices.getSearchResaulForAllManufacturerModels($scope.manufacturer.id + '?used=' + $scope.newOrUsed).success(function(data) {
                 SearchServices.getSearchResaulForAllManufacturerModels($scope.manufacturer.id).success(function(data) {
                     $scope.models = data;
-                    $(document).foundation();
                 });
             }
 

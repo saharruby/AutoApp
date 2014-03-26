@@ -15,6 +15,7 @@ class SearchController < ApplicationController
   end
 
   def guide
+    # binding.pry
     respond_with Net::HTTP.get URI.parse(HOST + "/guide?" + params[:id] )  if params[:id]
   end
 

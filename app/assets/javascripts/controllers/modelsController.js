@@ -23,8 +23,6 @@ angular.module('autoControllers')
                     $scope.models[item.name.charAt(0)].key = item.name.charAt(0);
                     $scope.models[item.name.charAt(0)].collection.push(item);
                 });
-
-                $(document).foundation();
             });
 
             $scope.itemClicked = function(index) {

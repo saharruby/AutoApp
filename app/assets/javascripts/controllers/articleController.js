@@ -5,7 +5,6 @@ angular.module('autoControllers')
 
             ArticlesServices.getArticleById($scope.article_id).success(function(data) {
                 $scope.article = data[0];
-                $(document).foundation();
             });
         }
     ]);

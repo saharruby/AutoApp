@@ -8,6 +8,11 @@ angular.module('autoDirectives')
                         console.log('infinity scroll fire');
                     }
                 });
+
+                elm.bind("$destroy", function() {
+                    $(window).unbind('scroll');
+                    console.log("element removed");
+                });
             };
         }
 );

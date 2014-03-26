@@ -45,8 +45,9 @@ angular.module('autoServices')
             };
 
             resource.getMoreItemsResults = function() {
+                var newStart = self.startVal + self.limitVal;
                 var moreSearchResults = {
-                    id: self.searchParams.id + '&start=' + self.startVal + self.limitVal + '&total=' + self.totalVal
+                    id: self.searchParams.id + '&start=' + newStart + '&total=' + self.totalVal
                 };
                 return $http.get('guide/search.json', {
                     headers: {

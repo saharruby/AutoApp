@@ -34,7 +34,5 @@ angular.module('autoControllers')
                     }
                 }
             }, true);
-
-            $(document).foundation();
         }
     ]);

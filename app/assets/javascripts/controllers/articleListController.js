@@ -31,7 +31,6 @@ angular.module('autoControllers')
                     $scope.articlesCategoriesCollection[item.categoryId].articles.push(item);
                 });
                 $scope.complete();
-                $(document).foundation();
                 //NavServices.broadcastNavIdMsg('2');
             });
         }

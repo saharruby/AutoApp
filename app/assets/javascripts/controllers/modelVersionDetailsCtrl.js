@@ -1,6 +1,6 @@
 angular.module('autoControllers')
-    .controller('ModelVersionDetailsCtrl', ['$scope', '$routeParams', 'VersionsServices', 'CatalogServices',
-        function($scope, $routeParams, VersionsServices, CatalogServices) {
+    .controller('ModelVersionDetailsCtrl', ['$timeout', '$scope', '$routeParams', 'VersionsServices', 'CatalogServices',
+        function($timeout, $scope, $routeParams, VersionsServices, CatalogServices) {
             var model_id = $routeParams.modelId;
             var version_id = $routeParams.versionId;
             $scope.showContent = false;
@@ -191,10 +191,12 @@ angular.module('autoControllers')
                     });
                 });
                 $scope.versionDetails.push(angular.copy(obj));
-
                 $scope.showContent = true;
-                $(document).foundation();
-                console.log($scope.versionDetails);
+
+                // $scope.$broadcast('InitCtrlFinish');
+                // $timeout(function() {
+                //     $scope.$broadcast('InitCtrlFinish');
+                // });
             });
         }
     ]);

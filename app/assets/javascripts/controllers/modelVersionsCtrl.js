@@ -23,7 +23,6 @@ angular.module('autoControllers')
             } else if ($scope.modelId > 0) {
                 VersionsServices.getAllModelVersionsByModelId($scope.modelId).success(function(data) {
                     $scope.versions = data;
-                    $(document).foundation();
                     console.log(data);
                 });
             }
