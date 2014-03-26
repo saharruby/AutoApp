@@ -1,7 +1,7 @@
 angular.module('autoControllers')
     .controller('GuideSearchResultCtrl', ['$scope', 'GuideSearchService', 'CatalogServices',
         function($scope, GuideSearchService, CatalogServices) {
-            $scope.busy = true;
+            $scope.busy = false;
             $scope.empty = true;
             $scope.hasdata = true;
 
@@ -10,8 +10,7 @@ angular.module('autoControllers')
                 setMoreDataParams(data.limit, data.start, data.total);
                 $scope.busy = false;
 
-                console.log($scope.searchResults);
-                if (angular.isUndefined($scope.searchResults) || !$scope.searchResults.length > 0) {
+                if (angular.isUndefined($scope.searchResults) || $scope.searchResults.length <= 0) {
                     $scope.empty = false;
                 }
                 console.log(data);
