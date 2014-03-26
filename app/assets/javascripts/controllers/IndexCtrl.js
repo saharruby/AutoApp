@@ -18,6 +18,7 @@ angular.module('autoControllers')
                         timer: false
                     });
                 });
+
                 console.log(data);
             });
         }

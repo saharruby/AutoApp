@@ -7,6 +7,7 @@ angular.module('autoControllers')
                 $scope.busy = false;
                 $scope.searchResults = data.searchResult;
                 setMoreDataParams(data.limit, data.start, data.total);
+                $(document).foundation();
                 console.log(data);
             });
 
@@ -16,6 +17,7 @@ angular.module('autoControllers')
                     GuideSearchService.getMoreItemsResults().success(function(data) {
                         $scope.busy = false;
                         $scope.searchResults.push.apply($scope.searchResults, data.searchResult);
+                        $(document).foundation();
                         setMoreDataParams(data.limit, data.start, data.total);
                         console.log(data);
                     });

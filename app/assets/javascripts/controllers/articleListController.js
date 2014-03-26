@@ -20,20 +20,18 @@ angular.module('autoControllers')
 
             ArticlesServices.getAllArticles().success(function(data) {
                 $scope.start();
-                // FOR TEST ONLY ....
-                $timeout(function() {
-                    $scope.articlesCategoriesCollection = {};
-                    angular.forEach(dicTypes, function(item, key) {
-                        $scope.articlesCategoriesCollection[key] = {
-                            categoryName: item,
-                            articles: []
-                        };
-                    });
-                    angular.forEach(data, function(item, index) {
-                        $scope.articlesCategoriesCollection[item.categoryId].articles.push(item);
-                    });
-                    $scope.complete();
-                }, 1000);
+                $scope.articlesCategoriesCollection = {};
+                angular.forEach(dicTypes, function(item, key) {
+                    $scope.articlesCategoriesCollection[key] = {
+                        categoryName: item,
+                        articles: []
+                    };
+                });
+                angular.forEach(data, function(item, index) {
+                    $scope.articlesCategoriesCollection[item.categoryId].articles.push(item);
+                });
+                $scope.complete();
+                $(document).foundation();
                 //NavServices.broadcastNavIdMsg('2');
             });
         }

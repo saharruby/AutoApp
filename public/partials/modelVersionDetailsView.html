@@ -5,13 +5,16 @@
     </header>
   </div>
   <div class="row" ng-repeat="version in versionDetails">
-    <div class="sticky">
+    <!-- <div class="sticky">
       <nav class="top-bar" data-topbar>
         <ul class="title-area">
           <li class="text-center">{{version.key}}</li>
         </ul>
       </nav>
-    </div>
+    </div> -->
+    <ul class="title-area">
+      <li class="text-center">{{version.key}}</li>
+    </ul>
     <ul class="pricing-table">
       <li ng-repeat="version_item in version.items"  class="small-12 columns bullet-item">
         <p class="small-6 columns text-right">{{version_item.title}}</p>

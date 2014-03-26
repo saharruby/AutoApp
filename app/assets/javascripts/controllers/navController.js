@@ -26,5 +26,7 @@ angular.module('autoControllers')
                 img: '......',
                 route: '#'
             }];
+
+            $(document).foundation();
         }
     ]);

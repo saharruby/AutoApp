@@ -193,6 +193,7 @@ angular.module('autoControllers')
                 $scope.versionDetails.push(angular.copy(obj));
 
                 $scope.showContent = true;
+                $(document).foundation();
                 console.log($scope.versionDetails);
             });
         }

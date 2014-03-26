@@ -221,5 +221,7 @@ angular.module('autoControllers')
                 GuideSearchService.setSearchParams(params.id);
                 $scope.showScroll = false;
             };
+
+            $(document).foundation();
         }
     ]);

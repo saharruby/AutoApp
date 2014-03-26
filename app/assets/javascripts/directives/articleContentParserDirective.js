@@ -8,22 +8,24 @@ angular.module('autoDirectives')
                 },
                 link: function(scope, element) {
                     scope.$watch('trustedhtml', function(newContent) {
-                        var iframe = $(newContent).find('iframe').attr({
-                            width: "100%"
-                        });
+                        if (newContent != 'undefine') {
+                            newContent = '<div>' + newContent + '<div>';
+                            var iframe = $(newContent).find('iframe');
+                            var last_index = 0;
 
-                        var s = newContent.indexOf('<iframe');
-                        var e = newContent.indexOf('</iframe>');
-                        newContent = newContent.substring(0, s) + iframe.prop('outerHTML') + newContent.substring(e + 9);
+                            angular.forEach(iframe, function(item, index) {
+                                $(item).attr({
+                                    width: "100%"
+                                });
+                                var s = newContent.indexOf('<iframe', last_index);
+                                var e = newContent.indexOf('</iframe>', last_index);
 
-                        // TODO: remove links & iframe num2
+                                newContent = newContent.substring(0, s) + $(item).prop('outerHTML') + newContent.substring(e + 9);
+                                last_index = e + 9;
+                            });
 
-                        //var textArr = newContent.split('<iframe');
-                        // var tmpText = textArr[1] + "";
-                        // tmpText = tmpText.replace(/width="\d+"/, "width='100%'");
-                        // newContent = textArr[0] + "<iframe " + tmpText;
-
-                        element.html($sce.trustAsHtml(newContent));
+                            element.html($sce.trustAsHtml(newContent));
+                        }
                     });
                 }
             };

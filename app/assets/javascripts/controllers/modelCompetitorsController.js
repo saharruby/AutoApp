@@ -10,6 +10,8 @@ angular.module('autoControllers')
                         $scope.noCompetitorsIndicator = 'למודל זה אין מתחרים!!!';
                     }
                     $scope.competitors = data;
+
+                    $(document).foundation();
                     console.log(data);
                 });
             }

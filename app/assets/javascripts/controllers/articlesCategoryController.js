@@ -7,6 +7,7 @@ angular.module('autoControllers')
             ArticlesServices.getAllArticlesByCatregoryId($scope.category_id).success(function(data) {
                 $scope.firstArticle = data[0];
                 $scope.articles = data.slice(1, data.length);
+                $(document).foundation();
             });
         }
     ]);

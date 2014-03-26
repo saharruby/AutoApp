@@ -19,6 +19,7 @@ angular.module('autoControllers')
                 if ($scope.videos.length === 0) {
                     $scope.defaultVideoText = 'לא קיימים סרטי וידאו לדגם זה';
                 }
+                $(document).foundation();
                 console.log(data);
             });
         }

@@ -1,7 +1,7 @@
 <div ng-controller="ArticleListCtrl" class="container" ng-show="articlesCategoriesCollection" ng-cloak>
   <div  ng-repeat="category in articlesCategoriesCollection">
-    <div class="row border-bottom">
-      <div class="twelve columns">
+    <div class="row border-bottom row-header-bg-color">
+      <div class="twelve columns text-center">
         <h5 ng-bind="category.categoryName"></h5>
       </div>
     </div>

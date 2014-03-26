@@ -91,6 +91,7 @@ angular.module('autoControllers')
                     link: '#/carcatalog/models/' + $scope.model.id + '/useds'
                 }];
 
+                $(document).foundation();
                 console.log('Reviews...');
                 console.log($scope.reviews);
             }
