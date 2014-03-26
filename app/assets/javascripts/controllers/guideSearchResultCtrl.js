@@ -3,16 +3,16 @@ angular.module('autoControllers')
         function($scope, GuideSearchService, CatalogServices) {
             $scope.busy = true;
             $scope.empty = true;
+            $scope.hasdata = true;
 
             GuideSearchService.getGuideSearchResult().success(function(data) {
                 $scope.searchResults = data.searchResult;
                 setMoreDataParams(data.limit, data.start, data.total);
                 $scope.busy = false;
-                console.log($scope.searchResults);
 
-                /// TODO: fix bug when sending only country=:id get searchResults 'undefined'....
-                if ($scope.searchResults == 'undefined' || !$scope.searchResults.length > 0) {
-                    $scope.empty = true;
+                console.log($scope.searchResults);
+                if (angular.isUndefined($scope.searchResults) || !$scope.searchResults.length > 0) {
+                    $scope.empty = false;
                 }
                 console.log(data);
             });
@@ -29,6 +29,9 @@ angular.module('autoControllers')
                             }
                             console.log(data);
                         });
+                    } else {
+                        //TODO: send event to 'infinityscrollDirective' to remove window binding to 'scroll' event....
+                        $scope.hasdata = false;
                     }
                 }
             };

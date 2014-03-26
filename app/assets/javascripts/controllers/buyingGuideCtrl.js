@@ -4,7 +4,7 @@ angular.module('autoControllers')
             $scope.showScroll = false;
             $scope.currentFilterKey = -1;
             $scope.collection = [];
-            $scope.selectedIndex = 0;
+            $scope.selectedIndex = -1;
 
             $scope.navsData = [{
                 title: 'בחר קטגוריה',
@@ -179,8 +179,6 @@ angular.module('autoControllers')
             };
 
             $scope.showFilter = function(navKey) {
-                // $scope.$apply(resetVars());
-                filtersNames[navKey].value = 0;
                 $scope.collection = dicCollections[navKey];
                 $scope.currentFilterKey = navKey;
                 $scope.showScroll = true;
@@ -191,12 +189,12 @@ angular.module('autoControllers')
 
                 $timeout(function() {
                     $scope.showScroll = false;
-                    $scope.selectedIndex = 0;
+                    $scope.selectedIndex = -1;
                 }, 700);
             };
 
             $scope.clearFilter = function() {
-                $scope.selectedIndex = 0;
+                $scope.selectedIndex = -1;
                 $scope.showScroll = false;
                 angular.forEach(filtersNames, function(item, key) {
                     item.value = -1;
