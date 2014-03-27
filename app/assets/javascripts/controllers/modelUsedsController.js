@@ -16,7 +16,7 @@ angular.module('autoControllers')
                 ModelUsedsServices.getAllModelUsedsByModelID(modelID).success(function(data) {
                     $scope.usedsModels = data;
 
-                    $(document).foundation();
+                    // $(document).foundation();
                     console.log(data);
                 });
             }

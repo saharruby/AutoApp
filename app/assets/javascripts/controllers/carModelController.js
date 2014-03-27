@@ -9,7 +9,6 @@ angular.module('autoControllers')
                 if ($scope.used_id) {
                     console.log("Route with -id- routeParams & usd_id routeParams");
                     SearchServices.getModelUsedByUsedID($scope.model_id, $scope.used_id).success(function(data) {
-                        console.log(data);
                         setDataFromService(data);
                     });
                 } else {

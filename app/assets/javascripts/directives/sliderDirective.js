@@ -22,11 +22,15 @@ angular.module('autoDirectives')
 
                     scope.prevSlide = function() {
                         scope.direction = 'left';
+                        // elem.removeClass('right');
+                        console.log(elem);
                         scope.currentIndex = (scope.currentIndex < scope.images.length - 1) ? ++scope.currentIndex : 0;
                     };
 
                     scope.nextSlide = function() {
                         scope.direction = 'right';
+                        // elem.addClass('right');
+                        console.log(elem);
                         scope.currentIndex = (scope.currentIndex > 0) ? --scope.currentIndex : scope.images.length - 1;
                     };
 
