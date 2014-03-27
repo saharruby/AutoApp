@@ -6,6 +6,10 @@
 // this is needed for the angular slider for the ng-touch event to work
 .nonDraggableImage{
     -webkit-user-drag: none;
+    -moz-user-drag: none;
+  -khtml-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
 }
 
 /*---------------------------------------------------------
@@ -23,10 +27,12 @@ SLIDER :   transition-animation
 .slide.ng-hide-add.ng-hide-add-active,
 .slide.ng-hide-remove {
   opacity: 0;
+  margin-left: 180px;
 }
 .slide.ng-hide-add,
 .slide.ng-hide-remove.ng-hide-remove-active {
   opacity: 1;
+  margin-left: 0;
 }
 
 /*---------------------------------------------------------
@@ -34,7 +40,7 @@ SLIDER :
 ---------------------------------------------------------*/
 
 .slider {
-    width: 100%;
+    width: 98%;
     height: 100%;
     min-height: 300px;
     overflow: hidden;
@@ -42,7 +48,7 @@ SLIDER :
     background: #e6e6e6;
     border: 7px solid #FFF;
     margin: auto;
-    box-shadow: 0px 0px 15px #999;
+    box-shadow: 5px 5px 15px #999;
 }
 
 .slide {
@@ -162,41 +168,6 @@ SLIDER :  NAV - DOTS
     background-color: transparent;
 }
 
-///// media querys for slider for the future...
-// @media (max-width: 900px) {
-//     .logo img {
-//         width: 60%;
-//     }
-//     .slider {
-//         height: 312px;
-//         width: 500px;
-//     }
-//     .slider .slide {
-//         width: 100%;
-//     }
-// }
-// @media (max-width: 550px) {
-//     .logo img {
-//         width: 60%;
-//     }
-//     .slider {
-//         height: 188px;
-//         width: 300px;
-//     }
-//     .slider .slide {
-//         width: 100%;
-//     }
-//     .nav {
-//         height: 28px;
-//     }
-//     .nav li {
-//         border: 3px solid #AAAAAA;
-//         border-radius: 3px;
-//         height: 15px;
-//         width: 25px;
-//     }
-// }
-
 
 /// my csssssss
 ///
@@ -225,7 +196,6 @@ SLIDER :  NAV - DOTS
   background-repeat: no-repeat;
   background-position: 0% 50%;
   height: 10px;
-  // margin-left: 10px;
 }
 
 .scrollview{

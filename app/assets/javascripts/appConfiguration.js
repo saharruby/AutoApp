@@ -56,7 +56,6 @@ angular.module("main")
                 })
                 .when('/carcatalog/model/gallery', {
                     templateUrl: 'partials/modelGalleryView.html',
-                    // templateUrl: 'partials/sliderView.html',
                     controller: 'ModelGalleryCtrl'
                 })
                 .when('/carcatalog/model/videos', {

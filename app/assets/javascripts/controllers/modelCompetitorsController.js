@@ -5,13 +5,13 @@ angular.module('autoControllers')
                 $scope.hasCompetitors = true;
 
                 ModelCompetitorsServices.getAllModelCompetitorsByCompetitorId($routeParams.id).success(function(data) {
-                    if (data.length == 0) {
+                    if (data.length === 0) {
                         $scope.hasCompetitors = false;
                         $scope.noCompetitorsIndicator = 'למודל זה אין מתחרים!!!';
                     }
                     $scope.competitors = data;
 
-                    $(document).foundation();
+                    // $(document).foundation();
                     console.log(data);
                 });
             }

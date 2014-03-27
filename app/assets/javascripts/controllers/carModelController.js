@@ -4,12 +4,7 @@ angular.module('autoControllers')
             $scope.modelId = CatalogServices.getModelId();
             $scope.model_id = $routeParams.id;
             $scope.used_id = $routeParams.usedID;
-            //$scope.newOrUsed = CatalogServices.getNewOrUsed();
-            //console.log($scope.newOrUsed);
 
-            // console.log($routeParams);
-            // console.log("routeParams.id : " + $scope.model_id);
-            // console.log("CatalogService.modelId : " + $scope.modelId);
             if ($routeParams.isSelected && $scope.model_id) {
                 if ($scope.used_id) {
                     console.log("Route with -id- routeParams & usd_id routeParams");

@@ -3,7 +3,6 @@ angular.module('autoDirectives')
         function($timeout) {
             return {
                 restrict: 'AE',
-                // replace: true,
                 scope: {
                     images: '=',
                     showdots: '='
@@ -30,6 +29,21 @@ angular.module('autoDirectives')
                         scope.direction = 'right';
                         scope.currentIndex = (scope.currentIndex > 0) ? --scope.currentIndex : scope.images.length - 1;
                     };
+
+                    // //for change images in silde show...
+                    // var timer;
+                    // var sliderFunc = function() {
+                    //     timer = $timeout(function() {
+                    //         scope.nextSlide();
+                    //         timer = $timeout(sliderFunc, 1000);
+                    //     }, 3000);
+                    // };
+
+                    // sliderFunc();
+
+                    // scope.$on('$destroy', function() {
+                    //     $timeout.cancel(timer); // when the scope is getting destroyed, cancel the timer
+                    // });
                 },
                 templateUrl: 'partials/sliderView.html'
             };

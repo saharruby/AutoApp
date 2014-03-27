@@ -12,6 +12,8 @@ angular.module('autoControllers')
                     $scope.manufacturers[item.name.charAt(0)].key = item.name.charAt(0);
                     $scope.manufacturers[item.name.charAt(0)].collection.push(item);
                 });
+
+                $(document).foundation();
             });
 
             $scope.onSelectMF = function(manufacturer) {

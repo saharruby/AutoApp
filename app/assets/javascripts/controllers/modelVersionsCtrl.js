@@ -16,7 +16,7 @@ angular.module('autoControllers')
                 // } else {
                 VersionsServices.getAllModelVersionsByModelId($routeParams.id).success(function(data) {
                     $scope.versions = data;
-                    $(document).foundation();
+                    // $(document).foundation();
                     console.log(data);
                 });
                 // }
