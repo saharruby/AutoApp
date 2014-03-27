@@ -1,5 +1,5 @@
 <div ng-controller="IndexCtrl" class="container"  ng-show="latest.length" ng-cloak>
-  <div class="row">
+<!--   <div class="row">
     <ul data-orbit  class="small-12 columns">
       <a ng-repeat="l in latest" href="#/articles/{{l.articleId}}">
         <li>
@@ -9,6 +9,13 @@
       </a>
     </ul>
   </div>
+  <div class="row">
+    <ul class="off-canvas-list">
+      <li><label class="text-center">תפריט ראשי</label></li>
+      <li ng-repeat="nav in navs" class="li-bg-color"><a href="{{nav.route}}">{{nav.name}}</a></li>
+    </ul>
+  </div> -->
+  <slider images="latest" showdots="showDots"></slider>
   <div class="row">
     <ul class="off-canvas-list">
       <li><label class="text-center">תפריט ראשי</label></li>
