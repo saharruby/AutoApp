@@ -7,7 +7,7 @@ angular.module('autoDirectives')
                 link: function(scope, elm, attr) {
                     // $rootScope.$on('InitCtrlFinish', function() {
                     scope.$on('InitCtrlFinish', function() {
-                        console.log('EVENTTTTT: ');
+                        console.log('EVENTTTTT');
                         $(document).foundation();
                     });
                 }

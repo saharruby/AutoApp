@@ -1,10 +1,3 @@
 <div ng-controller="ModelGalleryCtrl" class="container" ng-show="gallery.length" ng-cloak>
-  <div class="row">
-    <ul data-orbit class="small-12 columns">
-      <li ng-repeat="galleryItem in gallery">
-        <img src="{{galleryItem.imageUrl}}" alt="" class="orbit_img"/>
-<!--         <div class="orbit-caption"></div> -->
-      </li>
-    </ul>
-  </div>
+  <slider images="gallery" showdots="showDots"/>
 </div>

@@ -1,0 +1,16 @@
+<div class="slider">
+    <img ng-repeat="image in images" class="slide slide-animation nonDraggableImage"
+            ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+            ng-hide="!isCurrentSlideIndex($index)" ng-src="{{image.imageUrl}}">
+    <a class="arrow prev" href="" ng-click="nextSlide()"></a>
+    <a class="arrow next" href="" ng-click="prevSlide()"></a>
+</div>
+<nav class="nav" ng-show="showdots">
+    <div class="wrapper">
+        <ul class="dots">
+            <li class="dot" ng-repeat="image in images">
+                <a href="" ng-class="{'active':isCurrentSlideIndex($index)}"
+                    ng-click="setCurrentSlideIndex($index);"></a></li>
+        </ul>
+    </div>
+</nav>
