@@ -8,11 +8,11 @@ angular.module('autoDirectives')
                     showdots: '='
                 },
                 link: function(scope, elem, attrs) {
-                    scope.direction = 'left';
+                    scope.direction = '';
                     scope.currentIndex = 0;
 
                     scope.setCurrentSlideIndex = function(index) {
-                        scope.direction = (index > scope.currentIndex) ? 'left' : 'right';
+                        scope.direction = (index > scope.currentIndex) ? 'left' : '';
                         scope.currentIndex = index;
                     };
 
@@ -22,16 +22,16 @@ angular.module('autoDirectives')
 
                     scope.prevSlide = function() {
                         scope.direction = 'left';
-                        // elem.removeClass('right');
-                        console.log(elem);
-                        scope.currentIndex = (scope.currentIndex < scope.images.length - 1) ? ++scope.currentIndex : 0;
+                        $timeout(function() {
+                            scope.currentIndex = (scope.currentIndex < scope.images.length - 1) ? ++scope.currentIndex : 0;
+                        });
                     };
 
                     scope.nextSlide = function() {
                         scope.direction = 'right';
-                        // elem.addClass('right');
-                        console.log(elem);
-                        scope.currentIndex = (scope.currentIndex > 0) ? --scope.currentIndex : scope.images.length - 1;
+                        $timeout(function() {
+                            scope.currentIndex = (scope.currentIndex > 0) ? --scope.currentIndex : scope.images.length - 1;
+                        });
                     };
 
                     // //for change images in silde show...

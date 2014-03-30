@@ -1,7 +1,8 @@
 <div class="slider">
     <img ng-repeat="image in images" class="slide slide-animation nonDraggableImage"
-            ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-            ng-hide="!isCurrentSlideIndex($index)" ng-src="{{image.imageUrl}}">
+            ng-swipe-right="prevSlide()" ng-swipe-left="nextSlide()"
+            ng-hide="!isCurrentSlideIndex($index)" ng-src="{{image.imageUrl}}"
+            ng-class="direction">
     <a class="arrow prev" href="" ng-click="nextSlide()"></a>
     <a class="arrow next" href="" ng-click="prevSlide()"></a>
 </div>

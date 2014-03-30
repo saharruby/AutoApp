@@ -22,7 +22,7 @@ angular.module('autoControllers')
             $scope.$watch(CatalogServices.model, function(newData) {
                 $scope.model = CatalogServices.getModel();
                 $scope.newOrUsed = CatalogServices.getNewOrUsed();
-                console.log($scope.newOrUsed);
+
                 if ($scope.model && $scope.model.name) {
                     $scope.modelId = $scope.model.id;
                     $scope.modelName = $scope.model.name + '  >';
