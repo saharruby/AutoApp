@@ -1,6 +1,6 @@
 angular.module('autoControllers')
-    .controller('ManufacturersCtrl', ['$scope', 'ManufacturersServices', 'CatalogServices',
-        function($scope, ManufacturersServices, CatalogServices) {
+    .controller('ManufacturersCtrl', ['$scope', '$location', 'ManufacturersServices', 'CatalogServices',
+        function($scope, $location, ManufacturersServices, CatalogServices) {
             ManufacturersServices.getAllManufacturers().success(function(data) {
                 $scope.manufacturers = {};
                 angular.forEach(data, function(item, index) {
@@ -17,8 +17,10 @@ angular.module('autoControllers')
             });
 
             $scope.onSelectMF = function(manufacturer) {
+                console.log(manufacturer);
                 CatalogServices.setManufacturer(manufacturer);
                 CatalogServices.setModel(undefined);
+                $location.url('catalog',"catalog/manufacturers");
             };
         }
     ]);

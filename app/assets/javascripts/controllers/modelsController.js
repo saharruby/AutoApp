@@ -1,7 +1,7 @@
 angular.module('autoControllers')
-    .controller('ModelsCtrl', ['$scope', 'ManufacturersServices', 'CatalogServices',
-        function($scope, ManufacturersServices, CatalogServices) {
-            $scope.manufacturerId = CatalogServices.getManufacturerId();
+    .controller('ModelsCtrl', ['$scope', '$location', '$routeParams', 'ManufacturersServices', 'CatalogServices',
+        function($scope, $location, $routeParams, ManufacturersServices, CatalogServices) {
+            $scope.manufacturerId = CatalogServices.getManufacturerId() || $routeParams.id;
             $scope.newOrUsed = 'true';
             $scope.selectedIndex = 0;
             $scope.optionsArr = [{
@@ -32,6 +32,7 @@ angular.module('autoControllers')
             $scope.onSelectM = function(model) {
                 CatalogServices.setModel(model);
                 CatalogServices.setNewOrUsedData($scope.optionsArr[$scope.selectedIndex].value);
+                $location.url('catalog','catalog/manufacturers/' + $scope.manufacturerId + '/models');
             };
         }
     ]);

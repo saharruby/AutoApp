@@ -1,6 +1,6 @@
 angular.module('autoControllers')
-    .controller('AllManufacturerModelsCtrl', ['$scope','$routeParams', 'SearchServices', 'CatalogServices',
-        function($scope, $routeParams, SearchServices, CatalogServices) {
+    .controller('AllManufacturerModelsCtrl', ['$scope','$location', '$routeParams', 'SearchServices', 'CatalogServices',
+        function($scope, $location, $routeParams, SearchServices, CatalogServices) {
             $scope.manufacturerId = $routeParams.id;
 
             if ($scope.manufacturerId) {
@@ -9,8 +9,9 @@ angular.module('autoControllers')
                 });
             }
 
-            $scope.setModelId = function(model) {
+            $scope.setModel = function(model) {
                 CatalogServices.setModel(model);
+                $location.path('/catalog/models/' + model.model_id);
             };
         }
     ]);
