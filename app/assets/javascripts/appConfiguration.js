@@ -26,7 +26,7 @@ angular.module("main")
                     templateUrl: 'partials/carModelView.html',
                     controller: 'CarModelCtrl'
                 })
-                .when('/catalog/models', {
+                .when('/catalog/manufacturers/:id/models', {
                     templateUrl: 'partials/modelsView.html',
                     controller: 'ModelsCtrl'
                 })

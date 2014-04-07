@@ -2,7 +2,7 @@
   <div class="row">
     <div class="twelve columns text-right" ng-switch="hasCompetitors">
       <ul class="pricing-table" ng-switch-default ng-show="competitors.length" ng-cloak>
-        <a ng-repeat="competitor in competitors" href="#/catalog/models/{{competitor.model_id}}?isSelected">
+        <a ng-repeat="competitor in competitors" href="#/catalog/models/{{competitor.model_id}}">
           <li class="row bullet-item">
             <div class="small-4 columns">
               <img  class="th radius" ng-src="{{competitor.image_url}}" >

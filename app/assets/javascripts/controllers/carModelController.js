@@ -5,7 +5,7 @@ angular.module('autoControllers')
             $scope.model_id = $routeParams.id;
             $scope.used_id = $routeParams.usedID;
 
-            if ($routeParams.isSelected && $scope.model_id) {
+            if ($scope.model_id) {
                 if ($scope.used_id) {
                     console.log("Route with -id- routeParams & usd_id routeParams");
                     SearchServices.getModelUsedByUsedID($scope.model_id, $scope.used_id).success(function(data) {
@@ -67,10 +67,10 @@ angular.module('autoControllers')
 
                 $scope.tableData = [{
                     title: 'חוות דעת מומחה',
-                    link: '#/catalog/model/review/' + $scope.model.id + '?isSelected'
+                    link: '#/catalog/model/review/' + $scope.model.id
                 }, {
                     title: 'גרסאות',
-                    link: '#/catalog/model/versions/' + $scope.model.id + '?isSelected'
+                    link: '#/catalog/model/versions/' + $scope.model.id
                 }, {
                     title: 'תמונות גלריה',
                     link: '#/catalog/model/gallery?id=' + $scope.model.galleryId

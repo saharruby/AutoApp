@@ -18,7 +18,7 @@ angular.module('autoControllers')
 
             $scope.onSelectMF = function(manufacturer) {
                 CatalogServices.setManufacturer(manufacturer);
-                CatalogServices.setModel({});
+                CatalogServices.setModel(undefined);
             };
         }
     ]);

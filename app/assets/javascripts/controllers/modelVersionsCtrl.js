@@ -7,7 +7,7 @@ angular.module('autoControllers')
             console.log('CatalogServices.getModelId() : ' + $scope.modelId);
             console.log('$routeParams.id : ' + $routeParams.id);
             console.log($routeParams);
-            if ($routeParams.isSelected && $routeParams.id) {
+            if ($routeParams.id) {
                 // if ($routeParams.usedID) {
                 //     VersionsServices.getModelUsedByUsedID($routeParams.usedID).success(function(data) {
                 //         $scope.versions = data;

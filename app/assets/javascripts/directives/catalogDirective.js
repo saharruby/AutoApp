@@ -12,7 +12,8 @@ angular.module('autoDirectives')
                 },
                 link: function(scope, element) {
                     scope.$watch('manufactureselected', function(value) {
-                        scope.modelflag = (value === 0 ? true : false);
+                        console.log('manufactureselected: ' + value);
+                        scope.manufacturerSelected = (value === 0 ? true : false);
                     });
 
                     scope.$watch('modelselected', function(value) {
@@ -41,7 +42,7 @@ angular.module('autoDirectives')
                     '</div>' +
                     '<div class="row" >' +
                     '<div class="twelve columns">' +
-                    '<a href="#/catalog/models?isSelected" class="nice small button success radius round expand" ng-disabled="modelflag">' +
+                    '<a href="#/catalog/models" class="nice small button success radius round expand" ng-disabled="manufacturerSelected">' +
                     '<div class="small-6 columns text-right">בחר דגם</div>' +
                     '<div class="small-6 columns text-left">{{modelName}}</div>' +
                     '</a>' +
@@ -49,7 +50,7 @@ angular.module('autoDirectives')
                     '</div>' +
                     '<div class="row" >' +
                     '<div class="twelve columns text-center">' +
-                    '<a href="#/{{url}}" class="nice medium button alert round expand" ng-disabled="modelflag">חפש</a>' +
+                    '<a href="#/{{url}}" class="nice medium button alert round expand" ng-disabled="manufacturerSelected">חפש</a>' +
                     '</div>' +
                     '</div>'
             };

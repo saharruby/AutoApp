@@ -1,10 +1,10 @@
 angular.module('autoControllers')
-    .controller('AllManufacturerModelsCtrl', ['$scope', 'SearchServices', 'CatalogServices',
-        function($scope, SearchServices, CatalogServices) {
-            $scope.manufacturer = CatalogServices.getManufacturer();
+    .controller('AllManufacturerModelsCtrl', ['$scope','$routeParams', 'SearchServices', 'CatalogServices',
+        function($scope, $routeParams, SearchServices, CatalogServices) {
+            $scope.manufacturerId = $routeParams.id;
 
-            if ($scope.manufacturer && $scope.manufacturer.name) {
-                SearchServices.getSearchResaulForAllManufacturerModels($scope.manufacturer.id).success(function(data) {
+            if ($scope.manufacturerId) {
+                SearchServices.getSearchResaulForAllManufacturerModels($scope.manufacturerId).success(function(data) {
                     $scope.models = data;
                 });
             }
