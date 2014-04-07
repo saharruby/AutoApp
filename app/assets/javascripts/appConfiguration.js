@@ -10,63 +10,63 @@ angular.module("main")
                     templateUrl: 'partials/Index.html',
                     controller: 'IndexCtrl'
                 })
-                .when('/articles/carcatalog', {
+                .when('/catalog', {
                     templateUrl: 'partials/catalogView.html',
                     controller: 'CatalogCtrl'
                 })
-                .when('/articles/carcatalog/manufacturers', {
+                .when('/catalog/manufacturers', {
                     templateUrl: 'partials/manufacturersView.html',
                     controller: 'ManufacturersCtrl'
                 })
-                .when('/articles/carcatalog/manufacturers/:id', {
+                .when('/catalog/manufacturers/:id', {
                     templateUrl: 'partials/allManufacturerModelsView.html',
                     controller: 'AllManufacturerModelsCtrl'
                 })
-                .when('/articles/carcatalog/manufacturers/:id/models/:id', {
+                .when('/catalog/manufacturers/:id/models/:id', {
                     templateUrl: 'partials/carModelView.html',
                     controller: 'CarModelCtrl'
                 })
-                .when('/articles/carcatalog/models', {
+                .when('/catalog/models', {
                     templateUrl: 'partials/modelsView.html',
                     controller: 'ModelsCtrl'
                 })
-                .when('/articles/carcatalog/models/:id', {
+                .when('/catalog/models/:id', {
                     templateUrl: 'partials/carModelView.html',
                     controller: 'CarModelCtrl'
                 })
-                .when('/articles/carcatalog/models/:id/used', {
+                .when('/catalog/models/:id/used', {
                     templateUrl: 'partials/carModelView.html',
                     controller: 'CarModelCtrl'
                 })
-                .when('/carcatalog/model/review/:id', {
+                .when('/catalog/model/review/:id', {
                     templateUrl: 'partials/modelReviewView.html',
                     controller: 'CarModelCtrl'
                 })
-                .when('/carcatalog/model/versions/:id', {
+                .when('/catalog/model/versions/:id', {
                     templateUrl: 'partials/modelVersionsView.html',
                     controller: 'ModelVersionsCtrl'
                 })
-                .when('/carcatalog/model/versions/', {
+                .when('/catalog/model/versions/', {
                     templateUrl: 'partials/modelVersionsView.html',
                     controller: 'ModelVersionsCtrl'
                 })
-                .when('/carcatalog/model/version/details/', {
+                .when('/catalog/model/version/details/', {
                     templateUrl: 'partials/modelVersionDetailsView.html',
                     controller: 'ModelVersionDetailsCtrl'
                 })
-                .when('/carcatalog/model/gallery', {
+                .when('/catalog/model/gallery', {
                     templateUrl: 'partials/modelGalleryView.html',
                     controller: 'ModelGalleryCtrl'
                 })
-                .when('/carcatalog/model/videos', {
+                .when('/catalog/model/videos', {
                     templateUrl: 'partials/modelVideosView.html',
                     controller: 'ModelVideosCtrl'
                 })
-                .when('/carcatalog/model/competitors', {
+                .when('/catalog/model/competitors', {
                     templateUrl: 'partials/modelCompetitorsView.html',
                     controller: 'ModelCompetitorsCtrl'
                 })
-                .when('/carcatalog/models/:id/useds', {
+                .when('/catalog/models/:id/useds', {
                     templateUrl: 'partials/modelUsedsView.html',
                     controller: 'ModelUsedsCtrl'
                 })

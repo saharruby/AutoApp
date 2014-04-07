@@ -1,6 +1,6 @@
 <div ng-controller="AllManufacturerModelsCtrl" class="container" ng-show="models.length" ng-cloak>
     <div ng-repeat="m in models" class="row border-bottom">
-        <a href="#/articles/carcatalog/models/{{m.model_id}}?isSelected" ng-click="setModelId(m)">
+        <a href="#/catalog/models/{{m.model_id}}?isSelected" ng-click="setModelId(m)">
         <div class="small-4 columns">
             <img  class="th radius" ng-src="{{m.image_url}}" >
         </div>

@@ -15,7 +15,7 @@ angular.module('autoControllers')
                 if ($scope.manufacturer && $scope.manufacturer.name) {
                     $scope.manufactureId = $scope.manufacturer.id;
                     $scope.manufacturerName = $scope.manufacturer.name + '  >';
-                    $scope.searchUrl = 'articles/carcatalog/manufacturers/' + $scope.manufacturer.id + '?isSelected';
+                    $scope.searchUrl = 'catalog/manufacturers/' + $scope.manufacturer.id + '?isSelected';
                 }
             }, true);
 
@@ -28,9 +28,9 @@ angular.module('autoControllers')
                     $scope.modelName = $scope.model.name + '  >';
 
                     if ($scope.newOrUsed === '' || $scope.newOrUsed === 'new=true') {
-                        $scope.searchUrl = 'articles/carcatalog/manufacturers/' + $scope.manufacturer.id + '/models/' + $scope.model.id + '?isSelected';
+                        $scope.searchUrl = 'catalog/manufacturers/' + $scope.manufacturer.id + '/models/' + $scope.model.id + '?isSelected';
                     } else {
-                        $scope.searchUrl = 'carcatalog/models/' + $scope.model.id + '/useds?isSelected&' + $scope.newOrUsed;
+                        $scope.searchUrl = 'catalog/models/' + $scope.model.id + '/useds?isSelected&' + $scope.newOrUsed;
                     }
                 }
             }, true);

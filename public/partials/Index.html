@@ -1,5 +1,9 @@
 <div ng-controller="IndexCtrl" class="container"  ng-show="latest.length" ng-cloak>
-  <slider images="latest" showdots="showDots"></slider>
+  <ul rn-carousel rn-carousel-indicator="true" rn-carousel-buffered="true" rn-carousel-control="true">
+      <li ng-repeat="item in latest">
+        <img ng-src="{{item.imageUrl}}"></img>
+      </li>
+  </ul>
   <div class="row">
     <ul class="off-canvas-list">
       <li><label class="text-center">תפריט ראשי</label></li>

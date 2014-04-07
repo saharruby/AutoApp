@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require angular-carousel
 //= require main
 //= require_tree

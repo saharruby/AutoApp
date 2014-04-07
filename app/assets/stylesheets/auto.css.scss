@@ -4,6 +4,23 @@
 
 // this is for -webkit browser to remove the darg event.
 // this is needed for the angular slider for the ng-touch event to work
+@import "foundation_and_overrides.scss";
+.automag-app {
+  .rn-carousel-container {
+    direction: ltr;
+  }
+  .rn-carousel-indicator {
+    display: inline-block;
+    background: none;
+    //overflow: hidden;
+    span {
+      display: inline-block;
+      &.active {
+       color: red;
+      }
+    }
+  }
+}
 .nonDraggableImage{
     -webkit-user-drag: none;
     -moz-user-drag: none;
@@ -22,7 +39,7 @@ SLIDER :   transition-animation
   -moz-transition: all linear 0.5s;
   -o-transition: all linear 0.5s;
   transition: all linear 0.5s;
-  display: block!important;
+  display: block !important;
 }
 
 .slide.ng-hide-add.ng-hide-add-active.right {
@@ -100,35 +117,40 @@ SLIDER :   transition-animation
 /*---------------------------------------------------------
 SLIDER :
 ---------------------------------------------------------*/
-
+.contain {
+  display: block;
+  overflow: hidden;
+  height: 1%;
+}
 .slider {
-    width: 98%;
-    height: 100%;
-    min-height: 300px;
-    overflow: hidden;
-    position: relative;
-    background: #e6e6e6;
-    border: 7px solid #FFF;
-    margin: auto;
-    box-shadow: 5px 5px 15px #999;
+    width: 100%;
+   // height: 100%;
+//    min-height: 100px;
+//    display: block;
+//    overflow: hidden;
+//    position: relative;
+//    background: #e6e6e6;
+    //border: 7px solid #FFF;
+    //margin: 10px;
+    //box-shadow: 5px 5px 15px #999;
 }
 
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-}
+//.slide {
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    right: 0;
+//    bottom: 0;
+//    width: 100%;
+//    height: 100%;
+//    margin: auto;
+//}
 
 .arrow {
     position: absolute;
     z-index: 1002;
     display: block;
-    top: 50%;
+    top: 40%;
     margin-top: -35px;
     width: 36px;
     height: 71px;
@@ -199,6 +221,7 @@ SLIDER :  NAV - DOTS
     margin: 0 8px;
     width: 12px;
     height: 12px;
+    color: black;
 }
 
 .dots .dot a {
@@ -210,8 +233,8 @@ SLIDER :  NAV - DOTS
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
-    background: #FFF;
-    border: 1px solid transparent;
+    background: transparent;
+    border: 1px solid #000;
     outline: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -225,8 +248,8 @@ SLIDER :  NAV - DOTS
 }
 
 .dots .dot a.active {
-    border-color: #FFF;
-    background-color: transparent;
+    border-color: #000;
+    background-color: #000;
 }
 
 
@@ -237,10 +260,13 @@ SLIDER :  NAV - DOTS
 }
 
 .image-header{
-  background-color: rgba(110, 110, 100, 0.5);
+  background-color: rgba(255,255,255, 0.5);
   position:absolute;
   display:block;
   font-weight: bolder;
+  h3 {
+    color: $primary-color;
+  }
 }
 
 .image-magazine{

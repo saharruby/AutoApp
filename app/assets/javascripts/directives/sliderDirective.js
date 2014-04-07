@@ -3,8 +3,9 @@ angular.module('autoDirectives')
         function($timeout) {
             return {
                 restrict: 'AE',
+                transclude: true,
                 scope: {
-                    images: '=',
+                    items: '=',
                     showdots: '='
                 },
                 link: function(scope, elem, attrs) {
@@ -23,14 +24,14 @@ angular.module('autoDirectives')
                     scope.prevSlide = function() {
                         scope.direction = 'left';
                         $timeout(function() {
-                            scope.currentIndex = (scope.currentIndex < scope.images.length - 1) ? ++scope.currentIndex : 0;
+                            scope.currentIndex = (scope.currentIndex < scope.items.length - 1) ? ++scope.currentIndex : 0;
                         });
                     };
 
                     scope.nextSlide = function() {
                         scope.direction = 'right';
                         $timeout(function() {
-                            scope.currentIndex = (scope.currentIndex > 0) ? --scope.currentIndex : scope.images.length - 1;
+                            scope.currentIndex = (scope.currentIndex > 0) ? --scope.currentIndex : scope.items.length - 1;
                         });
                     };
 

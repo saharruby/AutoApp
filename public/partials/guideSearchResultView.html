@@ -1,6 +1,6 @@
 <div ng-controller="GuideSearchResultCtrl" infinity-scroll="addMoreItems()">
   <div ng-repeat="result in searchResults" ng-show="searchResults.length" ng-cloak class="row border-bottom">
-      <a href="#/articles/carcatalog/models/{{result.model_id}}?isSelected" ng-click="setModelId(result)">
+      <a href="#/catalog/models/{{result.model_id}}?isSelected" ng-click="setModelId(result)">
       <div class="small-4 columns">
           <img  class="th radius" ng-src="{{result.image_url}}" >
       </div>

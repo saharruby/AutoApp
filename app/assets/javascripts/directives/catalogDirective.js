@@ -12,11 +12,11 @@ angular.module('autoDirectives')
                 },
                 link: function(scope, element) {
                     scope.$watch('manufactureselected', function(value) {
-                        scope.modelflag = (value == 0 ? true : false);
+                        scope.modelflag = (value === 0 ? true : false);
                     });
 
                     scope.$watch('modelselected', function(value) {
-                        scope.continueflag = (value == 0 ? true : false);
+                        scope.continueflag = (value === 0 ? true : false);
                     });
 
                     scope.$watch('lookurl', function(value) {
@@ -33,7 +33,7 @@ angular.module('autoDirectives')
                 },
                 template: '<div class="row" >' +
                     '<div class="twelve columns">' +
-                    '<a href="#/articles/carcatalog/manufacturers" class="nice small button success radius round expand">' +
+                    '<a href="#/catalog/manufacturers" class="nice small button success radius round expand">' +
                     '<div class="small-6 columns text-right">בחר יצרן</div>' +
                     '<div class="small-6 columns text-left">{{manufactrureName}}</div>' +
                     '</a>' +
@@ -41,7 +41,7 @@ angular.module('autoDirectives')
                     '</div>' +
                     '<div class="row" >' +
                     '<div class="twelve columns">' +
-                    '<a href="#/articles/carcatalog/models?isSelected" class="nice small button success radius round expand" ng-disabled="modelflag">' +
+                    '<a href="#/catalog/models?isSelected" class="nice small button success radius round expand" ng-disabled="modelflag">' +
                     '<div class="small-6 columns text-right">בחר דגם</div>' +
                     '<div class="small-6 columns text-left">{{modelName}}</div>' +
                     '</a>' +

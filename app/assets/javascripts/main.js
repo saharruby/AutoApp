@@ -8,6 +8,7 @@ var autoModuleApp = angular.module("main", [
     'ngAnimate',
     'ngTouch',
     'chieffancypants.loadingBar',
+    'angular-carousel'
 ]).config(function(cfpLoadingBarProvider) {
     cfpLoadingBarProvider.includeSpinner = true;
 });

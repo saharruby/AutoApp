@@ -1,3 +1,7 @@
 <div ng-controller="ModelGalleryCtrl" class="container" ng-show="gallery.length" ng-cloak>
-  <slider images="gallery" showdots="showDots"></slider>
+  <ul rn-carousel rn-carousel-indicator="true" rn-carousel-buffered="true" rn-carousel-control="true">
+    <li ng-repeat="item in gallery">
+      <img ng-src="{{item.imageUrl}}"></img>
+    </li>
+  </ul>
 </div>

@@ -1,17 +1,23 @@
-<div class="slider">
-    <img ng-repeat="image in images" class="slide slide-animation nonDraggableImage"
+<div class="slider contain">
+    <div ng-repeat="item in items">
+      <div class="contain slide slide-animation nonDraggableImage"
             ng-swipe-right="prevSlide()" ng-swipe-left="nextSlide()"
-            ng-hide="!isCurrentSlideIndex($index)" ng-src="{{image.imageUrl}}"
-            ng-class="direction">
+            ng-if="isCurrentSlideIndex($index)"
+            ng-class="direction" ng-transclude>
+      </div>
+    </div>
     <a class="arrow prev" href="" ng-click="nextSlide()"></a>
     <a class="arrow next" href="" ng-click="prevSlide()"></a>
 </div>
-<nav class="nav" ng-show="showdots">
-    <div class="wrapper">
-        <ul class="dots">
-            <li class="dot" ng-repeat="image in images">
-                <a href="" ng-class="{'active':isCurrentSlideIndex($index)}"
-                    ng-click="setCurrentSlideIndex($index);"></a></li>
-        </ul>
-    </div>
+<nav class="nav" ng-if="showdots">
+  <div class="wrapper">
+    <ul class="dots">
+      <li class="dot" ng-repeat="item in items">
+            <a href="" ng-class="{'active':isCurrentSlideIndex($index)}"
+                ng-click="setCurrentSlideIndex($index);"></a>
+        </li>
+    </ul>
+  </div>
 </nav>
+
+

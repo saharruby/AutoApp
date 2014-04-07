@@ -8,7 +8,7 @@ angular.module('autoControllers')
             }, {
                 name: 'קטלוג הרכב',
                 img: '......',
-                route: '#/articles/carcatalog'
+                route: '#/catalog'
             }, {
                 name: 'כתבות',
                 img: '......',

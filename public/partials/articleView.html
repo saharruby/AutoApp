@@ -1,14 +1,14 @@
 <div ng-controller="ArticleCtrl" class="container" ng-show="article" ng-cloak>
  <div class="row" >
-          <header class="twelve columns text-right image-header">
-                <h4>{{article.title}}</h4>
-          </header>
+          <div class="twelve columns text-right image-header">
+                <h3>{{article.title}}</h3>
+          </div>
           <img src="{{article.imageUrl}}" class="image-magazine">
    </div>
   <div class="row">
-          <header class="twelve columns text-right">
-                <h5>{{article.subTitle}}</h5>
-            </header>
+     <div class="twelve columns text-right aricle-subtitle">
+        <h5>{{article.subTitle}}</h5>
+     </div>
    </div>
 <div class="row">
       <div class="twelve columns text-right">

@@ -67,22 +67,22 @@ angular.module('autoControllers')
 
                 $scope.tableData = [{
                     title: 'חוות דעת מומחה',
-                    link: '#/carcatalog/model/review/' + $scope.model.id + '?isSelected'
+                    link: '#/catalog/model/review/' + $scope.model.id + '?isSelected'
                 }, {
                     title: 'גרסאות',
-                    link: '#/carcatalog/model/versions/' + $scope.model.id + '?isSelected'
+                    link: '#/catalog/model/versions/' + $scope.model.id + '?isSelected'
                 }, {
                     title: 'תמונות גלריה',
-                    link: '#/carcatalog/model/gallery?id=' + $scope.model.galleryId
+                    link: '#/catalog/model/gallery?id=' + $scope.model.galleryId
                 }, {
                     title: 'וידאו',
-                    link: '#/carcatalog/model/videos?id=' + $scope.model.videoId
+                    link: '#/catalog/model/videos?id=' + $scope.model.videoId
                 }, {
                     title: 'מתחרים',
-                    link: '#/carcatalog/model/competitors?id=' + $scope.model.competitorsId
+                    link: '#/catalog/model/competitors?id=' + $scope.model.competitorsId
                 }, {
                     title: 'דגמי יד שניה',
-                    link: '#/carcatalog/models/' + $scope.model.id + '/useds'
+                    link: '#/catalog/models/' + $scope.model.id + '/useds'
                 }];
             }
         }

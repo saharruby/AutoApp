@@ -1,4 +1,4 @@
-<div ng-app="main">
+<div ng-app="main" class="automag-app">
   <div class="view-container">
     <div class="off-canvas-wrap">
       <div class="inner-wrap">
@@ -6,7 +6,7 @@
           <nav class="tab-bar">
 
             <section class="middle tab-bar-section">
-               <h1 class="title">Auto Magazine</h1>
+               <h1 class="title">מגזין אוטו</h1>
             </section>
 
             <section class="right-small">
@@ -18,13 +18,13 @@
 
         <aside class="right-off-canvas-menu text-right" ng-controller="NavCtrl">
           <ul class="off-canvas-list">
-            <li><label>Menu</label></li>
+            <li><label>תפריט</label></li>
             <li ng-repeat="nav in navs"><a href="{{nav.route}}">{{nav.name}}</a></li>
           </ul>
         </aside>
 
 
-        <section ng-view class="main-section" style="margin-top:45px;background-color:rgba(145, 145, 135, 0.3);height:100%">
+        <section ng-view class="main-section" style="margin-top:45px;height:100%">
           <!-- content goes here -->
         </section>
 
