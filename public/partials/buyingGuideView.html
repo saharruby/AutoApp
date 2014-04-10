@@ -1,20 +1,13 @@
 <div ng-controller="BuyingGuideCtrl">
-  <div ng-repeat="nav in navsData" class="row">
-    <span class="small-10 columns button round radius success expand text-center" ng-bind="nav.title" ng-click="showFilter(nav.key)"></span>
+  <div ng-repeat="menu in menus" class="row">
+    <a href="javascript:void(0)" data-dropdown="drop-{{$index}}" class="button expand dropdown">{{selections[$index].title}}</a><br>
+    <ul id="drop-{{$index}}" data-dropdown-content class="f-dropdown large content">
+      <li ng-repeat="item in menu" ng-click="itemClicked(item,$index,$parent.$index)">
+      <h3>{{item}}</h3></li>
+    </ul>
   </div>
   <div class="row">
     <a href='#/guide/search' class="small-6 columns button round primary text-center" ng-click="search()">חפש</a>
     <span ng-click="clearFilter()" class="small-6 columns button round secondary text-center">נקה בחירה</span>
-  </div>
-  <br/>
-  <div class="row top-border" ng-show="showScroll">
-    <div class="scrollview" scrollpositiontop visible="showScroll">
-      <div class="small-12 columns" ng-repeat="item in collection" ng-click="itemClicked($index)">
-        <a class="round success expand">
-          <p ng-class="{ 'selected-class': $index == selectedIndex }" ng-click="filterSelected(item.value)">{{item.title}}</p>
-        </a>
-        <hr/>
-      </div>
-    </div>
   </div>
 </div>
