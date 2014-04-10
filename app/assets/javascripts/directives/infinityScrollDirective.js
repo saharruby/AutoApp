@@ -3,7 +3,7 @@ angular.module('autoDirectives')
         function() {
             return function(scope, elm, attr) {
                 $(window).bind('scroll', function() {
-                    if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+                    if ($(window).scrollTop() > $(document).height() - $(window).height() - 150) {
                         scope.$apply(attr.infinityScroll);
                         console.log('infinity scroll fire');
                     }

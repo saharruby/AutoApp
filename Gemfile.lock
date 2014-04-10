@@ -115,6 +115,7 @@ GEM
     rails-assets-angular-carousel (0.2.2)
       rails-assets-angular (~> 1.2.10)
       rails-assets-angular-touch (~> 1.2.10)
+    rails-assets-angular-loading-bar (0.3.0)
     rails-assets-angular-touch (1.2.16)
       rails-assets-angular (= 1.2.16)
     railties (3.2.13)
@@ -171,6 +172,7 @@ DEPENDENCIES
   pry-rails
   rails (= 3.2.13)
   rails-assets-angular-carousel
+  rails-assets-angular-loading-bar
   sass-rails (~> 3.2.3)
   sqlite3
   thin

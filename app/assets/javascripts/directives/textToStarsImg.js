@@ -1,6 +1,6 @@
 angular.module('autoDirectives')
     .directive('startsimage',
-        function($sce) {
+        function() {
             return {
                 restrict: 'A',
                 scope: {
@@ -20,4 +20,4 @@ angular.module('autoDirectives')
                 }
             };
         }
-);
+    );

@@ -14,5 +14,10 @@
 //= require jquery_ujs
 //= require foundation
 //= require angular-carousel
+//= require angular-loading-bar
+
 //= require main
-//= require_tree
+//= require_tree ./services
+//= require_tree ./controllers
+//= require_tree ./directives
+//= require appConfiguration
