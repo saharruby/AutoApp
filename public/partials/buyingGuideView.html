@@ -1,6 +1,6 @@
 <div ng-controller="BuyingGuideCtrl">
   <div ng-repeat="menu in menus" class="row">
-    <a href="javascript:void(0)" data-dropdown="drop-{{$index}}" class="button expand dropdown">{{selections[$index].title}}</a><br>
+    <a href="javascript:void(0)" data-dropdown="drop-{{$index}}" class="button expand dropdown">{{menus[$index][selections[$index]]}}</a><br>
     <ul id="drop-{{$index}}" data-dropdown-content class="f-dropdown large content">
       <li ng-repeat="item in menu" ng-click="itemClicked(item,$index,$parent.$index)">
       <h3>{{item}}</h3></li>

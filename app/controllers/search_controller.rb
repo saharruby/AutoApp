@@ -15,8 +15,11 @@ class SearchController < ApplicationController
   end
 
   def guide
-    # binding.pry
-    respond_with Net::HTTP.get URI.parse(HOST + "/guide?" + params[:id] )  if params[:id]
+    query_url = "/guide?category=" + params[:category] + '&price_range=' + params[:price_range] +
+                      '&country=' + params[:country] + "&engine=" + params[:engine] + "&limit=" + params[:limit]
+    query_url += "&start=" + params[:start] if params[:start]
+    binding.pry
+    respond_with Net::HTTP.get URI.parse(HOST + query_url)
   end
 
   def versionDetails

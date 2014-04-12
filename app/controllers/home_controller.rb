@@ -4,6 +4,10 @@ class HomeController < ApplicationController
   def main
   end
 
+  def api
+
+  end
+
   def index
      respond_to do |format|
 

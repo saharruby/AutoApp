@@ -5,14 +5,11 @@ angular.module('autoServices')
             var resource = {};
             self.startVal = 0;
             self.totalVal = 0;
-            self.limitVal = 0;
 
-            self.searchParams = {
-                id: ''
-            };
+            self.searchParams = {};
 
             resource.setSearchParams = function(params) {
-                self.searchParams.id = 'limit=20' + params;
+                self.searchParams = params;
             };
 
             resource.getSearchParams = function() {
@@ -20,19 +17,19 @@ angular.module('autoServices')
             };
 
             resource.setStartPosition = function(startParam) {
-                self.startVal = startParam;
+                self.searchParams.start = startParam;
             };
 
             resource.setEndPosition = function(endParam) {
-                self.totalVal = endParam;
+                self.searchParams.end = endParam;
             };
 
             resource.setLimit = function(limitParam) {
-                self.limitVal = limitParam;
+                self.searchParams.limit = limitParam;
             };
 
             resource.hasMoreDataToFatch = function() {
-                return self.startVal + self.limitVal < self.totalVal;
+                return self.startVal + self.searchParam.limit < self.totalVal;
             };
 
             resource.getGuideSearchResult = function() {
@@ -45,10 +42,10 @@ angular.module('autoServices')
             };
 
             resource.getMoreItemsResults = function() {
-                var newStart = self.startVal + self.limitVal;
-                var moreSearchResults = {
-                    id: self.searchParams.id + '&start=' + newStart + '&total=' + self.totalVal
-                };
+                var newStart = self.startVal + self.searchParams.limit;
+                var moreSearchResults = angular.copy(self.searchParams);
+                moreSearchResults.start = newStart;
+                moreSearchResults.total = self.totalVal;
                 return $http.get('guide/search.json', {
                     headers: {
                         'Content-type': 'application/json'

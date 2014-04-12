@@ -18,7 +18,4 @@ var autoControllers = angular.module('autoControllers', []);
 var autoDirectives = angular.module('autoDirectives', []);
 var autoServices = angular.module('autoServices', ['ngResource']);
 
-//// for firefox: to disable draging and anable touch swipe events
-$(document).on("dragstart", function() {
-  return false;
-});
+

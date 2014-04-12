@@ -8,23 +8,10 @@ angular.module('autoControllers')
                 $(document).foundation();
               });
 
-              $scope.navsData = [{
-                title: 'בחר קטגוריה',
-                value: -1
-              }, {
-                title: 'בחר טווח מחירים',
-                value: -1
-              }, {
-                title: 'בחר ארץ מוצא',
-                value: -1
-              }, {
-                title: 'בחר נפח מנוע',
-                value: -1
-              }];
-
-              $scope.selections = angular.copy($scope.navsData);
+              $scope.selections = [0,0,0,0];
 
               var categoryCollection = [
+                'כל הקטגוריות',
                 'מיני / סופרמיני',
                 'משפחתיות / קטנות',
                 'משפחתיות / קומפקטיות',
@@ -44,6 +31,7 @@ angular.module('autoControllers')
               ];
 
               var priceRangeCollection = [
+                'כל המחירים',
                 'עד 95,000',
                 '95,000 - 120,000',
                 '120,000 - 140,000',
@@ -54,6 +42,7 @@ angular.module('autoControllers')
               ];
 
               var countryCollection = [
+                'כל הארצות',
                 "יפן",
                 'ארה"ב',
                 "קוריאה",
@@ -67,40 +56,36 @@ angular.module('autoControllers')
               ];
 
               var engineCapacityCollection = [
+                'כל המנועים',
                 'עד 1.4 ליטר',
                 '1.4 - 1.6 ליטר',
                 '1.6 - 1.8 ליטר',
-                '1.8 - 2. 0 ליטר',
-                '2.0  - 2.5 ליטר',
+                '1.8 - 2.0 ליטר',
+                '2.0 - 2.5 ליטר',
                 '2.5 - 3.0',
                 'מעל 3.0 ליטר'
               ];
 
               var filterNames = [
                 {
-                name: 'category=',
-                value: -1
+                name: 'category',
+                value: 0
               },
               {
-                name: 'price_range=',
-                value: -1
+                name: 'price_range',
+                value: 0
               },
               {
-                name: 'country=',
-                value: -1
+                name: 'country',
+                value: 0
               },
               {
-                name: 'engine=',
-                value: -1
+                name: 'engine',
+                value: 0
               }
               ];
 
               $scope.menus = [categoryCollection, priceRangeCollection, countryCollection, engineCapacityCollection];
-
-              $scope.selectedMenuItems = function(index) {
-                if (filterNames[index].value === -1) return navsData[index];
-                return (menus[index][filterNames][index].value);
-              };
 
               $scope.showFilter = function(navKey) {
                 $scope.collection = dicCollections[navKey];
@@ -108,24 +93,22 @@ angular.module('autoControllers')
               };
 
               $scope.clearFilter = function() {
-                $scope.selections = angular.copy($scope.navsData);
+                $scope.selections = [0,0,0,0];
               };
 
               $scope.itemClicked = function(item, index, parentIndex) {
-                $scope.selections[parentIndex].title = item;
-                $scope.selections[parentIndex].value = index;
+                $scope.selections[parentIndex] = index;
                 $(document).foundation('dropdown','close',$('#drop-' + parentIndex));
               };
 
               $scope.search = function() {
-                var params = '';
+                var params = {};
                 angular.forEach(filterNames, function(item, key) {
-                  if ($scope.selections[key].value !== -1) {
-                    params += '&' + item.name + $scope.selections[key].value;
-                  }
+                    params[item.name] = $scope.selections[key];
                 });
                 console.log(params);
                 GuideSearchService.setSearchParams(params);
+                GuideSearchService.setLimit(30);
                 $location.url('/guide/search');
               };
             }]);
