@@ -1,28 +1,26 @@
 angular.module('autoServices')
-    .factory('ModelUsedsServices', ['$http',
-        function($http) {
-            var source = {};
+.factory('ModelUsedsServices', ['$http',
+         function($http) {
+           var source = {};
 
-            source.getAllModelUsedsByModelID = function(model_id) {
-                return $http.get('models/' + model_id + '/used.json', {
-                    headers: {
-                        'Content-type': 'application/json'
-                    }
-                });
-            };
+           source.getAllModelUsedsByModelID = function(model_id) {
+             return $http.get('models/' + model_id + '/used', {
+               headers: {
+                 'Accept': 'application/json',
+                 'Content-type': 'application/json'
+               }
+             });
+           };
 
-            source.getAllModelUsedsByModelIDAndUsedID = function(modelID, usedID) {
-                return $http.get('models/' + modelID + '/used.json', {
-                    headers: {
-                        'Content-type': 'application/json'
-                    },
-                    params: {
-                        model_id: modelID,
-                        used_id: usedID
-                    }
-                });
-            };
+           source.getAllModelUsedsByModelIDAndUsedID = function(modelID, usedID) {
+             return $http.get('models/' + modelID + '/used/' + usedID, {
+               headers: {
+                 'Accept': 'application/json',
+                 'Content-type': 'application/json'
+               }
+             });
+           };
 
-            return source;
-        }
-    ]);
+           return source;
+         }
+]);

@@ -13,6 +13,11 @@ var autoModuleApp = angular.module("main", [
   cfpLoadingBarProvider.includeSpinner = true;
 });
 
+autoModuleApp.run(["$window", "$templateCache", function($window, $templateCache) {
+  angular.forEach($window.JST, function(elem,index) {
+    $templateCache.put(index,elem());
+  });
+}]);
 /* App Module Dependencies*/
 var autoControllers = angular.module('autoControllers', []);
 var autoDirectives = angular.module('autoDirectives', []);

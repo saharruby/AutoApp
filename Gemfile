@@ -7,8 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'thin'
 gem 'foundation-rails'
-gem 'angularjs-rails'
-
+gem 'ejs'
 
 gem 'rails-assets-angular-carousel'
 gem 'rails-assets-angular-loading-bar'

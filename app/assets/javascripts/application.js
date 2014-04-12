@@ -16,6 +16,7 @@
 //= require angular-carousel
 //= require angular-loading-bar
 
+//= require_tree ./templates
 //= require main
 //= require_tree ./services
 //= require_tree ./controllers

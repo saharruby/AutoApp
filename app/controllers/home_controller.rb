@@ -1,11 +1,11 @@
 class HomeController < ApplicationController
   respond_to :json, :html
-
-  def main
-  end
+  HOST = 'http://m.auto.co.il/autoAPI.svc'
 
   def api
-
+    p request.fullpath
+    #binding.pry
+    respond_with Net::HTTP.get URI.parse(HOST + request.env["REQUEST_URI"])
   end
 
   def index

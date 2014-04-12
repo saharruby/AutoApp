@@ -3,91 +3,91 @@ angular.module("main")
         function($routeProvider) {
             $routeProvider
                 .when('/articles', {
-                    templateUrl: 'partials/ArticlesListView.html',
+                    templateUrl:'templates/ArticlesListView',
                     controller: 'ArticleListCtrl'
                 })
                 .when('/articles/latest', {
-                    templateUrl: 'partials/Index.html',
+                    templateUrl: 'templates/Index',
                     controller: 'IndexCtrl'
                 })
                 .when('/catalog', {
-                    templateUrl: 'partials/catalogView.html',
+                    templateUrl: 'templates/catalogView',
                     controller: 'CatalogCtrl'
                 })
                 .when('/catalog/manufacturers', {
-                    templateUrl: 'partials/manufacturersView.html',
+                    templateUrl: 'templates/manufacturersView',
                     controller: 'ManufacturersCtrl'
                 })
                 .when('/catalog/manufacturers/:id', {
-                    templateUrl: 'partials/allManufacturerModelsView.html',
+                    templateUrl: 'templates/allManufacturerModelsView',
                     controller: 'AllManufacturerModelsCtrl'
                 })
                 .when('/catalog/manufacturers/:id/models/:id', {
-                    templateUrl: 'partials/carModelView.html',
+                    templateUrl: 'templates/carModelView',
                     controller: 'CarModelCtrl'
                 })
                 .when('/catalog/manufacturers/:id/models', {
-                    templateUrl: 'partials/modelsView.html',
+                    templateUrl: 'templates/modelsView',
                     controller: 'ModelsCtrl'
                 })
                 .when('/catalog/models/:id', {
-                    templateUrl: 'partials/carModelView.html',
+                    templateUrl: 'templates/carModelView',
                     controller: 'CarModelCtrl'
                 })
                 .when('/catalog/models/:id/used', {
-                    templateUrl: 'partials/carModelView.html',
+                    templateUrl: 'templates/carModelView',
                     controller: 'CarModelCtrl'
                 })
                 .when('/catalog/model/review/:id', {
-                    templateUrl: 'partials/modelReviewView.html',
+                    templateUrl: 'templates/modelReviewView',
                     controller: 'CarModelCtrl'
                 })
                 .when('/catalog/model/versions/:id', {
-                    templateUrl: 'partials/modelVersionsView.html',
+                    templateUrl: 'templates/modelVersionsView',
                     controller: 'ModelVersionsCtrl'
                 })
                 .when('/catalog/model/versions/', {
-                    templateUrl: 'partials/modelVersionsView.html',
+                    templateUrl: 'templates/modelVersionsView',
                     controller: 'ModelVersionsCtrl'
                 })
                 .when('/catalog/model/version/details/', {
-                    templateUrl: 'partials/modelVersionDetailsView.html',
+                    templateUrl: 'templates/modelVersionDetailsView',
                     controller: 'ModelVersionDetailsCtrl'
                 })
                 .when('/catalog/model/gallery', {
-                    templateUrl: 'partials/modelGalleryView.html',
+                    templateUrl: 'templates/modelGalleryView',
                     controller: 'ModelGalleryCtrl'
                 })
                 .when('/catalog/model/videos', {
-                    templateUrl: 'partials/modelVideosView.html',
+                    templateUrl: 'templates/modelVideosView',
                     controller: 'ModelVideosCtrl'
                 })
                 .when('/catalog/model/competitors', {
-                    templateUrl: 'partials/modelCompetitorsView.html',
+                    templateUrl: 'templates/modelCompetitorsView',
                     controller: 'ModelCompetitorsCtrl'
                 })
                 .when('/catalog/models/:id/useds', {
-                    templateUrl: 'partials/modelUsedsView.html',
+                    templateUrl: 'templates/modelUsedsView',
                     controller: 'ModelUsedsCtrl'
                 })
                 .when('/articles/:articleId', {
-                    templateUrl: 'partials/articleView.html',
+                    templateUrl: 'templates/articleView',
                     controller: 'ArticleCtrl'
                 })
                 .when('/articles/category/:categoryId', {
-                    templateUrl: 'partials/allArticlesOfCategoryView.html',
+                    templateUrl: 'templates/allArticlesOfCategoryView',
                     controller: 'ArticlesCategoryCtrl'
                 })
                 .when('/guide', {
-                    templateUrl: 'partials/buyingGuideView.html',
+                    templateUrl: 'templates/buyingGuideView',
                     controller: 'BuyingGuideCtrl'
                 })
                 .when('/guide/search', {
-                    templateUrl: 'partials/guideSearchResultView.html',
+                    templateUrl: 'templates/guideSearchResultView',
                     controller: 'GuideSearchResultCtrl'
                 })
                 .when('/articles', {
-                    templateUrl: 'partials/articlesListView.html',
+                    templateUrl: 'templates/articlesListView',
                     controller: 'ArticleListCtrl'
                 })
                 .otherwise({

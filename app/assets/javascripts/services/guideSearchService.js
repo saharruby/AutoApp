@@ -33,8 +33,9 @@ angular.module('autoServices')
             };
 
             resource.getGuideSearchResult = function() {
-                return $http.get('guide/search.json', {
+                return $http.get('guide', {
                     headers: {
+                        'Accept': 'application/json',
                         'Content-type': 'application/json'
                     },
                     params: self.searchParams
@@ -46,8 +47,9 @@ angular.module('autoServices')
                 var moreSearchResults = angular.copy(self.searchParams);
                 moreSearchResults.start = newStart;
                 moreSearchResults.total = self.totalVal;
-                return $http.get('guide/search.json', {
+                return $http.get('guide', {
                     headers: {
+                        'Accept': 'application/json',
                         'Content-type': 'application/json'
                     },
                     params: moreSearchResults

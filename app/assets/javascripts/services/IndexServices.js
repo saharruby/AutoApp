@@ -4,8 +4,9 @@ angular.module('autoServices')
             var resource = {};
 
             resource.getAllLatestArticles = function(manufacturerID) {
-                return $http.get('articles/latest.json', {
+                return $http.get('articles/latest', {
                     headers: {
+                        'Accept': 'application/json',
                         'Content-type': 'application/json'
                     }
                 });
