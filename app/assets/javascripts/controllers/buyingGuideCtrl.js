@@ -5,7 +5,7 @@ angular.module('autoControllers')
               $scope.collection = [];
               $scope.selectedIndex = -1;
               $timeout(function() {
-                $(document).foundation();
+                $('.selectpicker').selectpicker('mobile');
               });
 
               $scope.selections = [0,0,0,0];
@@ -98,7 +98,7 @@ angular.module('autoControllers')
 
               $scope.itemClicked = function(item, index, parentIndex) {
                 $scope.selections[parentIndex] = index;
-                $(document).foundation('dropdown','close',$('#drop-' + parentIndex));
+                //$(document).foundation('dropdown','close',$('#drop-' + parentIndex));
               };
 
               $scope.search = function() {

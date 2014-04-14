@@ -13,14 +13,13 @@ angular.module('autoControllers')
                     $scope.manufacturers[item.name.charAt(0)].collection.push(item);
                 });
 
-                $(document).foundation();
             });
 
-            $scope.onSelectMF = function(manufacturer) {
+            $scope.selectMF = function(manufacturer) {
                 console.log(manufacturer);
                 CatalogServices.setManufacturer(manufacturer);
                 CatalogServices.setModel(undefined);
-                $location.url('catalog',"catalog/manufacturers");
+                $location.path('catalog');
             };
         }
     ]);

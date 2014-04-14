@@ -8,13 +8,16 @@ gem 'rails', '3.2.13'
 gem 'thin'
 gem 'foundation-rails'
 gem 'ejs'
+gem 'sass-rails', '>= 3.2'
+gem 'bootstrap-sass', '~> 3.1.1'
+
 
 gem 'rails-assets-angular-carousel'
 gem 'rails-assets-angular-loading-bar'
+gem 'rails-assets-bootstrap-select'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

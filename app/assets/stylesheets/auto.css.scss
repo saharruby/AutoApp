@@ -4,7 +4,9 @@
 
 // this is for -webkit browser to remove the darg event.
 // this is needed for the angular slider for the ng-touch event to work
-@import "foundation_and_overrides.scss";
+@import "bootstrap";
+body {padding-top: 50px;}
+
 .automag-app {
   .rn-carousel-container {
     direction: ltr;
@@ -12,7 +14,6 @@
   .rn-carousel-indicator {
     display: inline-block;
     background: none;
-    //overflow: hidden;
     span {
       display: inline-block;
       &.active {
@@ -20,18 +21,28 @@
       }
     }
   }
-  .catalog {
-    padding: 10px;
-    display: block;
+  .list-group-item-inverse {
+    color: white;
+    background-color: #222;
+    border-color: #090909;
+  }
+
+  h4 {
+    margin: 0;
+  }
+
+  .car-list-item {
+    padding: 5px 0px;
+    border-bottom: solid 1px #222;
   }
 }
-.nonDraggableImage{
-    -webkit-user-drag: none;
-    -moz-user-drag: none;
-  -khtml-user-drag: none;
-  -o-user-drag: none;
-  user-drag: none;
-}
+/*.nonDraggableImage{*/
+    /*-webkit-user-drag: none;*/
+    /*-moz-user-drag: none;*/
+  /*-khtml-user-drag: none;*/
+  /*-o-user-drag: none;*/
+  /*user-drag: none;*/
+/*}*/
 
 
 .arrow {
@@ -84,9 +95,6 @@
   position:absolute;
   display:block;
   font-weight: bolder;
-  h3 {
-    color: $primary-color;
-  }
 }
 
 .image-magazine{

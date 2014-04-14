@@ -5,9 +5,9 @@
       </li>
   </ul>
   <div class="row">
-    <ul class="off-canvas-list">
-      <li><label class="text-center">תפריט ראשי</label></li>
-      <li ng-repeat="nav in navs" class="li-bg-color"><a href="{{nav.route}}">{{nav.name}}</a></li>
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-inverse"><h4>תפריט ראשי</h4></li>
+      <li ng-repeat="nav in navs" class="list-group-item"><a href="{{nav.route}}">{{nav.name}}</a></li>
     </ul>
   </div>
 </div>

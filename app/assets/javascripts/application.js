@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
 //= require angular-carousel
 //= require angular-loading-bar
-
+//= require bootstrap
+//= require bootstrap-select
 //= require_tree ./templates
 //= require main
 //= require_tree ./services

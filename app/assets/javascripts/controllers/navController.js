@@ -1,30 +1,40 @@
 angular.module('autoControllers')
-    .controller('NavCtrl', ['$scope', 'NavServices',
-        function($scope, NavServices) {
+    .controller('NavCtrl', ['$scope','$location', 'NavServices',
+        function($scope, $location, NavServices) {
             $scope.navs = [{
                 name: 'כתבות אחרונות',
                 img: '......',
-                route: '#/articles/latest'
+                route: '/articles/latest'
             }, {
                 name: 'קטלוג הרכב',
                 img: '......',
-                route: '#/catalog'
+                route: '/catalog'
             }, {
                 name: 'כתבות',
                 img: '......',
-                route: '#/articles'
+                route: '/articles'
             }, {
                 name: 'מדריך קניה',
                 img: '......',
-                route: '#/guide'
+                route: '/guide'
             }, {
-                name: 'יייעוץ חינם לקניית רכב',
+                name: 'יעוץ חינם לקניית רכב',
                 img: '......',
-                route: '#'
+                route: '/'
             }, {
                 name: 'מועדפים',
                 img: '......',
-                route: '#'
+                route: '/'
             }];
+
+          $scope.isActive = function(index) {
+            if ($location.url() === $scope.navs[index].route) return "active";
+          };
+
+          $scope.navigate = function(route) {
+            console.log(route);
+            $('#menu-button').click();
+            $location.path(route);
+          };
         }
     ]);

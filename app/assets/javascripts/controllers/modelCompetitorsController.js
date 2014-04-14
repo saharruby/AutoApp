@@ -11,7 +11,6 @@ angular.module('autoControllers')
                     }
                     $scope.competitors = data;
 
-                    // $(document).foundation();
                     console.log(data);
                 });
             }

@@ -1,6 +1,6 @@
 angular.module('autoControllers')
-.controller('CatalogCtrl', ['$scope', 'ManufacturersServices', 'CatalogServices',
-            function($scope, ManufacturersServices, CatalogServices) {
+.controller('CatalogCtrl', ['$scope', '$location', 'ManufacturersServices', 'CatalogServices',
+            function($scope, $location, ManufacturersServices, CatalogServices) {
               $scope.manufacturer = undefined;
               $scope.model = undefined;
               $scope.manufactureId = 0;
@@ -32,7 +32,7 @@ angular.module('autoControllers')
                 }
               }, true);
 
-              $scope.getSearchUrl = function() {
+              var getSearchUrl = function() {
                 if (!$scope.manufacturer) return "";
                 var modelUrl = typeof($scope.model) !== "undefined" ? "/models/" + $scope.model.id : "";
                 return 'catalog/manufacturers/' + $scope.manufacturer.id + modelUrl;
@@ -42,6 +42,18 @@ angular.module('autoControllers')
                 //  $scope.searchUrl = 'catalog/models/' + $scope.model.id + '/useds?' + $scope.newOrUsed;
                 //}
 
+              };
+
+              $scope.selectManufacturer = function() {
+                $location.path("catalog/manufacturers");
+              };
+
+              $scope.selectModel = function(manufacturerId) {
+                $location.path("catalog/manufacturers/" + manufacturerId + "/models");
+              };
+
+              $scope.performSearch = function() {
+                $location.path(getSearchUrl());
               };
             }
 ]);

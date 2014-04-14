@@ -9,9 +9,6 @@ angular.module('autoControllers')
                 $scope.videoUrl = $sce.trustAsResourceUrl(videoUrl);
                 $scope.switchView = !$scope.switchView;
 
-                $timeout(function() {
-                    $(document).foundation();
-                });
             };
 
             ModelVideosServices.getAllModelVideosByVideoId($routeParams.id).success(function(data) {

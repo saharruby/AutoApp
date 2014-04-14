@@ -1,20 +1,24 @@
-<div ng-controller="CatalogCtrl" class="container catalog">
+<div ng-controller="CatalogCtrl" class="catalog">
+  <br/>
   <div class="row" >
-    <a href="#/catalog/manufacturers" class="button alert expand">
-      <div class="small-6 columns text-right">בחר יצרן</div>
-      <div class="small-6 columns text-left">{{manufacturerName}}</div>
-    </a>
+    <div class="col-xs-1"></div>
+    <button type="button" ng-click="selectManufacturer()" class="btn btn-danger btn-lg col-xs-10">
+      <div class="col-xs-6 text-right">בחר יצרן</div>
+      <div class="col-xs-6 text-left">{{manufacturerName}}</div>
+    </button>
   </div>
+  <br/>
   <div class="row" >
-    <a href="#/catalog/manufacturers/{{manufacturer.id}}/models" class="button alert expand" ng-disabled="!manufacturerSelected">
-      <div class="small-6 columns text-right">בחר דגם</div>
-      <div class="small-6 columns text-left">{{modelName}}</div>
-    </a>
+    <div class="col-xs-1"></div>
+    <button type="button" ng-click="selectModel(manufacturer.id)" class="btn btn-danger btn-lg col-xs-10" ng-disabled="!manufacturerSelected">
+      <div class="col-xs-6 text-right">בחר דגם</div>
+      <div class="col-xs-6 text-left">{{modelName}}</div>
+    </button>
   </div>
+  <br/>
   <div class="row" >
-    <div class="twelve columns text-center">
-      <a href="#/{{getSearchUrl()}}" class="nice medium button alert round expand" ng-disabled="!manufacturerSelected">חפש</a>
-    </div>
+    <div class="col-xs-3"></div>
+    <button type="button" ng-click="performSearch()" class="col-xs-6 btn btn-danger btn-lg" ng-disabled="!manufacturerSelected">חפש</button>
   </div>
 
 </div>

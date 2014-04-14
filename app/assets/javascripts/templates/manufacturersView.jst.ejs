@@ -1,17 +1,6 @@
 <div ng-controller="ManufacturersCtrl" class="container" ng-show="manufacturers" ng-cloak>
-  <div ng-repeat="manufactur in manufacturers" >
-    <div class="row breadcrumbs box-shadow">
-      <header class="twelve columns text-center">
-        <h3>{{manufactur.key}}</h3>
-      </header>
-    </div>
-
-    <div ng-repeat="col in manufactur.collection" class="row border-bottom">
-      <a href="#/catalog" ng-click="onSelectMF(col)">
-        <div class="main small-12 columns text-right">
-          <p>{{col.name}}</p>
-        </div>
-      </a>
-    </div>
-  </div>
+  <ul ng-repeat="manufactur in manufacturers" class="list-group" >
+    <li class="list-group-item list-group-item-danger">{{manufactur.key}}</li>
+    <li ng-click="selectMF(col)" ng-repeat="col in manufactur.collection" class="list-group-item">{{col.name}}</li>
+  </ul>
 </div>

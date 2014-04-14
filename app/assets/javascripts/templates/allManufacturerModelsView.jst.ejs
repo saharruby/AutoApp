@@ -1,13 +1,13 @@
-<div ng-controller="AllManufacturerModelsCtrl" class="container" ng-show="models.length" ng-cloak>
-    <div ng-repeat="m in models" class="row border-bottom">
-        <a href="#/catalog/models/{{m.model_id}}" ng-click="setModel(m)">
-        <div class="small-4 columns">
-            <img  class="th radius" ng-src="{{m.image_url}}" >
-        </div>
-        <div class="main small-8 columns text-justify">
-            <h5 class="text-right">{{m.name}}</h5>
-            <p class="text-left" texthtmlparser texthtml="{{m.price}}"></p>
-        </div>
-        </a>
+<div ng-controller="AllManufacturerModelsCtrl" ng-cloak="{{models.length}}" ng-cloak>
+  <div ng-repeat="model in models">
+    <div class="row car-list-item" ng-click="setModel(model)">
+      <div class="col-xs-4 col-lg-2 col-sm-2">
+        <img class="img-responsive img-thumbnail" ng-src="{{model.image_url}}" >
+      </div>
+      <div class="col-xs-8 col-lg-10 col-sm-10">
+        <h4 class="text-right">{{model.name}}</h4>
+        <p class="text-right" texthtmlparser texthtml="{{model.price}}"></p>
+      </div>
     </div>
+  </div>
 </div>

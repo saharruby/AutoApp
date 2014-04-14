@@ -1,21 +1,18 @@
 <div ng-controller="ModelsCtrl" class="container" ng-show="models" ng-cloak>
-  <div class="row">
-    <ul class="button-group small-12 columns">
-      <li ng-repeat="option in optionsArr" ng-click="itemClicked($index)">
-        <div ng-class="{'success': $index == selectedIndex}" class="button secondary round">{{option.name}}</div>
-      </li>
-    </ul>
-  </div>
-  <ul class="pricing-table">
-    <div ng-repeat="model in models" >
-      <li class="title">{{model.key}}</li>
-      <a ng-repeat="colItem in model.collection" href="#catalog" ng-click="onSelectM(colItem)">
-        <li class="row bullet-item">
-          <div class="expand text-right">
-            <p>{{colItem.name}}</p>
-          </div>
-        </li>
-      </a>
+  <br/>
+  <div class="btn-group btn-group-lg btn-group-justified">
+    <div class="btn-group"  ng-repeat="option in optionsArr" >
+      <button type="button" ng-click="itemClicked($index)" class="btn btn-default">
+        <div ng-class="{'success': $index == selectedIndex}">{{option.name}}</div>
+      </button>
     </div>
+  </div>
+  <br/>
+  <ul class="list-group" ng-repeat="model in models" >
+    <li class="list-group-item list-group-item-danger">{{model.key}}</li>
+    <li class="list-group-item" ng-repeat="colItem in model.collection" ng-click="onSelectM(colItem)">
+    {{colItem.name}}
+    </li>
+    <br/>
   </ul>
 </div>
