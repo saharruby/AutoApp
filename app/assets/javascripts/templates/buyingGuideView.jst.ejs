@@ -1,33 +1,16 @@
 <div ng-controller="BuyingGuideCtrl">
-<!--  <div class="row" ng-repeat="menu in menus">-->
-    <!--<br/>-->
-    <!--<div class="btn-group col-xs-12">-->
-      <!--<button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown">-->
-        <!--{{menus[$index][selections[$index]]}} <span class="caret"></span>-->
-      <!--</button>-->
-      <!--<ul class="dropdown-menu" role="menu">-->
-        <!--<li ng-repeat="item in menu" ng-click="itemClicked(item, $index, $parent.$index)">{{item}}</li>-->
-      <!--</ul>-->
-    <!--</div>-->
-  <!--</div>-->
-  <div class="row" ng-repeat="menu in menus">
+  <div ng-repeat="menu in menus">
     <br/>
-    <select class="col-xs-12 selectpicker">
+    <select id="guide-dropdown-{{$index}}" class="col-xs-12">
       <option ng-repeat="item in menu">{{item}}</option>
     </select>
   </div>
-  <!--<div ng-repeat="menu in menus" class="row">
-    <a href="javascript:void(0)" data-dropdown="drop-{{$index}}" class="button expand dropdown">{{menus[$index][selections[$index]]}}</a><br>
-    <ul id="drop-{{$index}}" data-dropdown-content class="f-dropdown large content">
-      <li ng-repeat="item in menu" ng-click="itemClicked(item,$index,$parent.$index)">
-      <h3>{{item}}</h3></li>
-    </ul>
-  </div>-->
   <div class="row">
     <br/>
     <div class="col-xs-1"></div>
     <button type="button" class="col-xs-4 btn btn-danger text-center" ng-click="search()">חפש</button>
     <div class="col-xs-2"></div>
-    <button type="button" ng-click="clearFilter()" class="col-xs-4 btn text-center">נקה בחירה</button>
+    <button type="button" ng-click="clearFilter()" class="col-xs-4 btn btn-default text-center">נקה בחירה</button>
   </div>
+  <br/>
 </div>

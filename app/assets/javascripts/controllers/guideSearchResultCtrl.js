@@ -6,11 +6,11 @@ angular.module('autoControllers')
             $scope.hasdata = true;
 
             GuideSearchService.getGuideSearchResult().success(function(data) {
-                $scope.searchResults = data.searchResult;
-                setMoreDataParams(data.limit, data.start, data.total);
+                $scope.models = data.searchResult;
+                setMoreDataParams(30, 0, data.total);
                 $scope.busy = false;
 
-                if (angular.isUndefined($scope.searchResults) || $scope.searchResults.length <= 0) {
+                if (angular.isUndefined($scope.models) || $scope.models.length <= 0) {
                     $scope.empty = false;
                 }
                 console.log(data);
@@ -18,11 +18,12 @@ angular.module('autoControllers')
 
             $scope.addMoreItems = function() {
                 if (!$scope.busy) {
-                    if (GuideSearchService.hasMoreDataToFatch()) {
+                    if (GuideSearchService.hasMoreDataToFetch()) {
+                        console.log('adding more items...');
                         $scope.busy = true;
                         GuideSearchService.getMoreItemsResults().success(function(data) {
-                            if ($scope.searchResults) {
-                                $scope.searchResults.push.apply($scope.searchResults, data.searchResult);
+                            if ($scope.models) {
+                                $scope.models.push.apply($scope.models, data.searchResult);
                                 setMoreDataParams(data.limit, data.start, data.total);
                                 $scope.busy = false;
                             }
@@ -41,7 +42,7 @@ angular.module('autoControllers')
 
             function setMoreDataParams(limit, start, total) {
                 GuideSearchService.setStartPosition(start);
-                GuideSearchService.setEndPosition(total);
+                GuideSearchService.setTotalPosition(total);
                 GuideSearchService.setLimit(limit);
             }
         }

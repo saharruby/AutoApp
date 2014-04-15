@@ -5,6 +5,7 @@ angular.module('autoServices')
             var resource = {};
             self.startVal = 0;
             self.totalVal = 0;
+            self.limitVal = 30;
 
             self.searchParams = {};
 
@@ -20,32 +21,36 @@ angular.module('autoServices')
                 self.searchParams.start = startParam;
             };
 
-            resource.setEndPosition = function(endParam) {
-                self.searchParams.end = endParam;
+            resource.setTotalPosition = function(totalParam) {
+                if (totalParam === 0) return;
+                self.totalVal = totalParam;
             };
 
             resource.setLimit = function(limitParam) {
                 self.searchParams.limit = limitParam;
             };
 
-            resource.hasMoreDataToFatch = function() {
-                return self.startVal + self.searchParam.limit < self.totalVal;
+            resource.hasMoreDataToFetch = function() {
+                return self.searchParams.start + self.searchParams.limit < self.totalVal;
             };
 
             resource.getGuideSearchResult = function() {
+                self.startVal = 0;
+                var noCacheParams = angular.copy(self.searchParams);
+                noCacheParams._id = Date.now();
                 return $http.get('guide', {
                     headers: {
                         'Accept': 'application/json',
                         'Content-type': 'application/json'
                     },
-                    params: self.searchParams
+                    params: noCacheParams
                 });
             };
 
             resource.getMoreItemsResults = function() {
-                var newStart = self.startVal + self.searchParams.limit;
+                self.startVal = self.startVal + self.limitVal;
                 var moreSearchResults = angular.copy(self.searchParams);
-                moreSearchResults.start = newStart;
+                moreSearchResults.start = self.startVal;
                 moreSearchResults.total = self.totalVal;
                 return $http.get('guide', {
                     headers: {

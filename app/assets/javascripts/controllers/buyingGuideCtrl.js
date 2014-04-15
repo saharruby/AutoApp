@@ -4,11 +4,10 @@ angular.module('autoControllers')
               $scope.currentFilterKey = -1;
               $scope.collection = [];
               $scope.selectedIndex = -1;
+              $scope.defaultSelections = [];
               $timeout(function() {
-                $('.selectpicker').selectpicker('mobile');
+                  $('select').selectpicker();
               });
-
-              $scope.selections = [0,0,0,0];
 
               var categoryCollection = [
                 'כל הקטגוריות',
@@ -17,6 +16,7 @@ angular.module('autoControllers')
                 'משפחתיות / קומפקטיות',
                 'משפחתיות גדולות / מנהלים',
                 'סאלון',
+                'פאר',
                 'מיניוואן (עד 6 מושבים)',
                 'מיניוואן (7 מושבים ויותר)',
                 'פנאי / שטח בנוני',
@@ -87,24 +87,16 @@ angular.module('autoControllers')
 
               $scope.menus = [categoryCollection, priceRangeCollection, countryCollection, engineCapacityCollection];
 
-              $scope.showFilter = function(navKey) {
-                $scope.collection = dicCollections[navKey];
-                $scope.currentFilterKey = navKey;
-              };
-
               $scope.clearFilter = function() {
-                $scope.selections = [0,0,0,0];
-              };
-
-              $scope.itemClicked = function(item, index, parentIndex) {
-                $scope.selections[parentIndex] = index;
-                //$(document).foundation('dropdown','close',$('#drop-' + parentIndex));
+                angular.forEach($scope.menus, function(item, index) {
+                  $('#guide-dropdown-' + index).selectpicker('val',item[0]);
+                });
               };
 
               $scope.search = function() {
                 var params = {};
-                angular.forEach(filterNames, function(item, key) {
-                    params[item.name] = $scope.selections[key];
+                angular.forEach(filterNames, function(item, index) {
+                    params[item.name] = $scope.menus[index].indexOf($('#guide-dropdown-' + index).val());
                 });
                 console.log(params);
                 GuideSearchService.setSearchParams(params);

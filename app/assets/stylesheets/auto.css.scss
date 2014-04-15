@@ -31,6 +31,22 @@ body {padding-top: 50px;}
     margin: 0;
   }
 
+  //override bootstrap select values to make it rtl
+  .bootstrap-select.btn-group .btn {
+    .caret {
+      left: 12px;
+      right: initial;
+    }
+
+    .filter-option {
+      float: right;
+      text-align: right;
+      &.pull-left {
+        float: right !important;
+      }
+    }
+  }
+
   .car-list-item {
     padding: 5px 0px;
     border-bottom: solid 1px #222;

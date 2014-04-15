@@ -1,15 +1,7 @@
 <div ng-controller="GuideSearchResultCtrl" infinity-scroll="addMoreItems()">
-  <div ng-repeat="result in searchResults" ng-show="searchResults.length" ng-cloak class="row border-bottom">
-      <a href="#/catalog/models/{{result.model_id}}" ng-click="setModelId(result)">
-      <div class="small-4 columns">
-          <img  class="th radius" ng-src="{{result.image_url}}" >
-      </div>
-      <div class="main small-8 columns text-justify">
-          <h5 class="text-right">{{result.name}}</h5>
-          <p class="text-left" texthtmlparser texthtml="{{result.price}}"></p>
-      </div>
-      </a>
+  <div ng-show="models.length" ng-cloak>
+    <div ng-include=" 'templates/_modelsList' "></div>
   </div>
   <div ng-hide="empty" class="text-center">אין מידע לערכים הנוכחיים, שינוי ערכים מביא לשינוי תוצאות.</div>
-  <div ng-show='busy' class="text-center">המתן בבקשה...</div>
+  <div ng-show="busy"  class="text-center">המתן בבקשה...</div>
 </div>
