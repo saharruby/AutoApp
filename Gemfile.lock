@@ -129,9 +129,6 @@ GEM
     rails-assets-bootstrap-select (1.5.2)
       rails-assets-jquery (>= 1.7)
     rails-assets-jquery (2.1.0)
-    rails-assets-matchmedia (0.1.0)
-    rails-assets-matchmedia-ng (1.0.2)
-      rails-assets-matchmedia (~> 0.1.0)
     railties (3.2.13)
       actionpack (= 3.2.13)
       activesupport (= 3.2.13)
@@ -194,7 +191,6 @@ DEPENDENCIES
   rails-assets-angular-route (= 1.2.16)
   rails-assets-angular-touch (= 1.2.16)
   rails-assets-bootstrap-select
-  rails-assets-matchmedia-ng
   sass-rails (>= 3.2)
   sqlite3
   thin

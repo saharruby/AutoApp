@@ -19,7 +19,6 @@ gem 'rails-assets-angular-touch', '1.2.16'
 gem 'rails-assets-angular-carousel'
 gem 'rails-assets-angular-loading-bar'
 gem 'rails-assets-bootstrap-select'
-gem 'rails-assets-matchmedia-ng'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

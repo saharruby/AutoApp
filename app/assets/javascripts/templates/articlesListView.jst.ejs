@@ -7,19 +7,19 @@
     </div>
 
     <div ng-repeat="article in category.articles" class="row car-list-item" ng-click="showArticle(article)">
-      <div class="col-sm-6 {{colWidth}}">
+      <div class="col-xs-6 col-xxs">
         <img  class="img-responsive img-thumbnail" ng-src="{{getBigImage(article.imageUrl)}}">
       </div>
-      <div class="col-sm-6 {{colWidth}}">
+      <div class="col-xs-6 col-xxs">
         <h4>{{article.title}}</h4>
         <p>{{article.subTitle}}</p>
       </div>
     </div>
 
     <div class="row border-bottom">
-      <div class="twelve columns text-left">
-        <a href="#articles/category/{{category.articles[0].categoryId}}" >
-          <span>עוד...</span>
+      <div class="col-xs-12 text-left more-in-category">
+        <a href="#articles/category/{{category.categoryId}}" >
+          <h4>עוד ב{{category.categoryName}}...</h4>
         </a>
       </div>
     </div>
