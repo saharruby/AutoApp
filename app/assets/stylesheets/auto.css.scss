@@ -8,11 +8,11 @@
 body {padding-top: 50px;}
 
 .automag-app {
-  @media (max-width: 480px) { 
+  @media (max-width: 479px) { 
     .col-xxs {
       display:block;
       float:none;
-      width: 100%
+      width: 100%;
     }
   }
 
