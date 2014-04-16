@@ -16,10 +16,6 @@ angular.module('autoServices')
             };
 
             sharedService.navs = [{
-                name: 'כתבות אחרונות',
-                img: '......',
-                route: '#/articles/latest'
-            }, {
                 name: 'קטלוג הרכב',
                 img: '......',
                 route: '#/catalog'

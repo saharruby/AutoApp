@@ -1,6 +1,6 @@
 angular.module('autoControllers')
-    .controller('GuideSearchResultCtrl', ['$scope', 'GuideSearchService', 'CatalogServices',
-        function($scope, GuideSearchService, CatalogServices) {
+    .controller('GuideSearchResultCtrl', ['$scope', '$location', 'GuideSearchService', 'CatalogServices',
+        function($scope, $location, GuideSearchService, CatalogServices) {
             $scope.busy = false;
             $scope.empty = true;
             $scope.hasdata = true;
@@ -38,6 +38,10 @@ angular.module('autoControllers')
 
             $scope.setModelId = function(item_selected) {
                 CatalogServices.setModel(item_selected);
+            };
+
+            $scope.setModel = function(model) {
+              $location.path('/catalog/models/' + model.model_id);
             };
 
             function setMoreDataParams(limit, start, total) {

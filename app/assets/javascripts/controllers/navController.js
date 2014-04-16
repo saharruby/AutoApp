@@ -2,10 +2,6 @@ angular.module('autoControllers')
     .controller('NavCtrl', ['$scope','$location', 'NavServices',
         function($scope, $location, NavServices) {
             $scope.navs = [{
-                name: 'כתבות אחרונות',
-                img: '......',
-                route: '/articles/latest'
-            }, {
                 name: 'קטלוג הרכב',
                 img: '......',
                 route: '/catalog'
