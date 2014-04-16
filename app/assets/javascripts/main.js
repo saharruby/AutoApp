@@ -3,6 +3,7 @@ var autoModuleApp = angular.module("main", [
   'ngRoute',
   'ngResource',
   'ngAnimate',
+  'matchmedia-ng',
   'ngTouch',
   'angular-carousel',
   'chieffancypants.loadingBar',

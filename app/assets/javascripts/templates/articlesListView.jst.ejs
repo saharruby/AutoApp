@@ -1,27 +1,26 @@
-<div ng-controller="ArticleListCtrl" class="container" ng-show="articlesCategoriesCollection" ng-cloak>
+<div ng-controller="ArticleListCtrl" ng-show="articlesCategoriesCollection" class="articles-list" ng-cloak>
   <div  ng-repeat="category in articlesCategoriesCollection">
-    <div class="row border-bottom row-header-bg-color">
-      <div class="twelve columns text-center">
-        <h5 ng-bind="category.categoryName"></h5>
+    <div class="row article-header">
+      <div class="col-xs-12 text-right">
+        <h3>{{category.categoryName}}</h3>
       </div>
     </div>
 
-    <div ng-repeat="article in category.articles" class="row border-bottom">
-      <a href="#articles/{{article.articleId}}">
-      <div class="small-4 large-2 columns">
-        <img  class="th" ng-src="{{article.imageUrl}}" >
+    <div ng-repeat="article in category.articles" class="row car-list-item" ng-click="showArticle(article)">
+      <div class="col-sm-6 {{colWidth}}">
+        <img  class="img-responsive img-thumbnail" ng-src="{{getBigImage(article.imageUrl)}}">
       </div>
-      <div class="small-8 large-10 columns">
-        <h6 ng-bind="article.title"></h6>
+      <div class="col-sm-6 {{colWidth}}">
+        <h4>{{article.title}}</h4>
+        <p>{{article.subTitle}}</p>
       </div>
-      </a>
     </div>
 
     <div class="row border-bottom">
       <div class="twelve columns text-left">
-       <a href="#articles/category/{{category.articles[0].categoryId}}" >
-        <span>עוד...</span>
-       </a>
+        <a href="#articles/category/{{category.articles[0].categoryId}}" >
+          <span>עוד...</span>
+        </a>
       </div>
     </div>
   </div>

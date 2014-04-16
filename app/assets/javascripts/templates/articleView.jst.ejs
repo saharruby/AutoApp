@@ -1,18 +1,20 @@
-<div ng-controller="ArticleCtrl" class="container" ng-show="article" ng-cloak>
- <div class="row" >
-          <div class="twelve columns text-right image-header">
-                <h3>{{article.title}}</h3>
-          </div>
-          <img src="{{article.imageUrl}}" class="image-magazine">
-   </div>
+<div ng-controller="ArticleCtrl" ng-show="article" class="article" ng-cloak>
+  <div class="row" >
+    <div class="col-xs-12 text-right image-header">
+      <h3>{{article.title}}</h3>
+      <span>{{article.date}}</span><span>&nbsp;{{article.author}}</span>
+    </div>
+    <div class="col-xs-12 col-lg-5 col-md-6 col-sm-6">
+    <img src="{{article.imageUrl}}" class="img-responsive img-thumbnail">
+    </div>
+    <div class="col-xs-12 col-lg-7 col-md-6 col-sm-6 text-right aricle-subtitle">
+      <h4>{{article.subTitle}}</h4>
+    </div>
+  </div>
+  <hr/>
   <div class="row">
-     <div class="twelve columns text-right aricle-subtitle">
-        <h5>{{article.subTitle}}</h5>
-     </div>
-   </div>
-<div class="row">
-      <div class="twelve columns text-right">
-            <articlecontentparser trustedhtml="{{article.content}}"></articlecontentparser>
-      </div>
-</div>
+    <div class="col-xs-12 text-right">
+      <articlecontentparser trustedhtml="{{article.content}}"></articlecontentparser>
+    </div>
+  </div>
 </div>

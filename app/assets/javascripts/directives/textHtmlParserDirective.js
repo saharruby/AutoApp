@@ -8,7 +8,7 @@ angular.module('autoDirectives')
                 },
                 link: function(scope, element) {
                     scope.$watch('texthtml', function(newContent) {
-                        element.html($sce.trustAsHtml(newContent));
+                        element.html($sce.trustAsHtml(newContent).toString());
                     });
                 }
             };

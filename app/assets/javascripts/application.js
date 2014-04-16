@@ -12,8 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require angular
+//= require angular-route
+//= require angular-resource
+//= require angular-animate
+//= require angular-touch
 //= require angular-carousel
 //= require angular-loading-bar
+//= require matchmedia
+//= require matchmedia-ng
 //= require bootstrap
 //= require bootstrap-select
 //= require_tree ./templates

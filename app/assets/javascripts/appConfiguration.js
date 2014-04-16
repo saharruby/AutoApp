@@ -2,9 +2,6 @@ angular.module("main")
     .config(['$routeProvider',
         function($routeProvider) {
             $routeProvider
-                .when('/articles', {
-                    templateUrl:'templates/ArticlesListView'
-                })
                 .when('/articles/latest', {
                     templateUrl: 'templates/index'
                 })
@@ -53,6 +50,9 @@ angular.module("main")
                 .when('/catalog/models/:id/useds', {
                     templateUrl: 'templates/modelUsedsView'
                 })
+                .when('/articles', {
+                    templateUrl:'templates/ArticlesListView'
+                })
                 .when('/articles/:articleId', {
                     templateUrl: 'templates/articleView'
                 })
@@ -73,10 +73,3 @@ angular.module("main")
                 });
         }
     ]);
-
-angular.module("main").run(function($rootScope) {
-    $rootScope.$on('$routeChangeSuccess', function() {
-        //$(document).foundation('reflow');
-        console.log('$routeChangeSuccess');
-    });
-});

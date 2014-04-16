@@ -11,10 +11,15 @@ gem 'ejs'
 gem 'sass-rails', '>= 3.2'
 gem 'bootstrap-sass', '~> 3.1.1'
 
-
+gem 'rails-assets-angular', '1.2.16'
+gem 'rails-assets-angular-route', '1.2.16'
+gem 'rails-assets-angular-resource', '1.2.16'
+gem 'rails-assets-angular-animate', '1.2.16'
+gem 'rails-assets-angular-touch', '1.2.16'
 gem 'rails-assets-angular-carousel'
 gem 'rails-assets-angular-loading-bar'
 gem 'rails-assets-bootstrap-select'
+gem 'rails-assets-matchmedia-ng'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
