@@ -1,5 +1,5 @@
 angular.module('autoDirectives')
-    .directive('catalog',
+    .directive('catalog',[
         function() {
             return {
                 restrict: 'E',
@@ -55,4 +55,4 @@ angular.module('autoDirectives')
                     '</div>'
             };
         }
-);
+    ]);

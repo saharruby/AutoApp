@@ -10,9 +10,9 @@ var autoModuleApp = angular.module("main", [
   'autoServices',
   'autoControllers',
   'autoDirectives'
-]).config(function(cfpLoadingBarProvider) {
-  cfpLoadingBarProvider.includeSpinner = true;
-});
+]);//.config(function(cfpLoadingBarProvider) {
+//  cfpLoadingBarProvider.includeSpinner = true;
+//});
 
 autoModuleApp.run(["$window", "$templateCache", function($window, $templateCache) {
   angular.forEach($window.JST, function(elem,index) {

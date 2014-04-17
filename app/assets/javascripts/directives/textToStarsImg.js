@@ -1,5 +1,5 @@
 angular.module('autoDirectives')
-    .directive('startsimage',
+    .directive('startsimage',[
         function() {
             return {
                 restrict: 'A',
@@ -20,4 +20,4 @@ angular.module('autoDirectives')
                 }
             };
         }
-    );
+    ]);

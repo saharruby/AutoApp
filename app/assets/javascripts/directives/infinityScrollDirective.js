@@ -1,5 +1,5 @@
 angular.module('autoDirectives')
-    .directive('infinityScroll',
+    .directive('infinityScroll',[
         function() {
             return function(scope, elm, attr) {
                 $(window).bind('scroll', function() {
@@ -15,4 +15,4 @@ angular.module('autoDirectives')
                 });
             };
         }
-);
+    ]);

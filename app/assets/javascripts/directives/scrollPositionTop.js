@@ -1,5 +1,5 @@
 angular.module('autoDirectives')
-    .directive('scrollpositiontop',
+    .directive('scrollpositiontop',[
         function() {
             return {
                 restrict: 'A',
@@ -15,4 +15,4 @@ angular.module('autoDirectives')
                 }
             };
         }
-);
+    ]);
