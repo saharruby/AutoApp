@@ -1,6 +1,6 @@
 angular.module('autoControllers')
-.controller('CarModelCtrl', ['$scope', '$routeParams', '$sce', 'SearchServices', 'CatalogServices',
-            function($scope, $routeParams, $sce, SearchServices, CatalogServices) {
+.controller('CarModelCtrl', ['$scope', '$location', '$routeParams', 'SearchServices', 'CatalogServices',
+            function($scope, $location, $routeParams, SearchServices, CatalogServices) {
               $scope.model_id = $routeParams.id;
               $scope.used_id = $routeParams.usedID;
 
@@ -59,23 +59,24 @@ angular.module('autoControllers')
 
                 $scope.tableData = [{
                   title: 'חוות דעת מומחה',
-                  link: '#/catalog/model/review/' + $scope.model.id
+                  link: '/catalog/model/review/' + $scope.model.id
                 }, {
                   title: 'גרסאות',
-                  link: '#/catalog/model/versions/' + $scope.model.id
+                  link: '/catalog/model/versions/' + $scope.model.id
                 }, {
                   title: 'תמונות גלריה',
-                  link: '#/catalog/model/gallery?id=' + $scope.model.galleryId
+                  link: '/catalog/model/gallery/' + $scope.model.galleryId
                 }, {
                   title: 'וידאו',
-                  link: '#/catalog/model/videos?id=' + $scope.model.videoId
+                  link: '/catalog/model/videos/' + $scope.model.videoId
                 }, {
                   title: 'מתחרים',
-                  link: '#/catalog/model/competitors?id=' + $scope.model.competitorsId
+                  link: '/catalog/model/competitors/' + $scope.model.competitorsId
                 }, {
                   title: 'דגמי יד שניה',
-                  link: '#/catalog/models/' + $scope.model.id + '/useds'
+                  link: '/catalog/models/' + $scope.model.id + '/useds'
                 }];
+
               }
             }
 ]);

@@ -38,13 +38,13 @@ angular.module("main")
                 .when('/catalog/model/version/details/', {
                     templateUrl: 'templates/modelVersionDetailsView'
                 })
-                .when('/catalog/model/gallery', {
+                .when('/catalog/model/gallery/:id', {
                     templateUrl: 'templates/modelGalleryView'
                 })
-                .when('/catalog/model/videos', {
+                .when('/catalog/model/videos/:id', {
                     templateUrl: 'templates/modelVideosView'
                 })
-                .when('/catalog/model/competitors', {
+                .when('/catalog/model/competitors/:id', {
                     templateUrl: 'templates/modelCompetitorsView'
                 })
                 .when('/catalog/models/:id/useds', {

@@ -1,58 +1,56 @@
-<div ng-controller="CarModelCtrl" class="container" ng-show="tableData.length" ng-cloak>
+<div ng-controller="CarModelCtrl" class="model-page" ng-show="tableData.length" ng-cloak>
   <div class="row" >
-    <header class="twelve columns text-right image-header">
-      <h5>{{model.name}}</h5>
-    </header>
-    <img src="{{model.image_url}}" class="image-magazine">
-  </div>
-  <div class="row">
-    <header class="small-6 columns text-right">
-      <h4>:קטגוריה</h4>
-    </header>
-    <header class="small-6 columns text-left">
-      <h4>{{model.category}}</h4>
-    </header>
-  </div>
-  <div class="row">
-    <header class="small-6 columns text-right">
-      <h4>:מחיר</h4>
-    </header>
-    <header class="small-6 columns text-left">
-      <h4 >{{model.price}}</h4>
-    </header>
-  </div>
-  <div class="row">
-    <header class="small-6 columns text-right">
-      <h4>:מבחני ריסוק</h4>
-    </header>
-    <header class="small-6 columns text-left">
-      <h4 startsimage starstext="{{model.safetyStars}}"></h4>
-    </header>
-  </div>
-  <div class="row">
-    <div class="twelve columns text-center">
-      <a href="#" class="button radius round secondary success large expand">יעוץ חינם על {{model.name}}</a>
+    <div class="col-xs-12"><h3>{{model.name}}</h3></div>
+    <div class="col-xxs col-xs-6 col-sm-6">
+      <img ng-src="{{model.image_url}}" class="img-responsive img-thumbnail">
+    </div>
+    <div class="col-xs-6 col-xxs sub-header">
+      <hr class="not-visible-on-xxs"></hr>
+      <div class="text-right">
+        <h4>קטגוריה:</h4>
+      </div>
+      <div class="text-left">
+        <h4>{{model.category}}</h4>
+      </div>
+    </div>
+    <div class="col-xs-6 col-xxs sub-header">
+      <hr/>
+      <div class="text-right">
+        <h4>מחיר:</h4>
+      </div>
+      <div class="text-left">
+        <h4 >{{model.price}}</h4>
+      </div>
+    </div>
+    <div class="col-xs-6 col-xxs sub-header">
+      <hr/>
+      <div class="text-right">
+        <h4>מבחני ריסוק:</h4>
+      </div>
+      <div class="text-left">
+        <div startsimage starstext="{{model.safetyStars}}"></div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-xxs text-right">
+      <hr/>
+      <h4 texthtmlparser texthtml="{{model.review.summary}}">{{model.review.summary}}</h4>
     </div>
   </div>
   <div class="row">
-    <div class="twelve columns text-center">
-      <a href="#" class="button radius round secondary success large expand">הוספה למועדפים</a>
+    <div class="col-xs-12 text-center">
+      <button type="button" class="btn btn-danger btn-block">יעוץ חינם על {{model.name}}</button>
     </div>
   </div>
+  <br/>
   <div class="row">
-    <div class="twelve columns text-right">
-      <p class="breadcrumbs text-right" disabled="disabled" texthtmlparser texthtml="{{model.review.summary}}"></p>
+    <div class="col-xs-12 text-center">
+      <button type="button" class="btn btn-default btn-block">הוספה למועדפים</button>
     </div>
   </div>
-  <div class="row">
-    <ul class="pricing-table">
-      <a ng-repeat="td in tableData" href="{{td.link}}" alt=''>
-        <li class="twelve columns bullet-item">
-          <div class="text-center">
-              <p>{{td.title}}</p>
-          </div>
-        </li>
-      </a>
-    </ul>
-  </div>
+  <br/>
+  <ul class="list-group" style="margin-bottom: 15px">
+    <li ng-repeat="td in tableData" ng-click="navigate(td.link)" class="list-group-item">
+      {{td.title}}
+    </li>
+  </ul>
 </div>

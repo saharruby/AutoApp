@@ -11,8 +11,10 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
+//= require requestAnimationFrame
+//= require modernizrAdditions
 //= require angular
+//= require matchmedia-ng
 //= require angular-route
 //= require angular-resource
 //= require angular-animate

@@ -14,6 +14,9 @@ body {padding-top: 50px;}
       float:none;
       width: 100%;
     }
+    .not-visible-on-xxs {
+      visibility: hidden;
+    }
   }
 
   .rn-carousel-container {
@@ -22,6 +25,7 @@ body {padding-top: 50px;}
   .rn-carousel-indicator {
     display: inline-block;
     background: none;
+    height: initial;
     span {
       display: inline-block;
       &.active {
@@ -80,6 +84,24 @@ body {padding-top: 50px;}
       border-top: 1px solid #222;
     }
   }
+
+  .model-page {
+    hr {
+      margin: 0 0 10px 0;
+      border-top: 1px solid #ddd;
+    }
+
+    .sub-header {
+      margin-bottom: 10px;
+      display: block;
+      overflow: hidden;
+      height: 1%;
+      div,h4 { display: inline;}
+      .text-right { float: right; }
+      .text-left {float: left; }
+    }
+  }
+
 }
 /*.nonDraggableImage{*/
 /*-webkit-user-drag: none;*/

@@ -5,6 +5,7 @@ var autoModuleApp = angular.module("main", [
   'ngAnimate',
   'ngTouch',
   'angular-carousel',
+  'matchmedia-ng',
   'chieffancypants.loadingBar',
   'autoServices',
   'autoControllers',
