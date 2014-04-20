@@ -3,7 +3,6 @@ angular.module('autoControllers')
             function($scope, $routeParams, matchmedia, GalleryServices) {
               $scope.gallery_id = $routeParams.id;
               $scope.doubleGallery = [];
-              $scope.isPhone = Modernizr.mq('(max-width: 767px)');
 
               if (Modernizr.matchmedia) {
                 var unregister = matchmedia.onPhone( function(mediaQueryList){

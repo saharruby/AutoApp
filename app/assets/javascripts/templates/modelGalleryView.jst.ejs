@@ -1,19 +1,21 @@
 <div ng-controller="ModelGalleryCtrl" ng-show="gallery.length" ng-cloak>
-  <ul ng-if="!isIOS6() && !isPhone" rn-carousel rn-carousel-indicator rn-carousel-control rn-carousel-buffered>
+  <ul ng-if="!isIOS6or5 && !isPhone" rn-carousel rn-carousel-indicator rn-carousel-control rn-carousel-buffered>
     <li ng-repeat="item in doubleGallery">
     <ul class="list-inline">
       <li class="col-xs-6"><img ng-src="{{item.image1}}" class="img-responsive pull-left"></img></li>
       <li class="col-xs-6"><img ng-src="{{item.image2}}" class="img-responsive pull-right"></img></li>
-      </ul>
+    </ul>
     </li>
   </ul>
-  <ul ng-if="!isIOS6() && isPhone" rn-carousel rn-carousel-indicator rn-carousel-control rn-carousel-buffered>
+
+  <ul ng-if="!isIOS6or5 && isPhone" rn-carousel rn-carousel-indicator rn-carousel-control rn-carousel-buffered>
     <li ng-repeat="item in gallery">
     <img ng-src={{item.imageUrl}} class="img-responsive" style="margin: auto"></img>
     </li>
   </ul>
 
-  <ul ng-if="isIOS6()" rn-carousel rn-carousel-indicator rn-carousel-control><!-- remove buffering if we are on IOS6 -->
+  <!-- remove buffering if we are on IOS6 -->
+  <ul ng-if="isIOS6or5" rn-carousel rn-carousel-indicator rn-carousel-control>
     <li ng-repeat="item in gallery">
     <img ng-src="{{item.imageUrl}}" class="img-responsive" style="margin: auto;"></img>
     </li>

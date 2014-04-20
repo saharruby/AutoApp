@@ -2,8 +2,8 @@ angular.module('autoServices')
 .factory('CatalogServices', ['$routeParams',
          function($routeParams) {
            var msgService = {};
-           msgService.manufacturer = undefined;
-           msgService.model = undefined;
+           msgService.manufacturer = '';
+           msgService.model = '';
            msgService.newOrUsedData = '';
 
            msgService.setManufacturer = function(manufacturer) {
@@ -20,6 +20,9 @@ angular.module('autoServices')
            };
 
            msgService.setModel = function(model) {
+             if (model && model.id) {
+               model.model_id = model.id;
+             }
              msgService.model = model;
            };
 

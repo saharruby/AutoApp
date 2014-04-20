@@ -13,7 +13,10 @@ angular.module('autoDirectives')
 
         angular.forEach(iframe, function(item, index) {
           $(item).attr({
-            width: "100%"
+            //"max-width": "100%",
+            width: "100%",
+            style: "max-width: 450px",
+            height: "300px"
           });
           var s = newContent.indexOf('<iframe', last_index);
           var e = newContent.indexOf('</iframe>', last_index);

@@ -1,13 +1,30 @@
-<div ng-controller="IndexCtrl" class="container"  ng-show="latest.length" ng-cloak>
-  <ul rn-carousel rn-carousel-indicator="true" rn-carousel-buffered="true" rn-carousel-control="true">
-      <li ng-repeat="item in latest">
-        <img ng-src="{{item.imageUrl}}"></img>
-      </li>
-  </ul>
+<div ng-controller="IndexCtrl" ng-show="latest.length" ng-cloak>
+  <br/>
+  <div class="row carusela-lapanim">
+    <div class="col-sm-3 col-md-2 hidden-xs">
+      <div ng-repeat="item in latest" ng-click="setIndex($index)" class="side-image">
+        <img ng-src="{{item.thumbUrl}}" ng-class="{'active': ($parent.currIndex === $index)}" class="img-thumbnail img-responsive">
+      </div>
+    </div>
+    <div class="col-sm-9 col-md-10">
+      <ul rn-carousel rn-carousel-index="currIndex" rn-carousel-buffered>
+        <li ng-repeat="item in latest" ng-click="navigate('/articles/{{item.articleId}}')" >
+        <div class="col-xs-7 col-sm-12 col-md-7 col-xxs carousel-item">
+          <img ng-src={{item.imageUrl}} class="pull-right img-responsive img-thumbnail" ></img>
+        </div>
+        <div class="col-xs-5 col-sm-12 col-md-5 col-xxs carousel-item pull-right text-right">
+          <h3>{{item.title}}</h3>
+          <h4>{{item.subTitle}}</h4>
+        </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <div class="row">
-    <ul class="list-group">
-      <li class="list-group-item list-group-item-inverse"><h4>תפריט ראשי</h4></li>
-      <li ng-repeat="nav in navs" class="list-group-item"><a href="{{nav.route}}">{{nav.name}}</a></li>
+    <ul class="list-group col-xs-12">
+      <li class="list-group-item list-group-item-inverse index-header"><h4>עוד באוטו</h4></li>
+      <li ng-repeat="nav in navs" class="list-group-item" ng-click="navigate('{{nav.route}}')" >{{nav.name}}</li>
     </ul>
   </div>
 </div>

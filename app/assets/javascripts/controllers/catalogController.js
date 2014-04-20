@@ -1,12 +1,11 @@
 angular.module('autoControllers')
 .controller('CatalogCtrl', ['$scope', '$location', 'ManufacturersServices', 'CatalogServices',
             function($scope, $location, ManufacturersServices, CatalogServices) {
-              $scope.manufacturer = undefined;
-              $scope.model = undefined;
-              $scope.manufactureId = 0;
-              $scope.modelId = 0;
+              //$scope.manufacturer = '';
+              //$scope.model = '';
+              //$scope.modelId = 0;
               $scope.newOrUsed = '';
-              //$scope.searchUrl = '';
+
               $scope.manufacturerName = 'כל היצרנים  >';
               $scope.modelName = 'כל הדגמים  >';
 
@@ -15,9 +14,8 @@ angular.module('autoControllers')
                 $scope.manufacturer = CatalogServices.getManufacturer();
                 if ($scope.manufacturer && $scope.manufacturer.name) {
                   $scope.manufacturerSelected = true;
-                  $scope.manufactureId = $scope.manufacturer.id;
                   $scope.manufacturerName = $scope.manufacturer.name + '  >';
-                  $scope.model = undefined;
+                  $scope.model = '';
                 }
               }, true);
 
@@ -34,7 +32,8 @@ angular.module('autoControllers')
 
               var getSearchUrl = function() {
                 if (!$scope.manufacturer) return "";
-                var modelUrl = typeof($scope.model) !== "undefined" ? "/models/" + $scope.model.id : "";
+                console.log($scope.model);
+                var modelUrl = $scope.model !== "" ? "/models/" + $scope.model.model_id : "";
                 return 'catalog/manufacturers/' + $scope.manufacturer.id + modelUrl;
                 //if ($scope.newOrUsed === '' || $scope.newOrUsed === 'new=true') {
                 //  $scope.searchUrl = 'catalog/manufacturers/' + $scope.manufacturer.id + '/models/' + $scope.model.id;

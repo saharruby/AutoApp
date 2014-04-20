@@ -1,12 +1,41 @@
 angular.module('autoControllers')
-    .controller('IndexCtrl', ['$scope', '$timeout', '$templateCache', 'IndexServices', 'NavServices',
-        function($scope, $timeout, $templateCache, IndexServices, NavServices) {
-            $scope.navs = NavServices.navs;
-            $scope.showDots = true;
-            window.dbg = $templateCache;
+.controller('IndexCtrl', ['$scope', '$interval', '$templateCache', 'IndexServices', 'NavServices',
+            function($scope, $interval, $templateCache, IndexService, NavServices) {
+              var stop;
+              $scope.navs = NavServices.navs;
+              $scope.currIndex = 0;
+              stop = $interval(function() {
+                console.log($scope.currIndex);
+                $scope.currIndex++;
+                $scope.currIndex = $scope.currIndex % ($scope.latest.length);
+              },4000);
 
-            IndexServices.getAllLatestArticles().success(function(data) {
+              $scope.stopCarousel = function() {
+                if (angular.isDefined(stop)) {
+                  $interval.cancel(stop);
+                  stop = undefined;
+                }
+              };
+
+              $scope.setIndex = function(index) {
+                $scope.stopCarousel();
+                $scope.currIndex = index;
+              };
+
+              $scope.$on("$destroy", function() {
+                $scope.stopCarousel();
+              });
+
+              var convertToLargeImage = function(imageUrl) {
+                return imageUrl.split(".jpg")[0]+"-4.jpg";
+              };
+
+              IndexService.getAllLatestArticles().success(function(data) {
+                angular.forEach(data, function(item, index) {
+                  data[index].thumbUrl = data[index].imageUrl;
+                  data[index].imageUrl = convertToLargeImage(data[index].imageUrl);
+                });
                 $scope.latest = data;
-            });
-        }
-    ]);
+              });
+            }
+]);

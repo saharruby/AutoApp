@@ -1,10 +1,11 @@
 <div ng-controller="ModelVersionsCtrl" class="container" ng-show="versions.length" ng-cloak>
+  <br/>
   <div class="row">
-    <ul class="pricing-table">
-      <li ng-repeat="version in versions" class="row bullet-item">
+    <ul class="list-group">
+      <li ng-repeat="version in versions" class="list-group-item">
         <a href="#/catalog/model/version/details?modelId={{version.modelId}}&versionId={{version.versionId}}">
-          <div class="text-right black">
-            <p>{{version.name}}</p>
+          <div class="text-right" style="color: black">
+            {{version.name}}
           </div>
         </a>
       </li>

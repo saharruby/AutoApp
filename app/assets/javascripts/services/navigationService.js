@@ -8,24 +8,26 @@ angular.module('autoServices')
             sharedService.navs = [{
                 name: 'קטלוג הרכב',
                 img: '......',
-                route: '#/catalog'
+                route: '/catalog'
             }, {
                 name: 'כתבות',
                 img: '......',
-                route: '#/articles'
+                route: '/articles'
             }, {
                 name: 'מדריך קניה',
                 img: '......',
-                route: '#/guide'
+                route: '/guide'
             }, {
-                name: 'יייעוץ חינם לקניית רכב',
+                name: 'יעוץ חינם לקניית רכב',
                 img: '......',
                 route: '#'
-            }, {
-                name: 'מועדפים',
-                img: '......',
-                route: '#'
-            }];
+            }
+              //, {
+                //name: 'מועדפים',
+                //img: '......',
+                //route: '#'
+            //}
+            ];
 
             return sharedService;
         }

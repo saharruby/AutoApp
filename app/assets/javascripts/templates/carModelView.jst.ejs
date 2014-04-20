@@ -5,7 +5,7 @@
       <img ng-src="{{model.image_url}}" class="img-responsive img-thumbnail">
     </div>
     <div class="col-xs-6 col-xxs sub-header">
-      <hr class="not-visible-on-xxs"></hr>
+      <hr class="hidden-xxs"></hr>
       <div class="text-right">
         <h4>קטגוריה:</h4>
       </div>
@@ -42,12 +42,12 @@
     </div>
   </div>
   <br/>
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <button type="button" class="btn btn-default btn-block">הוספה למועדפים</button>
-    </div>
-  </div>
-  <br/>
+  <!--<div class="row">-->
+    <!--<div class="col-xs-12 text-center">-->
+      <!--<button type="button" class="btn btn-default btn-block">הוספה למועדפים</button>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<br/>-->
   <ul class="list-group" style="margin-bottom: 15px">
     <li ng-repeat="td in tableData" ng-click="navigate(td.link)" class="list-group-item">
       {{td.title}}

@@ -4,9 +4,8 @@ angular.module('autoControllers')
               $scope.navigate = function(path) {
                 $location.path(path);
               };
+              $scope.isPhone = Modernizr.mq('(max-width: 767px)');
 
-              $scope.isIOS6 = function() {
-                return (/(iPhone|iPad|iPod)\sOS\s6/.test(navigator.userAgent));
-              };
+              $scope.isIOS6or5 = (/(iPhone|iPad|iPod)\sOS\s(5|6)/.test(navigator.userAgent));
             }
 ]);

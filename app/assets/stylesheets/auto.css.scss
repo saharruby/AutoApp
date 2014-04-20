@@ -4,18 +4,38 @@
 
 // this is for -webkit browser to remove the darg event.
 // this is needed for the angular slider for the ng-touch event to work
+
+$brand-danger:          #EC1B23 !default;
+$auto-red: $brand-danger;
+$state-danger-text:              white !default;
+$state-danger-bg:                #EC1B23 !default;
 @import "bootstrap";
 body {padding-top: 50px;}
 
 .automag-app {
-  @media (max-width: 479px) { 
+  .contain {
+    display: block;
+    overflow: hidden;
+    height: 1%;
+  }
+
+  @media (max-width: 479px) {
     .col-xxs {
       display:block;
       float:none;
       width: 100%;
+      &.carousel-item {
+        padding: 0;
+      }
     }
-    .not-visible-on-xxs {
+    .hidden-xxs {
       visibility: hidden;
+    }
+  }
+
+  @media (min-width: 480px) and (max-width: 767px) {
+    .carousel-item {
+      padding-right: 0px;
     }
   }
 
@@ -65,7 +85,7 @@ body {padding-top: 50px;}
     h4 { margin: 0; }
     .article-header {
       h3 { margin: 0; }
-      background-color: #EC1B23;
+      background-color: $auto-red;
       color: white;
     }
 
@@ -74,8 +94,9 @@ body {padding-top: 50px;}
       a {
         color: white;//#EC1B23;
       }
-      margin-bottom: 5px;
-      padding: 3px 0;
+      margin-bottom: 2px;
+      //padding: 5px 0;
+      h3 {margin:0}
     }
   }
 
@@ -83,6 +104,8 @@ body {padding-top: 50px;}
     hr {
       border-top: 1px solid #222;
     }
+    h4 { font-weight: bold; }
+    div { font-size: 18px !important; }
   }
 
   .model-page {
@@ -100,6 +123,23 @@ body {padding-top: 50px;}
       .text-right { float: right; }
       .text-left {float: left; }
     }
+  }
+  .carusela-lapanim {
+    .img-thumbnail.active {
+      border-color: #222;
+    }
+    .side-image {
+      padding: 0 0 5px;
+    }
+
+    .carousel-item {
+      h3 { margin-top: 0; }
+    }
+  }
+
+  .index-header {
+    h4 {margin: 0; }
+//    background-color: $auto-red;
   }
 
 }

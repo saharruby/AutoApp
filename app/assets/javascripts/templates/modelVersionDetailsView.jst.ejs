@@ -1,27 +1,14 @@
-<div ng-controller="ModelVersionDetailsCtrl" class="container" ng-show="showContent" ng-cloak >
+<div ng-controller="ModelVersionDetailsCtrl"  ng-show="showContent" ng-cloak >
   <div class="row">
-    <header class="twelve columns text-right">
+    <div class="col-xs-12 text-right">
       <h3>{{title}}</h3>
-    </header>
+    </div>
   </div>
-  <div class="row" ng-repeat="version in versionDetails" InitEvent>
-<!--     <div class="sticky">
-      <nav class="top-bar" data-topbar>
-        <ul class="title-area">
-          <li class="text-center">{{version.key}}</li>
-        </ul>
-      </nav>
-    </div> -->
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="text-center">{{version.key}}</li>
-      </ul>
-    </nav>
-    <ul class="pricing-table">
-      <li ng-repeat="version_item in version.items"  class="small-12 columns bullet-item">
-        <p class="small-6 columns text-right">{{version_item.title}}</p>
-        <p setclass condition="version_item.value" classname="auto-version-included-item" class="small-6 columns text-left">{{version_item.value}}</p>
-      </li>
-    </ul>
-  </div>
+    <div class="list-group" ng-repeat="version in versionDetails" >
+      <div class="list-group-item list-group-item-danger">{{version.key}}</div>
+      <div ng-repeat="version_item in version.items"  class="contain list-group-item">
+        <div class="col-xs-6 text-right">{{version_item.title}}</div>
+        <div setclass condition="version_item.value" classname="auto-version-included-item" class="col-xs-6 text-left">{{version_item.value}}</div>
+      </div>
+    </div>
 </div>
