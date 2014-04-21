@@ -21,8 +21,11 @@ angular.module('autoServices')
              });
            };
 
-           resource.getAllArticlesByCatregoryId = function(categoryId) {
-             return $http.get('articles?category=' + categoryId + "&count=10", {
+           resource.getAllArticlesByCatregoryId = function(categoryId, count) {
+             if (typeof(count) === "undefined") {
+               count = 10;
+             }
+             return $http.get('articles?category=' + categoryId + "&count=" + count, {
                headers: {
                  'Accept': 'application/json',
                  'Content-type': 'application/json'

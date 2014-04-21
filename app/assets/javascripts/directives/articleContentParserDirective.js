@@ -13,7 +13,6 @@ angular.module('autoDirectives')
 
         angular.forEach(iframe, function(item, index) {
           $(item).attr({
-            //"max-width": "100%",
             width: "100%",
             style: "max-width: 450px",
             height: "300px"
@@ -32,7 +31,8 @@ angular.module('autoDirectives')
         $(tmpElem).html(newContent);
         $('img',tmpElem).attr('class','img-responsive img-thumbnail').removeAttr('height').removeAttr('width');
         return $($('div',tmpElem)[0]).html(); //strip the outer div and return the modified html
-      }
+      };
+
       scope.$watch('trustedhtml', function(newContent) {
         if (typeof(newContent) !== 'undefined' && newContent !== "") {
           newContent = '<div>' + newContent + '<div>';

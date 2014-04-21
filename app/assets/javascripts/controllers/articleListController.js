@@ -8,10 +8,6 @@ angular.module('autoControllers')
               return name + "-4.jpg";
             };
 
-            $scope.showArticle = function(article) {
-              $location.path("/articles/" + article.articleId);
-            };
-
             ArticlesServices.getAllArticles().success(function(data) {
                 $scope.articlesCategoriesCollection = {};
                 angular.forEach(dicTypes, function(item, key) {

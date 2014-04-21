@@ -5,10 +5,9 @@ angular.module('autoControllers')
               $scope.navs = NavServices.navs;
               $scope.currIndex = 0;
               stop = $interval(function() {
-                console.log($scope.currIndex);
                 $scope.currIndex++;
                 $scope.currIndex = $scope.currIndex % ($scope.latest.length);
-              },4000);
+              },6000);
 
               $scope.stopCarousel = function() {
                 if (angular.isDefined(stop)) {

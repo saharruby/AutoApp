@@ -1,4 +1,4 @@
-<div ng-controller="ArticleCtrl" ng-show="article" class="article" ng-cloak>
+<div ng-controller="ArticleCtrl" ng-show="article" class="article" ng-cloak="article.title">
   <div class="row" >
     <div class="col-xs-12 text-right image-header">
       <h3>{{article.title}}</h3>
@@ -17,4 +17,6 @@
       <articlecontentparser trustedhtml="{{article.content}}"></articlecontentparser>
     </div>
   </div>
+  <hr/>
+  <more-articles category-id="{{categoryId}}"></more-articles>
 </div>
