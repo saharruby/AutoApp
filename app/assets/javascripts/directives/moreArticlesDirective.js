@@ -59,7 +59,7 @@ angular.module('autoDirectives')
                    if (scrollBounded) return; //prevent from scroll to bind more than once
                    $(window).bind('scroll', function() {
                      console.log('scrolling...');
-                     if ($(window).scrollTop() > $(document).height() - $(window).height() - 200) {
+                     if ($(window).scrollTop() > $(document).height() - $(window).height() - 500) {
                        scope.$apply(loadMoreArticles);
                        $(window).unbind('scroll');
                      }
