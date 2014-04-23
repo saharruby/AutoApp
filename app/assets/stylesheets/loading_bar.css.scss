@@ -1,4 +1,5 @@
 /* loading-bar-css : Make clicks pass-through */
+$auto-red: #EC1B23;
 #loading-bar,
 #loading-bar-spinner {
   pointer-events: none;
@@ -29,7 +30,7 @@
   -o-transition: width 350ms;
   transition: width 350ms;
 
-  background: #29d;
+  background: $auto-red;
   position: fixed;
   z-index: 2000;
   top: 0;
@@ -48,10 +49,10 @@
   top: 0;
   height: 2px;
   opacity: .45;
-  -moz-box-shadow: #29d 1px 0 6px 1px;
-  -ms-box-shadow: #29d 1px 0 6px 1px;
-  -webkit-box-shadow: #29d 1px 0 6px 1px;
-  box-shadow: #29d 1px 0 6px 1px;
+  -moz-box-shadow: $auto-red 1px 0 6px 1px;
+  -ms-box-shadow: $auto-red 1px 0 6px 1px;
+  -webkit-box-shadow: $auto-red 1px 0 6px 1px;
+  box-shadow: $auto-red 1px 0 6px 1px;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
@@ -70,8 +71,8 @@
   height: 14px;
 
   border:  solid 2px transparent;
-  border-top-color:  #29d;
-  border-left-color: #29d;
+  border-top-color:  $auto-red;
+  border-left-color: $auto-red;
   border-radius: 10px;
 
   -webkit-animation: loading-bar-spinner 400ms linear infinite;

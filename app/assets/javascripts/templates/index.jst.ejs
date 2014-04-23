@@ -1,4 +1,4 @@
-<div ng-controller="IndexCtrl" ng-show="latest.length" ng-cloak>
+<div ng-controller="IndexCtrl" class="index-page" ng-show="latest.length" ng-cloak>
   <br/>
   <div class="row carusela-lapanim">
     <div class="col-sm-3 col-md-2 hidden-xs">
@@ -7,10 +7,10 @@
       </div>
     </div>
     <div class="col-sm-9 col-md-10">
-      <ul rn-carousel rn-carousel-index="currIndex" rn-carousel-buffered>
+      <ul rn-carousel rn-carousel-index="currIndex" rn-carousel-buffered rn-carousel-control rn-carousel-indicator>
         <li ng-repeat="item in latest" ng-click="navigate('/articles/{{item.articleId}}')" >
         <div class="col-xs-7 col-sm-12 col-md-7 col-xxs carousel-item">
-          <img ng-src={{item.imageUrl}} class="pull-right img-responsive img-thumbnail" ></img>
+          <img ng-src={{item.imageUrl}} class="img-responsive img-thumbnail pull-right"></img>
         </div>
         <div class="col-xs-5 col-sm-12 col-md-5 col-xxs carousel-item pull-right text-right">
           <h3>{{item.title}}</h3>

@@ -4,26 +4,26 @@ angular.module('autoControllers')
               var stop;
               $scope.navs = NavServices.navs;
               $scope.currIndex = 0;
-              stop = $interval(function() {
-                $scope.currIndex++;
-                $scope.currIndex = $scope.currIndex % ($scope.latest.length);
-              },6000);
+              //stop = $interval(function() {
+                //$scope.currIndex++;
+                //$scope.currIndex = $scope.currIndex % ($scope.latest.length);
+              //},6000);
 
-              $scope.stopCarousel = function() {
-                if (angular.isDefined(stop)) {
-                  $interval.cancel(stop);
-                  stop = undefined;
-                }
-              };
+              //$scope.stopCarousel = function() {
+                //if (angular.isDefined(stop)) {
+                  //$interval.cancel(stop);
+                  //stop = undefined;
+                //}
+              //};
 
               $scope.setIndex = function(index) {
-                $scope.stopCarousel();
+                //$scope.stopCarousel();
                 $scope.currIndex = index;
               };
 
-              $scope.$on("$destroy", function() {
-                $scope.stopCarousel();
-              });
+              //$scope.$on("$destroy", function() {
+                //$scope.stopCarousel();
+              //});
 
               var convertToLargeImage = function(imageUrl) {
                 return imageUrl.split(".jpg")[0]+"-4.jpg";

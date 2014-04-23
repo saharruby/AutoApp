@@ -1,8 +1,28 @@
 angular.module('autoControllers')
-.controller('CarModelCtrl', ['$scope', '$location', '$routeParams', 'SearchServices', 'CatalogServices',
-            function($scope, $location, $routeParams, SearchServices, CatalogServices) {
+.controller('CarModelCtrl', ['$scope', '$location', '$routeParams', 'matchmedia', 'SearchServices', 'CatalogServices', 'GalleryServices',
+            function($scope, $location, $routeParams, matchmedia, SearchServices, CatalogServices, GalleryServices) {
               $scope.model_id = $routeParams.id;
               $scope.used_id = $routeParams.usedID;
+              $scope.galleryVisible = false;
+              if (Modernizr.matchmedia) {
+                var removeXXSListener = matchmedia.on('(max-width: 499px)', function(mediaQueryList){
+                  $scope.isXXS = mediaQueryList.matches;
+                });
+                //var removeXSListener = matchmedia.on('(min-width: 500px) and (max-width: 1023px)', function(mediaQueryList){
+                  //$scope.isXS = mediaQueryList.matches;
+                //});
+                //var removeMDListener = matchmedia.on('(min-width: 1024px)', function(mediaQueryList){
+                  //$scope.isMD = mediaQueryList.matches;
+                //});
+              }
+
+              $scope.$on('$destroy', function() {
+                if (Modernizr.matchmedia) {
+                  removeXXSListener();
+                  //removeXSListener();
+                  //removeMDListener();
+                }
+              });
 
               if ($scope.used_id) {
                 console.log("Route with -id- routeParams & usd_id routeParams");
@@ -13,6 +33,22 @@ angular.module('autoControllers')
                 console.log("Route with -id- routeParams");
                 SearchServices.getSearchResaulForModelByModelId($scope.model_id).success(function(data) {
                   setDataFromService(data);
+                  GalleryServices.getAllModelGalleryByGalleryId(data[0].galleryId).success(function(images) {
+                    //var buildChunks = function(array, chunkSize) {
+                      //var arrayBck = angular.copy(array);
+                      //$scope['images' + chunkSize] = [];
+                      //while (images.length > 0) {
+                        //$scope['images' + chunkSize].push(images.splice(0,chunkSize));
+                      //}
+                      //images = arrayBck;
+                    //};
+                    //buildChunks(images,1);
+                    //buildChunks(images,2);
+                    //buildChunks(images,3);
+                    $scope.images = images;
+
+                    $scope.galleryVisible = true;
+                  });
                 });
               }
 
