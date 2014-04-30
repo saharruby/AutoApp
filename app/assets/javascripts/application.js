@@ -19,6 +19,7 @@
 //= require angular-resource
 //= require angular-animate
 //= require angular-touch
+//= require angular-cache
 //= require angular-carousel
 //= require angular-loading-bar
 //= require bootstrap

@@ -113,6 +113,7 @@ GEM
     rails-assets-angular (1.2.16)
     rails-assets-angular-animate (1.2.16)
       rails-assets-angular (= 1.2.16)
+    rails-assets-angular-cache (2.3.3)
     rails-assets-angular-carousel (0.2.2)
       rails-assets-angular (~> 1.2.10)
       rails-assets-angular-touch (~> 1.2.10)
@@ -184,6 +185,7 @@ DEPENDENCIES
   rails (= 3.2.13)
   rails-assets-angular (= 1.2.16)
   rails-assets-angular-animate (= 1.2.16)
+  rails-assets-angular-cache (= 2.3.3)
   rails-assets-angular-carousel
   rails-assets-angular-loading-bar
   rails-assets-angular-resource (= 1.2.16)

@@ -36,14 +36,14 @@ angular.module('autoServices')
 
             resource.getGuideSearchResult = function() {
                 self.startVal = 0;
-                var noCacheParams = angular.copy(self.searchParams);
-                noCacheParams._id = Date.now();
+                //var noCacheParams = angular.copy(self.searchParams);
+                //noCacheParams._id = Date.now();
                 return $http.get('guide', {
                     headers: {
                         'Accept': 'application/json',
                         'Content-type': 'application/json'
                     },
-                    params: noCacheParams
+                    params: self.searchParams
                 });
             };
 

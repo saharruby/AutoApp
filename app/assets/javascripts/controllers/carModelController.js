@@ -9,10 +9,10 @@ angular.module('autoControllers')
                   $scope.isXXS = mediaQueryList.matches;
                 });
                 //var removeXSListener = matchmedia.on('(min-width: 500px) and (max-width: 1023px)', function(mediaQueryList){
-                  //$scope.isXS = mediaQueryList.matches;
+                //$scope.isXS = mediaQueryList.matches;
                 //});
                 //var removeMDListener = matchmedia.on('(min-width: 1024px)', function(mediaQueryList){
-                  //$scope.isMD = mediaQueryList.matches;
+                //$scope.isMD = mediaQueryList.matches;
                 //});
               }
 
@@ -35,16 +35,22 @@ angular.module('autoControllers')
                   setDataFromService(data);
                   GalleryServices.getAllModelGalleryByGalleryId(data[0].galleryId).success(function(images) {
                     //var buildChunks = function(array, chunkSize) {
-                      //var arrayBck = angular.copy(array);
-                      //$scope['images' + chunkSize] = [];
-                      //while (images.length > 0) {
-                        //$scope['images' + chunkSize].push(images.splice(0,chunkSize));
-                      //}
-                      //images = arrayBck;
+                    //var arrayBck = angular.copy(array);
+                    //$scope['images' + chunkSize] = [];
+                    //while (images.length > 0) {
+                    //$scope['images' + chunkSize].push(images.splice(0,chunkSize));
+                    //}
+                    //images = arrayBck;
                     //};
                     //buildChunks(images,1);
                     //buildChunks(images,2);
                     //buildChunks(images,3);
+                    angular.forEach(images, function(item, index) {
+                      var str = item.imageUrl;
+                      var imageId = str.split("_t/")[1].split("-")[0];
+                      item.imageUrl = "http://www.auto.co.il//modules/mpicture/server/imagethumb.ashx?i=" + imageId + "&w=500&h=10000";
+
+                    });
                     $scope.images = images;
 
                     $scope.galleryVisible = true;

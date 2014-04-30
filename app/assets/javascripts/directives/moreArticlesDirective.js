@@ -3,9 +3,6 @@ angular.module('autoDirectives')
            function($templateCache, $timeout, ArticlesService) {
              return {
                restrict: 'E',
-               //scope: {
-               //  categoryId: '='
-               //},
                template: $templateCache.get('templates/moreArticles'),
                link: function(scope, elem, attrs) {
                  var isPhone = Modernizr.mq('(max-width: 767px)');
@@ -42,13 +39,13 @@ angular.module('autoDirectives')
                      }
                      scope.isLoading = false;
                      //workaround the problem of carousel rendered with width=0 because of videos
-                     $timeout(function() {
-                       if ($('.rn-carousel-container').width() === 0) {
-                         console.log('resize');
+                     //$timeout(function() {
+                     //  if ($('.rn-carousel-container').width() === 0) {
+                     //    console.log('resize');
                          //force a reflow
-                         $(window).trigger('resize');
-                       }
-                     });
+                     //    $(window).trigger('resize');
+                     //  }
+                     //});
                    });
 
                  };
@@ -57,14 +54,22 @@ angular.module('autoDirectives')
                  scope.$watch('article',function(article) {
                    if (!article) return; //only bind the scroll event when the article finished loading
                    if (scrollBounded) return; //prevent from scroll to bind more than once
-                   $(window).bind('scroll', function() {
-                     console.log('scrolling...');
-                     if ($(window).scrollTop() > $(document).height() - $(window).height() - 500) {
-                       scope.$apply(loadMoreArticles);
-                       $(window).unbind('scroll');
+                   $timeout(function() {
+                     if ($(document).height() <= $(window).height()) {
+                       loadMoreArticles();
+                       console.debug('load articles without scroll');
+                       scrollBounded = true;
+                       return;
                      }
+                     $(window).bind('scroll', function() {
+                       console.debug('scrolling...');
+                       if ($(window).scrollTop() > $(document).height() - $(window).height() - 500) {
+                         scope.$apply(loadMoreArticles);
+                         $(window).unbind('scroll');
+                       }
+                     });
+                     scrollBounded = true;
                    });
-                   scrollBounded = true;
                  });
 
                }
