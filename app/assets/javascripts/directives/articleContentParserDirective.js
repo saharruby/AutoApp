@@ -8,29 +8,22 @@ angular.module('autoDirectives')
     },
     link: function(scope, element) {
       var fixIframes = function(newContent) {
-        var iframe = $(newContent).find('iframe');
-        var last_index = 0;
 
-        angular.forEach(iframe, function(item, index) {
-          $(item).attr({
-            width: "100%",
-            style: "max-width: 450px",
-            height: "300px"
-          });
-          var s = newContent.indexOf('<iframe', last_index);
-          var e = newContent.indexOf('</iframe>', last_index);
-
-          newContent = newContent.substring(0, s) + $(item).prop('outerHTML') + newContent.substring(e + 9);
-          last_index = e + 9;
+        tmpElem = document.createElement('section');
+        $(tmpElem).html(newContent);
+        $('iframe',tmpElem).attr({
+          width: "100%",
+          style: "max-width: 450px",
+          height: "300px"
         });
-        return newContent;
+        return tmpElem.innerHTML;
       };
 
       var fixImages = function(newContent) {
-        tmpElem = document.createElement('div');
+        tmpElem = document.createElement('section'); //create a pseodu element in the dom in order to manipulate it with jQuery
         $(tmpElem).html(newContent);
         $('img',tmpElem).attr('class','img-responsive img-thumbnail').removeAttr('height').removeAttr('width');
-        return $($('div',tmpElem)[0]).html(); //strip the outer div and return the modified html
+        return tmpElem.innerHTML; //strip the outer section and return the modified html
       };
 
       scope.$watch('trustedhtml', function(newContent) {

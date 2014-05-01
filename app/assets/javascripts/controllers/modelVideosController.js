@@ -5,10 +5,8 @@ angular.module('autoControllers')
             $scope.defaultVideoText = '';
             $scope.videoUrl = '';
 
-            $scope.changeView = function(videoUrl) {
-                $scope.videoUrl = $sce.trustAsResourceUrl(videoUrl);
-                $scope.switchView = !$scope.switchView;
-
+            $scope.trustUrl = function(videoUrl) {
+               return $sce.trustAsResourceUrl(videoUrl);
             };
 
             ModelVideosServices.getAllModelVideosByVideoId($routeParams.id).success(function(data) {
@@ -16,7 +14,7 @@ angular.module('autoControllers')
                 if ($scope.videos.length === 0) {
                     $scope.defaultVideoText = 'לא קיימים סרטי וידאו לדגם זה';
                 }
-                console.log(data);
+                $timeout(function() { window.scrollTo(0,0); });
             });
         }
     ]);
