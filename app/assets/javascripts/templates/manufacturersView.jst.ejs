@@ -1,0 +1,6 @@
+<div ng-controller="ManufacturersCtrl" class="container" ng-show="manufacturers" ng-cloak>
+  <ul ng-repeat="manufactur in manufacturers" class="list-group" >
+    <li class="list-group-item list-group-item-danger">{{manufactur.key}}</li>
+    <li ng-click="selectMF(col)" ng-repeat="col in manufactur.collection" class="list-group-item">{{col.name}}</li>
+  </ul>
+</div>

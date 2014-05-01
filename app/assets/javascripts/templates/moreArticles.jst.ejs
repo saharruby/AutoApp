@@ -1,0 +1,12 @@
+<div class="row more-articles" ng-if="!isLoading" >
+  <div class="col-xs-12"><h3 style="margin: 0 0 5px">כתבות נוספות:</h3></div>
+  <ul rn-carousel rn-carousel-indicator rn-carousel-control>
+    <li ng-repeat="section in moreArticles">
+    <div ng-repeat="article in section" ng-click="showArticle(article)" class="text-right pull-right col-xs-6 col-sm-3">
+      <img ng-src="{{article.imageUrl}}" class="img-responsive img-thumbnail"></img>
+      <h5>{{article.title}}</h5>
+    </div>
+    </li>
+  </ul>
+</div>
+<div class="row" ng-if="isLoading"><div class="col-xs-12" style="min-height: 100px"><h3 style="margin: 0 0 5px">טוען כתבות נוספות...</h3></div></div>

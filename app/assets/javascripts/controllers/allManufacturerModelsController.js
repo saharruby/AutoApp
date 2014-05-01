@@ -1,18 +1,17 @@
 angular.module('autoControllers')
-    .controller('AllManufacturerModelsCtrl', ['$scope', 'SearchServices', 'CatalogServices',
-        function($scope, SearchServices, CatalogServices) {
-            $scope.manufacturer = CatalogServices.getManufacturer();
-            //$scope.newOrUsed = CatalogServices.getNewOrUsed();
+    .controller('AllManufacturerModelsCtrl', ['$scope','$location', '$routeParams', 'SearchServices', 'CatalogServices',
+        function($scope, $location, $routeParams, SearchServices, CatalogServices) {
+            $scope.manufacturerId = $routeParams.id;
 
-            if ($scope.manufacturer && $scope.manufacturer.name) {
-                // SearchServices.getSearchResaulForAllManufacturerModels($scope.manufacturer.id + '?used=' + $scope.newOrUsed).success(function(data) {
-                SearchServices.getSearchResaulForAllManufacturerModels($scope.manufacturer.id).success(function(data) {
+            if ($scope.manufacturerId) {
+                SearchServices.getSearchResaulForAllManufacturerModels($scope.manufacturerId).success(function(data) {
                     $scope.models = data;
                 });
             }
 
-            $scope.setModelId = function(model) {
+            $scope.setModel = function(model) {
                 CatalogServices.setModel(model);
+                $location.path('/catalog/models/' + model.model_id);
             };
         }
     ]);

@@ -2,44 +2,74 @@ angular.module("main")
     .config(['$routeProvider',
         function($routeProvider) {
             $routeProvider
+                .when('/articles/latest', {
+                    templateUrl: 'templates/index'
+                })
+                .when('/catalog', {
+                    templateUrl: 'templates/catalogView'
+                })
+                .when('/catalog/manufacturers', {
+                    templateUrl: 'templates/manufacturersView'
+                })
+                .when('/catalog/manufacturers/:id', {
+                    templateUrl: 'templates/allManufacturerModelsView'
+                })
+                .when('/catalog/manufacturers/:id/models/:id', {
+                    templateUrl: 'templates/carModelView'
+                })
+                .when('/catalog/manufacturers/:id/models', {
+                    templateUrl: 'templates/modelsView'
+                })
+                .when('/catalog/models/:id', {
+                    templateUrl: 'templates/carModelView'
+                })
+                .when('/catalog/models/:id/used', {
+                    templateUrl: 'templates/carModelView'
+                })
+                .when('/catalog/model/review/:id', {
+                    templateUrl: 'templates/modelReviewView'
+                })
+                .when('/catalog/model/versions/:id', {
+                    templateUrl: 'templates/modelVersionsView'
+                })
+                .when('/catalog/model/versions/', {
+                    templateUrl: 'templates/modelVersionsView'
+                })
+                .when('/catalog/model/version/details/', {
+                    templateUrl: 'templates/modelVersionDetailsView'
+                })
+                .when('/catalog/model/gallery/:id', {
+                    templateUrl: 'templates/modelGalleryView'
+                })
+                .when('/catalog/model/videos/:id', {
+                    templateUrl: 'templates/modelVideosView'
+                })
+                .when('/catalog/model/competitors/:id', {
+                    templateUrl: 'templates/modelCompetitorsView'
+                })
+                .when('/catalog/models/:id/useds', {
+                    templateUrl: 'templates/modelUsedsView'
+                })
                 .when('/articles', {
-                    templateUrl: 'partials/allArticlesView.html',
-                    controller: 'ArticleListCtrl'
-                })
-                .when('/articles/carcatalog', {
-                    templateUrl: 'partials/catalogView.html',
-                    controller: 'CatalogCtrl'
-                })
-                .when('/articles/carcatalog/manufacturers', {
-                    templateUrl: 'partials/manufacturersView.html',
-                    controller: 'ManufacturersCtrl'
-                })
-                .when('/articles/carcatalog/manufacturers/:id', {
-                    templateUrl: 'partials/allManufacturerModelsView.html',
-                    controller: 'AllManufacturerModelsCtrl'
-                })
-                .when('/articles/carcatalog/manufacturers/:id/models/:id', {
-                    templateUrl: 'partials/carModelView.html',
-                    controller: 'CarModelCtrl'
-                })
-                .when('/articles/carcatalog/models', {
-                    templateUrl: 'partials/modelsView.html',
-                    controller: 'ModelsCtrl'
-                })
-                .when('/articles/carcatalog/models/:id', {
-                    templateUrl: 'partials/carModelView.html',
-                    controller: 'CarModelCtrl'
+                    templateUrl:'templates/ArticlesListView'
                 })
                 .when('/articles/:articleId', {
-                    templateUrl: 'partials/articleView.html',
-                    controller: 'ArticleCtrl'
+                    templateUrl: 'templates/articleView'
                 })
                 .when('/articles/category/:categoryId', {
-                    templateUrl: 'partials/allArticlesOfCategoryView.html',
-                    controller: 'ArticlesCategoryCtrl'
+                    templateUrl: 'templates/allArticlesOfCategoryView'
+                })
+                .when('/guide', {
+                    templateUrl: 'templates/buyingGuideView'
+                })
+                .when('/guide/search', {
+                    templateUrl: 'templates/guideSearchResultView'
+                })
+                .when('/articles', {
+                    templateUrl: 'templates/articlesListView'
                 })
                 .otherwise({
-                    redirectTo: '/articles'
+                    redirectTo: '/articles/latest'
                 });
         }
     ]);

@@ -9,7 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require foundation_and_overrides
-
- *= require_tree .
+ *= require auto
+ *= require bootstrap-select
+ *= require bootstrap-rtl
+ *= require loading_bar
+ *= require angular-carousel
  */
+

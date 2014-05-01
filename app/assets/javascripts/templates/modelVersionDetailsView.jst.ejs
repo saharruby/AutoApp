@@ -1,0 +1,14 @@
+<div ng-controller="ModelVersionDetailsCtrl"  ng-show="showContent" ng-cloak >
+  <div class="row">
+    <div class="col-xs-12 text-right">
+      <h3>{{title}}</h3>
+    </div>
+  </div>
+    <div class="list-group" ng-repeat="version in versionDetails" >
+      <div class="list-group-item list-group-item-danger">{{version.key}}</div>
+      <div ng-repeat="version_item in version.items"  class="contain list-group-item">
+        <div class="col-xs-6 text-right">{{version_item.title}}</div>
+        <div setclass condition="version_item.value" classname="auto-version-included-item" class="col-xs-6 text-left">{{version_item.value}}</div>
+      </div>
+    </div>
+</div>

@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html lang="heb">
+<html lang="heb" >
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %> </title>
+    <title><%= content_for?(:title) ? yield(:title) : "מגזין אוטו" %> </title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
-    <!-- <link rel="stylesheet" type="text/css" href="bower_components/dist/toggle-switch.css"> -->
+    <%= favicon_link_tag "/favicon.ico" %>
   </head>
 
   <body>
     <%= yield %>
-    <script type="text/javascript" src="//code.angularjs.org/1.2.14/angular.js"></script>
-    <script type="text/javascript" src="//code.angularjs.org/1.2.14/angular-route.js"></script>
-    <script type="text/javascript" src="//code.angularjs.org/1.2.14/angular-resource.js"></script>
     <%= javascript_include_tag "application" %>
   </body>
+
 </html>

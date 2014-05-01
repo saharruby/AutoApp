@@ -1,12 +1,17 @@
 angular.module('autoControllers')
-    .controller('ArticlesCategoryCtrl', ['$scope', '$routeParams', 'ArticlesServices',
-        function($scope, $routeParams, ArticlesServices) {
-            $scope.category_id = $routeParams.categoryId;
-            $scope.firstArticle = {};
+.controller('ArticlesCategoryCtrl', ['$scope', '$routeParams', '$location', 'ArticlesServices',
+            function($scope, $routeParams, $location, ArticlesServices) {
+              $scope.categoryId = $routeParams.categoryId;
+              $scope.categoryName = ArticlesServices.categories[$scope.categoryId];
 
-            ArticlesServices.getAllArticlesByCatregoryId($scope.category_id).success(function(data) {
-                $scope.firstArticle = data[0];
-                $scope.articles = data.slice(1, data.length);
-            });
-        }
-    ]);
+              ArticlesServices.getAllArticlesByCatregoryId($scope.categoryId).success(function(data) {
+                $scope.articles = data;
+              });
+
+              $scope.getBigImage = function(imageUrl) {
+                var name = imageUrl.split('.jpg')[0];
+                return name + "-4.jpg";
+              };
+
+            }
+]);

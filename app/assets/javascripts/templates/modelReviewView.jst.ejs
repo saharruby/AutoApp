@@ -1,0 +1,9 @@
+<div ng-controller="CarModelCtrl" class="container" ng-show="reviews.length" ng-cloak>
+  <br/>
+  <div class="row" ng-repeat="review in reviews">
+    <header class="small-12 columns text-right">
+      <h4>{{review.title}}</h4>
+    </header>
+    <p class="small-12 columns text-right" texthtmlparser texthtml="{{review.content}}"></p>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div ng-controller="ModelsCtrl" class="container" ng-show="models" ng-cloak>
+  <br/>
+  <div class="btn-group btn-group-lg btn-group-justified">
+    <div class="btn-group"  ng-repeat="option in optionsArr" >
+      <button type="button" ng-click="itemClicked($index)" class="btn btn-default">
+        <div ng-class="{'success': $index == selectedIndex}">{{option.name}}</div>
+      </button>
+    </div>
+  </div>
+  <br/>
+  <ul class="list-group" ng-repeat="model in models" >
+    <li class="list-group-item list-group-item-danger">{{model.key}}</li>
+    <li class="list-group-item" ng-repeat="colItem in model.collection" ng-click="onSelectM(colItem)">
+    {{colItem.name}}
+    </li>
+    <br/>
+  </ul>
+</div>

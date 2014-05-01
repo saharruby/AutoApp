@@ -11,11 +11,22 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
-//= require foundation
+//= require requestAnimationFrame
+//= require modernizrAdditions
+//= require angular
+//= require matchmedia-ng
+//= require angular-route
+//= require angular-resource
+//= require angular-animate
+//= require angular-touch
+//= require angular-cache
+//= require angular-carousel
+//= require angular-loading-bar
+//= require bootstrap
+//= require bootstrap-select
+//= require_tree ./templates
 //= require main
-//= require_tree .
-
-$(function() {
-    $(document).foundation();
-});
+//= require_tree ./services
+//= require_tree ./controllers
+//= require_tree ./directives
+//= require appConfiguration

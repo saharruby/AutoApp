@@ -4,24 +4,18 @@ angular.module('autoServices')
             var resourcemf = {};
 
             resourcemf.getAllManufacturers = function() {
-                return $http.get('manufacturers.json', {
+                return $http.get('manufacturers', {
                     headers: {
+                        'Accept': 'application/json',
                         'Content-type': 'application/json'
                     }
                 });
             };
 
             resourcemf.getAllModelsByManufacturerId = function(mId) {
-                return $http.get('manufacturers/' + mId + '/models.json', {
+                return $http.get('manufacturers/' + mId + '/models', {
                     headers: {
-                        'Content-type': 'application/json'
-                    }
-                });
-            };
-
-            resourcemf.getAllManufacturerModelsByManufacturerId = function(mId) {
-                return $http.get('manufacturers/' + mId + '/models.json', {
-                    headers: {
+                        'Accept': 'application/json',
                         'Content-type': 'application/json'
                     }
                 });

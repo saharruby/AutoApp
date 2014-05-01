@@ -1,0 +1,18 @@
+<div ng-controller="ArticlesCategoryCtrl" ng-show="articles.length" ng-cloak class="articles-list">
+  <div class="row article-header">
+    <div class="col-xs-12 text-right">
+      <h3>{{categoryName}}</h3>
+    </div>
+  </div>
+
+  <div ng-repeat="article in articles" class="row car-list-item" ng-click="showArticle(article)">
+    <div class="col-xs-6 col-xxs">
+      <img  class="img-responsive img-thumbnail" ng-src="{{getBigImage(article.imageUrl)}}">
+    </div>
+    <div class="col-xs-6 col-xxs">
+      <h4>{{article.title}}</h4>
+      <p>{{article.subTitle}}</p>
+    </div>
+  </div>
+
+</div>

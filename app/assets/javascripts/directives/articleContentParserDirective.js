@@ -1,31 +1,40 @@
 angular.module('autoDirectives')
-    .directive('articlecontentparser', ['$sce',
-        function($sce) {
-            return {
-                restrict: 'E',
-                scope: {
-                    trustedhtml: '@'
-                },
-                link: function(scope, element) {
-                    scope.$watch('trustedhtml', function(newContent) {
-                        var iframe = $(newContent).find('iframe').attr({
-                            width: "100%"
-                        });
+.directive('articlecontentparser', [
+  function() {
+  return {
+    restrict: 'E',
+    scope: {
+      trustedhtml: '@'
+    },
+    link: function(scope, element) {
+      var fixIframes = function(newContent) {
 
-                        var s = newContent.indexOf('<iframe');
-                        var e = newContent.indexOf('</iframe>');
-                        newContent = newContent.substring(0, s) + iframe.prop('outerHTML') + newContent.substring(e + 9);
+        tmpElem = document.createElement('section');
+        $(tmpElem).html(newContent);
+        $('iframe',tmpElem).attr({
+          width: "100%",
+          style: "max-width: 450px",
+          height: "300px"
+        });
+        return tmpElem.innerHTML;
+      };
 
-                        // TODO: remove links & iframe num2
+      var fixImages = function(newContent) {
+        tmpElem = document.createElement('section'); //create a pseodu element in the dom in order to manipulate it with jQuery
+        $(tmpElem).html(newContent);
+        $('img',tmpElem).attr('class','img-responsive img-thumbnail').removeAttr('height').removeAttr('width');
+        return tmpElem.innerHTML; //strip the outer section and return the modified html
+      };
 
-                        //var textArr = newContent.split('<iframe');
-                        // var tmpText = textArr[1] + "";
-                        // tmpText = tmpText.replace(/width="\d+"/, "width='100%'");
-                        // newContent = textArr[0] + "<iframe " + tmpText;
-
-                        element.html($sce.trustAsHtml(newContent));
-                    });
-                }
-            };
+      scope.$watch('trustedhtml', function(newContent) {
+        if (typeof(newContent) !== 'undefined' && newContent !== "") {
+          newContent = '<div>' + newContent + '<div>';
+          newContent = fixIframes(newContent);
+          newContent = fixImages(newContent);
+          element.html(newContent);
         }
-    ]);
+      });
+    }
+  };
+}
+]);

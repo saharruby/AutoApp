@@ -1,60 +1,50 @@
 angular.module('autoServices')
-    .factory('CatalogServices', ['$routeParams',
-        function($routeParams) {
-            var msgService = {};
-            msgService.manufacturer = {};
-            msgService.model = {};
-            msgService.newOrUsed = '';
+.factory('CatalogServices', ['$routeParams',
+         function($routeParams) {
+           var msgService = {};
+           msgService.manufacturer = '';
+           msgService.model = '';
+           msgService.newOrUsedData = '';
 
-            msgService.setManufacturer = function(manufacturer) {
-                msgService.manufacturer = manufacturer;
-            };
+           msgService.setManufacturer = function(manufacturer) {
+             msgService.manufacturer = manufacturer;
+           };
 
-            msgService.getManufacturer = function() {
-                if ($routeParams.isSelected) {
-                    return msgService.manufacturer;
-                }
-                return null;
-            };
+           msgService.getManufacturer = function() {
+             return msgService.manufacturer;
+           };
 
-            msgService.getManufacturerId = function() {
-                if ($routeParams.isSelected) {
-                    return msgService.manufacturer.id;
-                }
-                return 0;
-            };
+           msgService.getManufacturerId = function() {
+             if (!msgService.manufacturer) return 0;
+             return msgService.manufacturer.id;
+           };
 
-            msgService.setModel = function(model) {
-                msgService.model = model;
-            };
+           msgService.setModel = function(model) {
+             if (model && model.id) {
+               model.model_id = model.id;
+             }
+             msgService.model = model;
+           };
 
-            msgService.getModel = function() {
-                if ($routeParams.isSelected) {
-                    return msgService.model;
-                }
-                return null;
-            };
+           msgService.getModel = function() {
+             return msgService.model;
+           };
 
-            msgService.getModelId = function() {
-                if ($routeParams.isSelected) {
-                    if (msgService.model.id)
-                        return msgService.model.id;
-                    return msgService.model.model_id;
-                }
-                return 0;
-            };
+           msgService.getModelId = function() {
+             if (!msgService.model) return 0;
+             if (msgService.model.id)
+               return msgService.model.id;
+             return msgService.model.model_id;
+           };
 
-            msgService.setNewOrUsed = function(id) {
-                msgService.newOrUsed = id;
-            };
+           msgService.setNewOrUsedData = function(newOrUsed) {
+             msgService.newOrUsedData = newOrUsed;
+           };
 
-            msgService.getNewOrUsed = function() {
-                if ($routeParams.isSelected) {
-                    return msgService.newOrUsed;
-                }
-                return 0;
-            };
+           msgService.getNewOrUsed = function() {
+             return msgService.newOrUsedData;
+           };
 
-            return msgService;
-        }
-    ]);
+           return msgService;
+         }
+]);

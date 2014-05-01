@@ -1,0 +1,19 @@
+<div ng-controller="ModelCompetitorsCtrl" class="container">
+  <div class="row">
+    <div class="twelve columns text-right" ng-switch="hasCompetitors">
+      <ul class="pricing-table" ng-switch-default ng-show="competitors.length" ng-cloak>
+        <a ng-repeat="competitor in competitors" href="#/catalog/models/{{competitor.model_id}}">
+          <li class="row bullet-item">
+            <div class="small-4 columns">
+              <img  class="th radius" ng-src="{{competitor.image_url}}" >
+            </div>
+            <div class="main small-8 columns text-right">
+              <h5>{{competitor.name}}</h5>
+            </div>
+          </li>
+        </a>
+      </ul>
+      <div ng-switch-on="false">{{noCompetitorsIndicator}}</div>
+    </div>
+  </div>
+</div>
