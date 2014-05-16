@@ -13,6 +13,7 @@
 //= require jquery
 //= require requestAnimationFrame
 //= require modernizrAdditions
+//= require underscore
 //= require angular
 //= require matchmedia-ng
 //= require angular-route
@@ -22,6 +23,7 @@
 //= require angular-cache
 //= require angular-carousel
 //= require angular-loading-bar
+//= require restangular
 //= require bootstrap
 //= require bootstrap-select
 //= require_tree ./templates
