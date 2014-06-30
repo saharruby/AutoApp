@@ -1,6 +1,6 @@
 window.fbAsyncInit = function() {
   FB.init({
-    appId      : '{ appId }',
+    appId      : '281382155321504',
     xfbml      : true,
     version    : 'v2.0'
   });
@@ -11,6 +11,6 @@ window.fbAsyncInit = function() {
 
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/sdk.js";
+  js.src = "//connect.facebook.net/en_US/sdk.js";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
