@@ -12,6 +12,7 @@ angular.module('autoControllers')
             $scope.fbShare = function () {
                 FB.ui({
                   method: 'share',
+                  display: 'touch',
                   href: 'http://www.auto.co.il/view.aspx?article=' + $scope.article_id,
                 }, function(response){
                     if(response && response.post_id) {
