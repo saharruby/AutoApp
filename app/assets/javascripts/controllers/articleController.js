@@ -8,5 +8,18 @@ angular.module('autoControllers')
                 $scope.article = data[0];
                 window.scrollTo(0,0);
             });
+
+            $scope.fbShare = function () {
+                FB.ui({
+                  method: 'share',
+                  href: 'http://www.auto.co.il/view.aspx?article=' + $scope.article_id,
+                }, function(response){
+                    if(response && response.post_id) {
+                        console.log('Publish was completed');
+                    } else {
+                        console.log('Publish did not complete');
+                    }
+                });
+            }
         }
     ]);

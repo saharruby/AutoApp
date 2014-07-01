@@ -36,6 +36,7 @@ group :assets do
 end
 group :production,:staging do
   gem 'pg'
+  gem 'rails_12factor', '0.0.2'
 end
 
 group:development do
