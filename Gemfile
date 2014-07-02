@@ -9,6 +9,7 @@ gem 'thin'
 gem 'foundation-rails'
 gem 'ejs'
 gem 'sass-rails', '>= 3.2'
+gem 'sass', '3.2.13'
 gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'rails-assets-angular', '1.2.16'
@@ -36,6 +37,7 @@ group :assets do
 end
 group :production,:staging do
   gem 'pg'
+  gem 'rails_12factor', '0.0.2'
 end
 
 group:development do

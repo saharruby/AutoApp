@@ -32,3 +32,4 @@
 //= require_tree ./controllers
 //= require_tree ./directives
 //= require appConfiguration
+//= require  fbInit
