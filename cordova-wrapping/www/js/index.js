@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var siteUrl = 'http://eshcharc-auto-app.herokuapp.com/'.
+var siteUrl = 'http://eshcharc-auto-app.herokuapp.com/',
     app = {
         // Application Constructor
         initialize: function() {

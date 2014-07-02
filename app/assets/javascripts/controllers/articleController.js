@@ -11,10 +11,11 @@ angular.module('autoControllers')
 
             $scope.fbShare = function () {
                 var redirectUrl = 
-                redirectUrl = ['https://www.facebook.com/dialog/share?',
+                redirectUrl = ['https://m.facebook.com/dialog/share?',
                                    'app_id=281382155321504',
+                                   'client_id=281382155321504',
                                    '&display=touch',
-                                   '&href=http%3A%2F%2Fwww.auto.co.il%2Fview.aspx?article=', $scope.article_id,
+                                   '&link=http%3A%2F%2Fwww.auto.co.il%2Fview.aspx?article=', $scope.article_id,
                                    '&redirect_uri=', window.encodeURIComponent(window.location)].join('');
 
                window.location = redirectUrl;
